@@ -9,9 +9,10 @@
     "lint": "next lint",
     "build": "next build && next export",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d out --dotfiles"
+    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
+    "@types/marked": "^4.0.8",
     "@types/node": "18.14.2",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
@@ -21,6 +22,8 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "gh-pages": "^5.0.0",
+    "gray-matter": "^4.0.3",
+    "marked": "^4.2.12",
     "next": "13.2.1",
     "prettier": "^2.8.4",
     "react": "18.2.0",

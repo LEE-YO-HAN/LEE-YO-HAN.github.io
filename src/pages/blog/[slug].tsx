@@ -1,55 +1,44 @@
-import fs from "fs";
-import path from "path";
+import { GetStaticPaths, GetStaticProps } from "next";
+import { join } from "path";
+import fs from "fs/promises";
 import matter from "gray-matter";
-import { marked } from "marked";
-import { Frontmatter } from "@/types/client/blog";
-import { StaticProps } from "@/types/client/blog";
+import ReactMarkdown from "react-markdown";
 
-interface ChildProps {
-  frontmatter: Frontmatter;
-  content: any;
+interface Props {
+  title: string;
+  date: string;
+  content: string;
 }
 
-export default function PostPage({ frontmatter, content }: ChildProps) {
+export default function BlogPost({ title, date, content }: Props) {
   return (
     <div>
-      <h1>{frontmatter.title}</h1>
-      <p>{frontmatter.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+      <h1>{title}</h1>
+      <p>{date}</p>
+      <ReactMarkdown>{content}</ReactMarkdown>
     </div>
   );
 }
 
-export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join("blog"));
-
-  const paths = files.map(filename => ({
-    params: {
-      slug: filename.replace(".md", ""),
-    },
+export const getStaticPaths: GetStaticPaths = async () => {
+  const postsDirectory = join(process.cwd() + "/posting", "blog");
+  const filenames = await fs.readdir(postsDirectory);
+  const paths = filenames.map(filename => ({
+    params: { slug: filename.replace(/\.md$/, "") },
   }));
+  return { paths, fallback: false };
+};
 
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-interface GetStaticProps {
-  params: StaticProps;
-}
-
-export async function getStaticProps({ params: { slug } }: GetStaticProps) {
-  const markdownWithMeta = fs.readFileSync(
-    path.join("blog", slug + ".md"),
-    "utf-8",
-  );
-  const { data: frontmatter, content } = matter(markdownWithMeta);
-
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+  const slug = params?.slug as string;
+  const filePath = join(process.cwd() + "/posting", "blog", `${slug}.md`);
+  const fileContents = await fs.readFile(filePath, "utf8");
+  const { data, content } = matter(fileContents);
   return {
     props: {
-      frontmatter,
+      title: data.title,
+      date: data.date.toString(),
       content,
     },
   };
-}
+};

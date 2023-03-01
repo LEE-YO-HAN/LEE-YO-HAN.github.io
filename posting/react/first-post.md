@@ -1,5 +1,5 @@
 ---
-title: First Post
+title: First React
 date: "2023-02-28"
 ---
 

@@ -3,20 +3,32 @@ import { join } from "path";
 import fs from "fs/promises";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
+import { NextHead } from "@/components/post/NextHead";
 
 interface Props {
   title: string;
+  description: string;
+  category: string;
   date: string;
   content: string;
 }
 
-export default function BlogPost({ title, date, content }: Props) {
+export default function BlogPost({
+  title,
+  description,
+  category,
+  date,
+  content,
+}: Props) {
   return (
-    <div>
-      <h1>{title}</h1>
-      <p>{date}</p>
-      <ReactMarkdown>{content}</ReactMarkdown>
-    </div>
+    <>
+      <NextHead title={title} description={description} category={category} />
+      <div>
+        <h1>{title}</h1>
+        <p>{date}</p>
+        <ReactMarkdown>{content}</ReactMarkdown>
+      </div>
+    </>
   );
 }
 
@@ -37,6 +49,8 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   return {
     props: {
       title: data.title,
+      description: data.description,
+      category: data.category,
       date: data.date,
       content,
     },

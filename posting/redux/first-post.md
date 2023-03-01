@@ -1,5 +1,7 @@
 ---
-title: First React
+title: First Post
+description: 테스트하는용도에오
+category: redux
 date: "2023-02-28"
 ---
 

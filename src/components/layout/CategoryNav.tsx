@@ -24,8 +24,8 @@ export const CategoryNav = () => {
     getList("TypeScript"),
     getList("Redux"),
     getList("React"),
-    getList("Next.js"),
-    getList("Nest.js"),
+    getList("Nextjs"),
+    getList("Nestjs"),
   ];
   return (
     <CategoryNavWrap>

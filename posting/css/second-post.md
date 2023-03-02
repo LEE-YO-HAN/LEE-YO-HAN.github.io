@@ -1,7 +1,7 @@
 ---
 title: Second Post
 description: 테스트하는용도에오
-category: github
+category: css
 date: "2023-02-29"
 ---
 

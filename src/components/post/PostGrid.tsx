@@ -1,13 +1,24 @@
 import styled from "styled-components";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export const PostGrid = ({ posts }: any) => {
+  const router = useRouter();
   return (
     <GridBox>
       {posts.map((item: any, index: number) => {
         const { title, description, category, date, content } = item;
         return (
-          <Card key={index}>
+          <Card
+            key={index}
+            onClick={() =>
+              router.push(
+                `/${category === "github" ? "blog" : category}/${title
+                  .replaceAll(" ", "-")
+                  .toLowerCase()}`,
+              )
+            }
+          >
             <Image
               src={require(`../../images/${category.toUpperCase()}.png`)}
               alt="카테고리 이미지"

@@ -9,7 +9,7 @@ interface Props {
 export const NextHead = ({ title, description, category }: Props) => {
   return (
     <Head>
-      <title>Rain Suagr BangBang Front-End</title>
+      <title>Rain Sugar BangBang Front-End</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content={`${description}`} />
       <meta name="keywords" content={`${category}, ${category}-${title}`} />

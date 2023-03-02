@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Rain Suagr BangBang Front-End</title>
+        <title>Rain Sugar BangBang Front-End</title>
         <meta name="description" content="developer's blog" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Rain Sugar BangBang" />

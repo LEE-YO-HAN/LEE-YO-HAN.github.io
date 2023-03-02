@@ -23,9 +23,12 @@ export default function BlogPost({
   return (
     <>
       <NextHead title={title} description={description} category={category} />
-      <div>
+      <section>
         <h1>{title}</h1>
+        <h2>{description}</h2>
         <p>{date}</p>
+      </section>
+      <div>
         <ReactMarkdown>{content}</ReactMarkdown>
       </div>
     </>

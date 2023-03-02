@@ -17,7 +17,7 @@ const HeaderWrap = styled.header`
   flex-direction: row;
   align-items: center;
   height: 99px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #3c2a213b;
 
   & h1 {
     width: 500px;

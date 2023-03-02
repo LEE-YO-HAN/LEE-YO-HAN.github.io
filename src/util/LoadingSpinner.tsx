@@ -30,14 +30,13 @@ const Spinner = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin-top: -32px;
     margin-left: -32px;
     border-radius: 50%;
     border: 3px solid transparent;
-    /* border-color: #3b3b3b #747474 #747474 #3b3b3b; */
-    border-color: ${props => props.theme.loadingColor};
-    animation: spinner 0.2s infinite;
+    border-color: #3c2a21 white #3c2a21 white;
+    animation: spinner 0.6s infinite;
   }
 `;

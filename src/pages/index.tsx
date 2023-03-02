@@ -6,7 +6,7 @@ import matter from "gray-matter";
 import { PostGrid } from "@/components/post/PostGrid";
 import { MarkDownProps } from "@/types/pages";
 
-export default function Home({ posts }: any) {
+export default function Home({ posts }: { posts: MarkDownProps[] }) {
   return (
     <>
       <Head>
@@ -18,7 +18,6 @@ export default function Home({ posts }: any) {
         <meta property="og:image" content={require("../images/GITHUB.png")} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <main>블로그 ㅎㅇ</main> */}
       <p style={{ fontWeight: "bold" }}>전체 글 ({posts.length})</p>
       <PostGrid posts={posts} />
     </>

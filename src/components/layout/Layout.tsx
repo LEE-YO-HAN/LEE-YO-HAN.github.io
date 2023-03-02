@@ -6,7 +6,6 @@ export const Layout = ({ children }: any) => {
   return (
     <>
       <Header />
-
       <LayoutWrap>
         <ContentWrap>
           <PostArea>{children}</PostArea>

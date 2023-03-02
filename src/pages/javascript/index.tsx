@@ -6,7 +6,7 @@ import matter from "gray-matter";
 import { PostGrid } from "@/components/post/PostGrid";
 import { MarkDownProps } from "@/types/pages";
 
-export default function SimpleMemo({ posts }: any) {
+export default function SimpleMemo({ posts }: { posts: MarkDownProps[] }) {
   return (
     <>
       <Head>

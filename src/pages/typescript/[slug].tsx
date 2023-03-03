@@ -2,8 +2,8 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { join } from "path";
 import fs from "fs/promises";
 import matter from "gray-matter";
-import ReactMarkdown from "react-markdown";
 import { NextHead } from "@/components/post/NextHead";
+import { PostTemplate } from "@/components/post/PostTemplate";
 
 interface Props {
   title: string;
@@ -23,11 +23,13 @@ export default function BlogPost({
   return (
     <>
       <NextHead title={title} description={description} category={category} />
-      <div>
-        <h1>{title}</h1>
-        <p>{date}</p>
-        <ReactMarkdown>{content}</ReactMarkdown>
-      </div>
+      <PostTemplate
+        title={title}
+        description={description}
+        category={category}
+        date={date}
+        content={content}
+      />
     </>
   );
 }

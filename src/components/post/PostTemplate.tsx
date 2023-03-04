@@ -78,7 +78,7 @@ const HeaderSection = styled.section`
 `;
 
 const MainContent = styled.main`
-  margin-top: 80px;
+  margin: 80px 0 150px 0;
 
   // markdown
   .markdown {
@@ -88,13 +88,19 @@ const MainContent = styled.main`
   }
 
   .markdown h1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
 
   .markdown h2 {
-    font-size: 1rem;
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .markdown h3 {
+    font-size: 1.1rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
@@ -106,6 +112,10 @@ const MainContent = styled.main`
   .markdown a {
     color: #0070f3;
     text-decoration: underline;
+  }
+
+  .markdown img {
+    max-width: 45vw;
   }
 
   .markdown pre {

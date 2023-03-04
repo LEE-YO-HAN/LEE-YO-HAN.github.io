@@ -10,6 +10,9 @@ export const SideNav = () => {
 };
 
 const SideArea = styled.aside`
+  /* position: absolute;
+  top: 100px;
+  right: 0; */
   margin-left: 100px;
   display: flex;
   flex-direction: column;

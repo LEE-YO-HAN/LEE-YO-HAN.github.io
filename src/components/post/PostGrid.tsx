@@ -38,7 +38,7 @@ export const PostGrid = ({ posts }: any) => {
 const GridBox = styled.ul`
   margin: 20px 0;
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-columns: 200px 200px 200px;
   grid-gap: 30px;
   list-style: none;
 `;

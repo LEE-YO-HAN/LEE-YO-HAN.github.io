@@ -20,7 +20,7 @@ const LayoutWrap = styled.div`
   margin: 0 auto;
   padding: 0 20px;
   max-width: 1080px;
-  width: 100vw;
+  width: 50vw;
 `;
 
 const ContentWrap = styled.section`
@@ -31,5 +31,5 @@ const ContentWrap = styled.section`
 
 const PostArea = styled.article`
   margin-top: 60px;
-  width: 60vw;
+  width: 50vw;
 `;

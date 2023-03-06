@@ -15,6 +15,14 @@ export default function Home({ posts }: { posts: MarkDownProps[] }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Rain Sugar BangBang" />
         <meta property="og:description" content="welcome to developer's blog" />
+        <meta
+          name="naver-site-verification"
+          content="af9c8049662a7c6c85ea946e9eb561086e70062c"
+        />
+        <meta
+          name="google-site-verification"
+          content="Zgp7rA3RAdcRnhPPsGLK-t4KVTO86AejlDIQQIGpvLg"
+        />
         <meta property="og:image" content={require("../images/GITHUB.png")} />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -10,14 +10,13 @@ export const SideNav = () => {
 };
 
 const SideArea = styled.aside`
-  /* position: absolute;
+  position: relative;
   top: 100px;
-  right: 0; */
-  margin-left: 100px;
+  right: 0;
+  margin-left: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 249px;
-  height: 100vh;
   border-left: 1px solid #3c2a213b;
 `;

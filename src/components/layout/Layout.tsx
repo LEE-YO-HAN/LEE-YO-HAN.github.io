@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Header } from "./Header";
 import { SideNav } from "./SideNav";
+import { Profile } from "./Profile";
 
 export const Layout = ({ children }: any) => {
   return (
@@ -8,6 +9,7 @@ export const Layout = ({ children }: any) => {
       <Header />
       <LayoutWrap>
         <ContentWrap>
+          <Profile />
           <PostArea>{children}</PostArea>
           <SideNav />
         </ContentWrap>
@@ -20,7 +22,7 @@ const LayoutWrap = styled.div`
   margin: 0 auto;
   padding: 0 20px;
   max-width: 1080px;
-  width: 50vw;
+  /* width: 50vw; */
 `;
 
 const ContentWrap = styled.section`
@@ -31,5 +33,4 @@ const ContentWrap = styled.section`
 
 const PostArea = styled.article`
   margin-top: 60px;
-  width: 50vw;
 `;

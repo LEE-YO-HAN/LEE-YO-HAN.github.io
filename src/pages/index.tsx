@@ -26,7 +26,6 @@ export default function Home({ posts }: { posts: MarkDownProps[] }) {
         <meta property="og:image" content={require("../images/GITHUB.png")} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <p style={{ fontWeight: "bold" }}>전체 글 ({posts.length})</p>
       <PostGrid posts={posts} />
     </>
   );

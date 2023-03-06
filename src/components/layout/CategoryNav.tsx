@@ -29,7 +29,6 @@ export const CategoryNav = () => {
   ];
   return (
     <CategoryNavWrap>
-      <Profile />
       <NavList>
         <li>Category</li>
         {CATEGORYS.map((item, index) => {
@@ -45,7 +44,6 @@ export const CategoryNav = () => {
 };
 
 const CategoryNavWrap = styled.nav`
-  margin-top: 60px;
   margin-left: 20px;
 `;
 

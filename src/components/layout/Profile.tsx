@@ -6,7 +6,7 @@ import { AiOutlineMail } from "react-icons/ai";
 
 export const Profile = () => {
   return (
-    <>
+    <ProfileArea>
       <ProfileWrap>
         <Image
           src={`https://avatars.githubusercontent.com/u/85297720?v=4`}
@@ -26,9 +26,22 @@ export const Profile = () => {
           <span>Github</span>
         </Link>
       </LinkBox>
-    </>
+    </ProfileArea>
   );
 };
+
+const ProfileArea = styled.aside`
+  position: relative;
+  top: 100px;
+  left: 0;
+  margin-top: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 249px;
+  border-right: 1px solid #3c2a213b;
+`;
 
 const ProfileWrap = styled.div`
   display: flex;

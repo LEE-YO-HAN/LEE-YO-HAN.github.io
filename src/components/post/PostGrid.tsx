@@ -1,9 +1,27 @@
 import styled from "styled-components";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { Pagination } from "./Pagination";
+import { useState } from "react";
 
 export const PostGrid = ({ posts }: any) => {
   const router = useRouter();
+
+  const [activePage, setActivePage] = useState<number>(1);
+  const handlePageChange = (page: number) => {
+    setActivePage(page);
+  };
+
+  let pagePerItems = 6;
+  let indexArray = Array.from({ length: pagePerItems }, (item, index) => {
+    return index;
+  });
+  let pageIndex: number[] = [];
+  pageIndex =
+    activePage === 1
+      ? indexArray
+      : indexArray.map(item => item + (activePage - 1) * pagePerItems);
+
   return (
     <GridContainer>
       <p style={{ fontWeight: "bold", width: "660px" }}>
@@ -12,32 +30,43 @@ export const PostGrid = ({ posts }: any) => {
       <GridBox>
         {posts.map((item: any, index: number) => {
           const { title, description, category, date, content } = item;
-          return (
-            <Card
-              key={index}
-              onClick={() =>
-                router.push(
-                  `/${category === "github" ? "blog" : category}/${title
-                    .replaceAll(" ", "-")
-                    .toLowerCase()}`,
-                )
-              }
-            >
-              <Image
-                src={require(`../../images/${category.toUpperCase()}.png`)}
-                alt="카테고리 이미지"
-                width={200}
-                height={150}
-              />
-              <CardBody>
-                <h1>{title}</h1>
-                <p>{description.slice(0, 30)}...</p>
-                <span>{date.replaceAll("-", ". ")}</span>
-              </CardBody>
-            </Card>
-          );
+          if (pageIndex[0] <= index && index <= pageIndex[5]) {
+            return (
+              <Card
+                key={index}
+                onClick={() =>
+                  router.push(
+                    `/${category === "github" ? "blog" : category}/${title
+                      .replaceAll(" ", "-")
+                      .toLowerCase()}`,
+                  )
+                }
+              >
+                <Image
+                  src={require(`../../images/${category.toUpperCase()}.png`)}
+                  alt="카테고리 이미지"
+                  width={200}
+                  height={150}
+                />
+                <CardBody>
+                  <h1>{title}</h1>
+                  <p>{description.slice(0, 30)}...</p>
+                  <span>{date.replaceAll("-", ". ")}</span>
+                </CardBody>
+              </Card>
+            );
+          }
         })}
       </GridBox>
+      <Pagination
+        activePage={activePage}
+        itemsCountPerPage={9}
+        totalItemsCount={posts.length}
+        prevPageText={"<"}
+        nextPageText={">"}
+        handlePageChange={handlePageChange}
+        maxItems={5}
+      />
     </GridContainer>
   );
 };

@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
+import { BsCaretLeftFill, BsCaretRightFill } from "react-icons/bs";
 
 interface Props {
   activePage: number;
   itemsCountPerPage: number;
   totalItemsCount: number;
-  prevPageText: string;
-  nextPageText: string;
   handlePageChange: any;
   maxItems: number;
 }
@@ -15,8 +14,6 @@ export const Pagination = ({
   activePage,
   itemsCountPerPage,
   totalItemsCount,
-  prevPageText,
-  nextPageText,
   handlePageChange,
   maxItems,
 }: Props) => {
@@ -38,7 +35,7 @@ export const Pagination = ({
   const [listNum, setListNum] = useState<number>(1);
   useEffect(() => {
     setListNum(Math.floor(Number((activePage + maxItems - 1) / maxItems)));
-  }, [activePage]);
+  }, [activePage, maxItems]);
 
   // 한 묶음에 보여줄 페이지 넘버
   const firPagingArr = Array.from(
@@ -69,7 +66,7 @@ export const Pagination = ({
         }}
         style={activePage === 1 ? { backgroundColor: `gray` } : {}}
       >
-        {prevPageText}
+        <BsCaretLeftFill />
       </li>
       {pagingArray.map((item, index) => {
         if (
@@ -100,7 +97,7 @@ export const Pagination = ({
           activePage === pagingArray.length ? { backgroundColor: `gray` } : {}
         }
       >
-        {nextPageText}
+        <BsCaretRightFill />
       </li>
     </PagingUl>
   );
@@ -115,6 +112,10 @@ const PagingUl = styled.ul`
   justify-content: center;
   justify-content: space-evenly;
   align-items: center;
+  font-weight: bold;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: 0.3s;
   & ul,
   li {
     list-style: none;
@@ -124,25 +125,26 @@ const PagingUl = styled.ul`
     height: 35px;
     text-align: center;
     font-size: 25px;
-    border: ${props => props.theme.pagingBorder};
     border-radius: 5px;
-    background-color: ${props => props.theme.pagingBackground};
-    transition: 0.6s;
+    transition: 0.3s;
     cursor: pointer;
     &:hover {
-      color: ${props => props.theme.pagingHoverColor};
-      background-color: ${props => props.theme.pagingHoverBackground};
+      color: black;
+      background-color: blanchedalmond;
     }
   }
   & .activePage {
-    color: ${props => props.theme.pagingHoverColor};
-    background-color: ${props => props.theme.pagingHoverBackground};
+    color: black;
+    background-color: blanchedalmond;
   }
   & li:first-child,
   li:last-child {
-    background-color: ${props => props.theme.pagingBackground};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c2c2c;
     &:hover {
-      background-color: ${props => props.theme.pagingHoverBackground};
+      background-color: #585858;
     }
   }
 `;

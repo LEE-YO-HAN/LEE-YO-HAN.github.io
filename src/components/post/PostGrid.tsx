@@ -49,8 +49,8 @@ export const PostGrid = ({ posts }: any) => {
                   height={150}
                 />
                 <CardBody>
-                  <h1>{title}</h1>
-                  <p>{description.slice(0, 30)}...</p>
+                  <h1>{title.slice(0, 30)}</h1>
+                  <p>{description.slice(0, 25)}...</p>
                   <span>{date.replaceAll("-", ". ")}</span>
                 </CardBody>
               </Card>
@@ -62,8 +62,6 @@ export const PostGrid = ({ posts }: any) => {
         activePage={activePage}
         itemsCountPerPage={9}
         totalItemsCount={posts.length}
-        prevPageText={"<"}
-        nextPageText={">"}
         handlePageChange={handlePageChange}
         maxItems={5}
       />
@@ -90,6 +88,7 @@ const GridBox = styled.ul`
 `;
 
 const Card = styled.li`
+  height: 300px;
   border-radius: 5px 5px 5px 5px;
   background-color: #2c2c2c;
   cursor: pointer;
@@ -103,7 +102,11 @@ const Card = styled.li`
 `;
 
 const CardBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   padding: 10px;
+  height: 133px;
   & span {
     font-size: 0.8rem;
     color: #968a79;

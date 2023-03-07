@@ -60,7 +60,7 @@ export const PostGrid = ({ posts }: any) => {
       </GridBox>
       <Pagination
         activePage={activePage}
-        itemsCountPerPage={9}
+        itemsCountPerPage={6}
         totalItemsCount={posts.length}
         handlePageChange={handlePageChange}
         maxItems={5}

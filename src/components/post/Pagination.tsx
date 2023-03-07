@@ -17,12 +17,12 @@ export const Pagination = ({
   handlePageChange,
   maxItems,
 }: Props) => {
-  // 페이지 버튼 총 길이
+  // pages button length
   const totalLength =
     Math.ceil(totalItemsCount / itemsCountPerPage) < 1
       ? 1
       : Math.ceil(totalItemsCount / itemsCountPerPage);
-  // 버튼 총 길이를 배열로 생성
+  // pages button length arr
   const pagingArray = Array.from(
     {
       length: totalLength,
@@ -30,14 +30,14 @@ export const Pagination = ({
     (item, index) => index,
   );
 
-  // 현재 페이지가 바뀔때마다.
-  // 페이지 묶음의 몇 번째인지 설정
-  const [listNum, setListNum] = useState<number>(1);
+  // when active page change
+  // page set's No. setting
+  const [listNum, setListNum] = useState(1);
   useEffect(() => {
     setListNum(Math.floor(Number((activePage + maxItems - 1) / maxItems)));
   }, [activePage, maxItems]);
 
-  // 한 묶음에 보여줄 페이지 넘버
+  // numbers in one set
   const firPagingArr = Array.from(
     {
       length: maxItems,

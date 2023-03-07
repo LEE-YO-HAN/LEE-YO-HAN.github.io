@@ -27,6 +27,11 @@ export const NextHead = ({ title, description, category }: Props) => {
         name="google-site-verification"
         content="Zgp7rA3RAdcRnhPPsGLK-t4KVTO86AejlDIQQIGpvLg"
       />
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4077287316160146"
+        crossOrigin="anonymous"
+      ></script>
       <link rel="icon" href="/favicon.ico" />
     </Head>
   );

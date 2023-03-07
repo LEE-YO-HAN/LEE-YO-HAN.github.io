@@ -33,4 +33,7 @@ const ContentWrap = styled.section`
 
 const PostArea = styled.article`
   margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

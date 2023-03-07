@@ -23,6 +23,11 @@ export default function Home({ posts }: { posts: MarkDownProps[] }) {
           name="google-site-verification"
           content="Zgp7rA3RAdcRnhPPsGLK-t4KVTO86AejlDIQQIGpvLg"
         />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4077287316160146"
+          crossOrigin="anonymous"
+        ></script>
         <meta property="og:image" content={require("../images/GITHUB.png")} />
         <link rel="icon" href="/favicon.ico" />
       </Head>

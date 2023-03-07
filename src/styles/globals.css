@@ -149,7 +149,7 @@ body {
 
   /* test */
   color: blanchedalmond;
-  background-color: rgb(27, 26, 26);
+  background-color: rgb(27, 27, 27);
 }
 
 * {
@@ -158,7 +158,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 5px;
+  width: 2px;
   background-color: #aaa;
 }
 body::-webkit-scrollbar-thumb {

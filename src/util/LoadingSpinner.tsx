@@ -36,7 +36,7 @@ const Spinner = styled.div`
     margin-left: -32px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-color: #3c2a21 white #3c2a21 white;
+    border-color: #2c2c2c blanchedalmond #2c2c2c blanchedalmond;
     animation: spinner 0.6s infinite;
   }
 `;

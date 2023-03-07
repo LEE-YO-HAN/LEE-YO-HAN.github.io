@@ -62,30 +62,42 @@ export const PostTemplate = ({
 };
 
 const HeaderSection = styled.section`
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 200px;
+  background-color: #2c2c2c;
+  border-radius: 20px;
   & h1 {
+    padding: 0 10px;
+    width: 640px;
     font-weight: bold;
     font-size: 2rem;
   }
   & p {
     margin-top: 10px;
+    padding: 0 10px;
+    width: 640px;
     font-weight: bold;
     font-size: 1.2rem;
   }
   & span {
+    padding: 0 10px;
+    width: 640px;
     font-weight: bold;
     font-size: 0.9rem;
   }
 `;
 
 const MainContent = styled.main`
-  margin: 80px 0 150px 0;
+  margin: 0px 0 150px 0;
   width: 660px;
 
   // markdown
   .markdown {
     font-size: 1.2rem;
     line-height: 1.5;
-    /* color: #333; */
   }
 
   .markdown h1 {

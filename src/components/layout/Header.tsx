@@ -17,7 +17,7 @@ const HeaderWrap = styled.header`
   justify-content: center;
   align-items: center;
   height: 99px;
-  border-bottom: 1px solid #3c2a213b;
+  border-bottom: 1px solid #3a3a3a;
   background-color: #2c2c2c;
   & h1 {
     width: 500px;

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
-import { Profile } from "./Profile";
 
 export const CategoryNav = () => {
   const router = useRouter();
@@ -9,6 +8,7 @@ export const CategoryNav = () => {
     let cateUrl = category === "Simple Memo" ? "blog" : category.toLowerCase();
     let navData = {
       name: category,
+      cateUrl: cateUrl,
       goLink: () => {
         router.push(`/${cateUrl}`);
       },
@@ -32,9 +32,19 @@ export const CategoryNav = () => {
       <NavList>
         <li>Category</li>
         {CATEGORYS.map((item, index) => {
+          const { name, goLink, cateUrl } = item;
           return (
-            <ListItem key={index} onClick={item.goLink}>
-              {item.name}
+            <ListItem
+              key={index}
+              onClick={goLink}
+              style={
+                `/${cateUrl}` === router.pathname ||
+                `/${cateUrl}/[slug]` === router.pathname
+                  ? { color: "white", fontWeight: "bold" }
+                  : {}
+              }
+            >
+              {name}
             </ListItem>
           );
         })}
@@ -49,8 +59,9 @@ const CategoryNavWrap = styled.nav`
 
 const NavList = styled.ul`
   list-style: none;
+  transition: 0.3s;
   & li:first-child {
-    margin: 20px 0 20px 0;
+    margin-bottom: 20px;
     font-weight: bold;
     font-size: 1.2rem;
     cursor: auto;
@@ -60,11 +71,9 @@ const NavList = styled.ul`
 const ListItem = styled.li`
   margin-bottom: 7px;
   cursor: pointer;
-  transition: 0.3s;
 
   &:hover {
     font-weight: bold;
-    /* color: #ffae00; */
     color: white;
   }
 `;

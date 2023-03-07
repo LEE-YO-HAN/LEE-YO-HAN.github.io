@@ -11,8 +11,8 @@ export const Profile = () => {
         <Image
           src={`https://avatars.githubusercontent.com/u/85297720?v=4`}
           alt="profile"
-          width={50}
-          height={50}
+          width={100}
+          height={100}
         />
         <p>Hanbbi</p>
       </ProfileWrap>
@@ -34,25 +34,27 @@ const ProfileArea = styled.aside`
   position: relative;
   top: 100px;
   left: 0;
-  margin-top: 10px;
-  margin-right: 10px;
+  margin-right: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 249px;
-  border-right: 1px solid #3c2a213b;
+  width: 200px;
+  height: 350px;
+  background-color: #2c2c2c;
+  border-radius: 10px;
 `;
 
 const ProfileWrap = styled.div`
+  margin-top: 30px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 
   & img {
-    border-radius: 30px;
+    border-radius: 50px;
   }
   & p {
-    margin: 0 15px;
+    margin: 10px 15px 0 15px;
     font-weight: bold;
     font-size: 1.4rem;
   }
@@ -63,7 +65,7 @@ const LinkBox = styled.div`
   & a {
     display: flex;
     align-items: center;
-    color: #3c2a21;
+    color: blanchedalmond;
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;

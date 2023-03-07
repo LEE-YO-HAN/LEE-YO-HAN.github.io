@@ -130,13 +130,13 @@ table {
 
 body {
   /* color: #1A120B; */
-  color: #3c2a21;
+  /* color: #3c2a21; */
   /* color: #D5CEA3; */
   /* color: #E5E5CB; */
   /* background: #262a35; */
   /* background: #1a120b; */
   /* background: #3c2a21; */
-  background: #ebe3b4;
+  /* background: #ebe3b4; */
   /* background: #E5E5CB; */
   /* background: linear-gradient(45deg, black, lightgray); */
   /* 1A120B - brown
@@ -146,6 +146,10 @@ body {
     ebe3b4 - better light vanilla
     3c2a213b - hr or lean border line
     */
+
+  /* test */
+  color: blanchedalmond;
+  background-color: rgb(27, 26, 26);
 }
 
 * {

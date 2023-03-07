@@ -14,9 +14,11 @@ export const Header = () => {
 const HeaderWrap = styled.header`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   height: 99px;
   border-bottom: 1px solid #3c2a213b;
+  background-color: #2c2c2c;
   & h1 {
     width: 500px;
     text-align: center;

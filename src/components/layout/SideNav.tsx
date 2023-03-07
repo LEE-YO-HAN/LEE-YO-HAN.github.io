@@ -13,10 +13,13 @@ const SideArea = styled.aside`
   position: relative;
   top: 100px;
   right: 0;
-  margin-left: 10px;
+  margin-left: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 249px;
-  border-left: 1px solid #3c2a213b;
+  justify-content: center;
+  align-items: flex-start;
+  width: 200px;
+  height: 350px;
+  background-color: #2c2c2c;
+  border-radius: 10px;
 `;

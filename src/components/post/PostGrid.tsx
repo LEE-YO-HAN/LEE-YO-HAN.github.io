@@ -29,9 +29,11 @@ export const PostGrid = ({ posts }: any) => {
                 width={200}
                 height={150}
               />
-              <h1>{title}</h1>
-              <p>{description.slice(0, 30)}...</p>
-              <span>{date.replaceAll("-", ". ")}</span>
+              <CardBody>
+                <h1>{title}</h1>
+                <p>{description.slice(0, 30)}...</p>
+                <span>{date.replaceAll("-", ". ")}</span>
+              </CardBody>
             </Card>
           );
         })}
@@ -59,13 +61,22 @@ const GridBox = styled.ul`
 `;
 
 const Card = styled.li`
+  border-radius: 5px 5px 5px 5px;
+  background-color: #2c2c2c;
   cursor: pointer;
   transition: 0.3s;
-  &:hover {
-    box-shadow: 2px 2px 3px 2px #3c2a21;
+  & img {
+    border-radius: 5px 5px 0 0;
   }
+  &:hover {
+    box-shadow: 1px 1px 3px 4px #777777;
+  }
+`;
+
+const CardBody = styled.div`
+  padding: 10px;
   & span {
     font-size: 0.8rem;
-    color: ${props => props.theme.postFontColor};
+    color: #968a79;
   }
 `;

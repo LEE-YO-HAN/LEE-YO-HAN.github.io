@@ -4,7 +4,11 @@ export const mainTheme = {
   fontColor: "white",
 
   // post Card
-  postFontColor: "gray",
+  postFontColor: "#2c2c2c",
+
+  // layout box color
+  layoutBackground: "black",
+  layoutFontColor: "blanchedalmond",
 };
 
 // background-color: ${(props) => props.theme.backgroundColor};

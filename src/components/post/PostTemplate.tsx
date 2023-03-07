@@ -79,12 +79,13 @@ const HeaderSection = styled.section`
 
 const MainContent = styled.main`
   margin: 80px 0 150px 0;
+  width: 660px;
 
   // markdown
   .markdown {
     font-size: 1.2rem;
     line-height: 1.5;
-    color: #333;
+    /* color: #333; */
   }
 
   .markdown h1 {

@@ -21,8 +21,6 @@ export default function TypeScript({ posts }: { posts: MarkDownProps[] }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <main>블로그 ㅎㅇ</main> */}
-      <p style={{ fontWeight: "bold" }}>전체 글 ({posts.length})</p>
       <PostGrid posts={posts} />
     </>
   );

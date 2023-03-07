@@ -21,14 +21,14 @@ export const Layout = ({ children }: any) => {
 const LayoutWrap = styled.div`
   margin: 0 auto;
   padding: 0 20px;
-  max-width: 1080px;
-  /* width: 50vw; */
+  /* max-width: 1200px; */
+  /* width: 1080px; */
 `;
 
 const ContentWrap = styled.section`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 `;
 
 const PostArea = styled.article`

@@ -54,7 +54,7 @@ export const PostTemplate = ({
           {content}
         </ReactMarkdown>
       </MainContent>
-      <RecommandList />
+      <RecommandList title={title} />
       <CommentBox>
         <p>COMMENTS</p>
         <Comment />
@@ -93,7 +93,7 @@ const HeaderSection = styled.section`
 `;
 
 const MainContent = styled.main`
-  margin: 0px 0 150px 0;
+  margin: 0px 0 50px 0;
   width: 660px;
 
   // markdown

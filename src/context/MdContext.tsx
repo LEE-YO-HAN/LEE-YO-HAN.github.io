@@ -25,7 +25,6 @@ export const useMdContextUpdate = () => {
 // create component
 export const MdContext = ({ children }: ProviderProps) => {
   const [posts, setPosts] = useState<MarkDownProps[]>([]);
-  console.log(posts);
 
   return (
     <PostContextValue.Provider value={posts}>
@@ -35,3 +34,13 @@ export const MdContext = ({ children }: ProviderProps) => {
     </PostContextValue.Provider>
   );
 };
+
+// usage in another component
+// import { useMdContextUpdate } from "@/context/MdContext";
+// const update = useMdContextUpdate();
+
+//   useEffect(() => {
+//     if (posts) {
+//       update(posts);
+//     }
+//   }, [posts, update]);

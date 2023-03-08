@@ -5,18 +5,8 @@ import fs from "fs/promises";
 import matter from "gray-matter";
 import { PostGrid } from "@/components/post/PostGrid";
 import { MarkDownProps } from "@/types/pages";
-import { useEffect } from "react";
-import { useMdContextUpdate } from "@/context/mdContext";
 
 export default function Home({ posts }: { posts: MarkDownProps[] }) {
-  const update = useMdContextUpdate();
-
-  useEffect(() => {
-    if (posts) {
-      update(posts);
-    }
-  }, [posts, update]);
-
   return (
     <>
       <Head>

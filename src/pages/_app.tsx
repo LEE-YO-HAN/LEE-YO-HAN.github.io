@@ -5,7 +5,7 @@ import { Layout } from "@/components/layout/Layout";
 import { mainTheme } from "@/theme/theme";
 import { LoadingSpinner } from "@/util/LoadingSpinner";
 import { useLoading } from "@/hooks/useLoading";
-import { MdContext } from "@/context/mdContext";
+import { MdContext } from "@/context/MdContext";
 
 export default function App({ Component, pageProps }: AppProps) {
   const isLoadnig = useLoading();

@@ -1,20 +1,24 @@
 import styled from "styled-components";
-import { useMdContextValue } from "@/context/mdContext";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { MarkDownProps } from "@/types/pages";
+import axios from "axios";
 
-export const RecommandList = () => {
-  const MdContext = useMdContextValue();
+export const RecommandList = ({ title }: { title: string }) => {
   const { pathname } = useRouter();
-  console.log("mdmdmdmdmdmd", MdContext);
 
-  // const listfetch = async () => {
-  //   const data = await (await fetch(require("../../posting"))).json();
-  //   console.log(data);
-  // };
-  // useEffect(() => {
-  //   listfetch();
-  // }, []);
+  const [recommandList, setrecommandList] = useState<MarkDownProps[]>([]);
+  const [postIndex, setPostIndex] = useState<number>(0);
+  const listfetch = async () => {
+    const response = await axios.get("/api/md");
+    setrecommandList(response.data);
+    setPostIndex(
+      response.data.findIndex((post: MarkDownProps) => post.title === title),
+    );
+  };
+  useEffect(() => {
+    listfetch();
+  }, []);
 
   return (
     <RecommandBox>
@@ -26,8 +30,14 @@ export const RecommandList = () => {
         </strong>{" "}
         카테고리의 다른 글
       </p>
-      <li>이것두있구요</li>
-      <li>저것두있어요</li>
+      {recommandList.map((item, index) => {
+        if (postIndex - 2 <= index && index <= postIndex + 2)
+          return (
+            <li>
+              <span>{item.description}</span>
+            </li>
+          );
+      })}
     </RecommandBox>
   );
 };
@@ -40,14 +50,18 @@ const RecommandBox = styled.ul`
 
   & p {
     margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #3a3a3a;
   }
   & li {
     margin-bottom: 5px;
+  }
+  & span {
     cursor: pointer;
     transition: 0.3s;
 
     &:hover {
-      color: white;
+      color: #3a3a3a;
       font-weight: bold;
     }
   }

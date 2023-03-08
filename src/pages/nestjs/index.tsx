@@ -17,7 +17,7 @@ export default function SimpleMemo({ posts }: { posts: MarkDownProps[] }) {
         <meta property="og:description" content="welcome to developer's blog" />
         <meta
           property="og:image"
-          content={require("../../images/GITHUB.png")}
+          content={require("../../images/NESTJS.png")}
         />
         <meta
           name="naver-site-verification"

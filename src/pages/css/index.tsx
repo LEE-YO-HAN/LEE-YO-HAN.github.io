@@ -15,10 +15,7 @@ export default function SimpleMemo({ posts }: { posts: MarkDownProps[] }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Rain Sugar BangBang" />
         <meta property="og:description" content="welcome to developer's blog" />
-        <meta
-          property="og:image"
-          content={require("../../images/GITHUB.png")}
-        />
+        <meta property="og:image" content={require("../../images/CSS.png")} />
         <meta
           name="naver-site-verification"
           content="af9c8049662a7c6c85ea946e9eb561086e70062c"

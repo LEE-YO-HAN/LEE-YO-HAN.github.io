@@ -54,7 +54,7 @@ export const PostTemplate = ({
           {content}
         </ReactMarkdown>
       </MainContent>
-      {/* <RecommandList mainCategory={category} /> */}
+      <RecommandList mainCategory={category} />
       <CommentBox>
         <p>COMMENTS</p>
         <Comment />
@@ -148,6 +148,7 @@ const MainContent = styled.main`
 `;
 
 const CommentBox = styled.div`
+  margin-bottom: 100px;
   width: 100%;
 
   & p {

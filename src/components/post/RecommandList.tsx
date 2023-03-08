@@ -1,6 +1,10 @@
 import styled from "styled-components";
+import { useMdContextValue } from "@/context/mdContext";
 
 export const RecommandList = ({ mainCategory }: { mainCategory: string }) => {
+  const MdContext = useMdContextValue();
+  console.log("mdmdmdmdmdmd", MdContext);
+
   return (
     <RecommandBox>
       <p>
@@ -17,8 +21,9 @@ export const RecommandList = ({ mainCategory }: { mainCategory: string }) => {
 const RecommandBox = styled.ul`
   margin: 50px 0;
   padding: 15px;
+  width: 100%;
   list-style: none;
-  border: 1px solid #3c2a21;
+  border: 1px solid #3a3a3a;
 
   & p {
     margin-bottom: 15px;

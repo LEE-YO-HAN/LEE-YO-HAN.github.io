@@ -3,7 +3,11 @@ import { Header } from "./Header";
 import { SideNav } from "./SideNav";
 import { Profile } from "./Profile";
 
-export const Layout = ({ children }: any) => {
+interface ChildrenProps {
+  children: React.ReactNode;
+}
+
+export const Layout = ({ children }: ChildrenProps) => {
   return (
     <>
       <Header />

@@ -47,6 +47,7 @@ export const PostGrid = ({ posts }: any) => {
                   alt="카테고리 이미지"
                   width={200}
                   height={150}
+                  priority
                 />
                 <CardBody>
                   <p>

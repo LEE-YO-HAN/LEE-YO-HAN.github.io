@@ -1,6 +1,6 @@
 ---
-title: javascript 기초 2 날짜다루기
-description: javascript의 문법과 메서드들을 통해 날짜와 관련되 작업을 해볼 수 있다.
+title: javascript basic 2 Date
+description: javascript 기초 2 날짜다루기
 category: javascript
 date: "2023-03-06"
 ---

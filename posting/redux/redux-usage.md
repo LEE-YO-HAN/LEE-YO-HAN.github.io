@@ -1,6 +1,6 @@
 ---
-title: redux 사용해보기
-description: 일반적인 리덕스 사용해보기
+title: redux usage
+description: redux 사용해보기
 category: redux
 date: "2023-03-04"
 ---

@@ -1,6 +1,6 @@
 ---
-title: redux와 mock server 사용하기
-description: postman을 이용해 redux Mock server(json-server)를 사용해볼 수 있다.
+title: redux mock server
+description: postman을 이용해 redux Mock server(json-server) 사용해보기
 category: redux
 date: "2023-03-04"
 ---

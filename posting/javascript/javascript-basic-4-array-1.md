@@ -1,6 +1,6 @@
 ---
-title: javascript 기초 4 배열 다루기 .1
-description: javascript의 배열 메서드를 이용해 정렬, 데이터 처리 등 배열과 관련된 작업을 할 수 있다.
+title: javascript basic 4 array 1
+description: javascript 기초 4 배열 다루기 - 1
 category: javascript
 date: "2023-03-06"
 ---

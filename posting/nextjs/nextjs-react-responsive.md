@@ -1,6 +1,6 @@
 ---
-title: nextjs에 react responsive 적용하기
-description: nextjs에서 화면 크기에 따른 적응형 컴포넌트 를 구현하기 위해 responsive를 이용할 수 있다.
+title: nextjs react responsive
+description: nextjs에 react responsive 적용하기
 category: nextjs
 date: "2023-03-04"
 ---

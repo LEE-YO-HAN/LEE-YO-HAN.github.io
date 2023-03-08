@@ -1,6 +1,6 @@
 ---
-title: redux toolkit 사용해보기
-description: React와 함께 reduxToolkit과 미들웨어인 AsyncThunk를 함께 사용해볼 수 있다.
+title: redux toolkit async thunk
+description: React reduxToolkit과 미들웨어 AsyncThunk 사용해보기
 category: redux
 date: "2023-03-24"
 ---

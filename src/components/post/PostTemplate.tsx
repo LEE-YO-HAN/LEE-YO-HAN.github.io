@@ -9,6 +9,8 @@ import { dark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { vsDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
+import { Comment } from "./Comment";
+
 export const PostTemplate = ({
   title,
   description,
@@ -19,8 +21,8 @@ export const PostTemplate = ({
   return (
     <>
       <HeaderSection>
-        <h1>{title}</h1>
-        <p>{description}</p>
+        <p>{category}</p>
+        <h1>{description}</h1>
         <span>{date}</span>
       </HeaderSection>
       <MainContent>
@@ -53,10 +55,10 @@ export const PostTemplate = ({
         </ReactMarkdown>
       </MainContent>
       {/* <RecommandList mainCategory={category} /> */}
-      {/* <div>
-        <p>댓글</p>
-        <div></div>
-      </div> */}
+      <CommentBox>
+        <p>COMMENTS</p>
+        <Comment />
+      </CommentBox>
     </>
   );
 };
@@ -65,7 +67,7 @@ const HeaderSection = styled.section`
   margin-top: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   height: 200px;
   background-color: #2c2c2c;
   border-radius: 20px;
@@ -129,6 +131,7 @@ const MainContent = styled.main`
 
   .markdown img {
     max-width: 45vw;
+    text-align: center;
   }
 
   .markdown pre {
@@ -141,5 +144,13 @@ const MainContent = styled.main`
   }
 
   .markdown code {
+  }
+`;
+
+const CommentBox = styled.div`
+  width: 100%;
+
+  & p {
+    font-weight: bold;
   }
 `;

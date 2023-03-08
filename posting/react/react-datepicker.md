@@ -1,6 +1,6 @@
 ---
-title: react datepicker 사용하기
-description: react의 달력 라이브러리인 datepicker를 사용해 custom calendar을 만들어볼 수 있다.
+title: react datepicker
+description: React datepicker 사용하기
 category: react
 date: "2023-03-03"
 ---

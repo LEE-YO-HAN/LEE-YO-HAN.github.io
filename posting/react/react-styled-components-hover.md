@@ -1,6 +1,6 @@
 ---
 title: react styled components hover
-description: react에 styled-components를 이용해 hover 등의 특정 상황에 대한 스타일을 적용해줄 수 있다.
+description: react에 styled-components를 이용해 hover 적용하기
 category: react
 date: "2023-03-03"
 ---

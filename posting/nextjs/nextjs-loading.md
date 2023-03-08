@@ -1,6 +1,6 @@
 ---
-title: nextjs에서의 로딩처리
-description: nextjs에서 페이지 전환을 유동적으로 바꿔줄 수 있다.
+title: nextjs loading
+description: nextjs에서의 로딩처리
 category: nextjs
 date: "2023-03-04"
 ---

@@ -1,6 +1,6 @@
 ---
-title: react formdata 코드간소화
-description: React에서 formData를 변경해주는 코드를 간소화해볼 수 있다.
+title: react simple formdata code
+description: react formdata 코드간소화
 category: react
 date: "2023-03-03"
 ---

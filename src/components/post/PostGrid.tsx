@@ -49,8 +49,11 @@ export const PostGrid = ({ posts }: any) => {
                   height={150}
                 />
                 <CardBody>
-                  <h1>{title.slice(0, 30)}</h1>
-                  <p>{description.slice(0, 25)}...</p>
+                  <p>
+                    {description.length > 30
+                      ? description.slice(0, 31) + "..."
+                      : description}
+                  </p>
                   <span>{date.replaceAll("-", ". ")}</span>
                 </CardBody>
               </Card>

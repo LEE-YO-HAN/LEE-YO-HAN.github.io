@@ -1,6 +1,6 @@
 ---
-title: javascript 기초 1 숫자열문자열
-description: javascript의 문법과 메서드들을 통해 숫자열/문자열을 다뤄볼 수 있다.
+title: javascript basic 1 num str
+description: javascript 기초 1 숫자열문자열
 category: javascript
 date: "2023-03-06"
 ---

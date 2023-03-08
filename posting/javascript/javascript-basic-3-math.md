@@ -1,6 +1,6 @@
 ---
-title: javascript 기초 3 수학 다뤄보기
-description: javascript의 Math 메서드를 이용해 수학과 관련된 처리를 할 수 있다.
+title: javascript basic 3 math
+description: javascript 기초 3 Math 다뤄보기
 category: javascript
 date: "2023-03-06"
 ---

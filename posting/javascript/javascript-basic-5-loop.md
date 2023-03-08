@@ -1,6 +1,6 @@
 ---
-title: javascript 기초 5 반복문 다루기
-description: javascript의 for문, while 문을 통해 반복적인 작업을 처리할 수 있다.
+title: javascript basic 5 loop
+description: javascript 기초 5 반복문 다루기
 category: javascript
 date: "2023-03-06"
 ---

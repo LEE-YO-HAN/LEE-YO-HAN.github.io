@@ -1,6 +1,6 @@
 ---
-title: react navigate로 props 넘기기
-description: useNavigate를 이용해 props 데이터를 넘겨줄 수 있다.
+title: react navigate props
+description: React navigate로 props 넘기기
 category: react
 date: "2023-03-03"
 ---

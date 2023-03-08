@@ -15,10 +15,7 @@ export const NextHead = ({ title, description, category }: Props) => {
       <meta name="keywords" content={`${category}, ${category}-${title}`} />
       <meta property="og:title" content={`${title}`} />
       <meta property="og:description" content={`${description}`} />
-      <meta
-        property="og:image"
-        content={`../images/${category.toUpperCase()}.png`}
-      />
+      <meta property="og:image" content={`../images/${category}.png`} />
       <meta
         name="naver-site-verification"
         content="af9c8049662a7c6c85ea946e9eb561086e70062c"

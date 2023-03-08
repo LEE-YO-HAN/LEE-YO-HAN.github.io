@@ -1,6 +1,6 @@
 ---
-title: javascript 기초 4 배열 다루기 .2
-description: javascript의 고차함수나 메서드를 이용해 정렬, 데이터 처리 등 배열과 관련된 작업을 할 수 있다.
+title: javascript basic 4 array 2
+description: javascript 기초 4 배열 다루기 - 2
 category: javascript
 date: "2023-03-06"
 ---
@@ -42,8 +42,7 @@ console.log(new_array); // [ 4, 5 ]
 ```javascript
 const array_num = [0, 1, 2, 3, 4, 5]; // arr_n은 상수이지만
 const new_arr_num = array_num.map(
-  element =>
-    element * 10, // 요렇게 map으로 *10을 돌려주면
+  element => element * 10, // 요렇게 map으로 *10을 돌려주면
 );
 console.log(new_arr_num); // [ 0, 10, 20, 30, 40, 50 ] // 원본 배열 변경 없이 새 배열이 잘 만들어진다.
 ```

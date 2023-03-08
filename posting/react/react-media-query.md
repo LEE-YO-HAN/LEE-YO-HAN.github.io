@@ -1,6 +1,6 @@
 ---
-title: react media query 사용법
-description: react-responsive의 mediaQuery를 통해 적응형 화면을 쉽게 구축할 수 있다.
+title: react media query
+description: React mediaQuery 사용법
 category: react
 date: "2023-03-03"
 ---

@@ -1,6 +1,6 @@
 ---
-title: react modal 만들기
-description: 라이브러리 없이 모달창을 만들어 커스텀하는 법
+title: react modal non library
+description: 라이브러리 없이 React Modal 만들기
 category: react
 date: "2023-03-03"
 ---

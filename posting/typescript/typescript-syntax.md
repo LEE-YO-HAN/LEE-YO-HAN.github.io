@@ -1,6 +1,6 @@
 ---
-title: typescript 기본문법
-description: 타입스크립트 사용을 위한 기본적인 문법 정리
+title: typescript syntax
+description: Typescript 사용을 위한 기본적인 문법 정리
 category: typescript
 date: "2023-03-02"
 ---

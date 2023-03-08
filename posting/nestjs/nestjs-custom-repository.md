@@ -1,6 +1,6 @@
 ---
-title: entityrepository()를 대신한 repository 생성
-description: 9.x.x 버전에서 사용할 수 없는 @EntityRepository()를 대신해 repository를 만들어볼 수 있다.
+title: nestjs custom repository
+description: Entityrepository()를 대신한 Repository 생성
 category: nestjs
 date: "2023-03-04"
 ---

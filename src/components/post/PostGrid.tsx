@@ -3,9 +3,19 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { Pagination } from "./Pagination";
 import { useState } from "react";
+import { MarkDownProps } from "@/types/pages";
 
 export const PostGrid = ({ posts }: any) => {
   const router = useRouter();
+
+  const dateHandler = (date: string) => {
+    return Number(new Date(date));
+  };
+  const postlist = posts.sort(
+    (a: MarkDownProps, b: MarkDownProps) =>
+      dateHandler(b.date) - dateHandler(a.date),
+  );
+  console.log("포스트리스트", postlist);
 
   const [activePage, setActivePage] = useState<number>(1);
   const handlePageChange = (page: number) => {
@@ -28,7 +38,7 @@ export const PostGrid = ({ posts }: any) => {
         전체 글 ({posts.length})
       </p>
       <GridBox>
-        {posts.map((item: any, index: number) => {
+        {postlist.map((item: any, index: number) => {
           const { title, description, category, date, content } = item;
           if (pageIndex[0] <= index && index <= pageIndex[5]) {
             return (

@@ -2,7 +2,7 @@
 title: redux toolkit async thunk
 description: React reduxToolkit과 미들웨어 AsyncThunk 사용해보기
 category: redux
-date: "2023-03-24"
+date: "2023-03-04"
 ---
 
 # ReduxToolkit

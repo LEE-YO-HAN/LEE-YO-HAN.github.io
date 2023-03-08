@@ -2,7 +2,7 @@
 title: typescript react reduxtoolkit
 description: Typescript react에서 ReduxToolkit 사용해보기
 category: redux
-date: "2023-03-24"
+date: "2023-03-04"
 ---
 
 javascript에서의 ReduxToolkit 사용 예제 : https://lee-yo-han.github.io/redux/redux-toolkit-사용해보기

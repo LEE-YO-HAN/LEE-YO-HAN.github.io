@@ -1,15 +1,28 @@
 import styled from "styled-components";
 import { useMdContextValue } from "@/context/mdContext";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
-export const RecommandList = ({ mainCategory }: { mainCategory: string }) => {
+export const RecommandList = () => {
   const MdContext = useMdContextValue();
+  const { pathname } = useRouter();
   console.log("mdmdmdmdmdmd", MdContext);
+
+  // const listfetch = async () => {
+  //   const data = await (await fetch(require("../../posting"))).json();
+  //   console.log(data);
+  // };
+  // useEffect(() => {
+  //   listfetch();
+  // }, []);
 
   return (
     <RecommandBox>
       <p>
         <strong>
-          {mainCategory === "github" ? '"Simple Memo"' : `"${mainCategory}"`}
+          {pathname.split("/")[1] === "blog"
+            ? '"Simple Memo"'
+            : `"${pathname.split("/")[1]}"`}
         </strong>{" "}
         카테고리의 다른 글
       </p>

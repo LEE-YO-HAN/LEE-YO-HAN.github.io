@@ -35,7 +35,7 @@ export default function Home({ posts }: { posts: MarkDownProps[] }) {
 export const getStaticProps: GetStaticProps<{
   posts: MarkDownProps[];
 }> = async () => {
-  const dirPath = join(process.cwd(), "posting");
+  const dirPath = join(process.cwd() + "/src", "posting");
   const mdFiles = await getMdFiles(dirPath);
   const posts: MarkDownProps[] = [];
   for (const filePath of mdFiles) {

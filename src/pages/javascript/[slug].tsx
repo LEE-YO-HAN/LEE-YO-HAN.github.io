@@ -45,7 +45,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const slug = params?.slug as string;
-  const filePath = join(process.cwd() + "/posting", "javascript", `${slug}.md`);
+  const filePath = join(
+    process.cwd() + "/src" + "/posting",
+    "javascript",
+    `${slug}.md`,
+  );
   const fileContents = await fs.readFile(filePath, "utf8");
   const { data, content } = matter(fileContents);
   return {

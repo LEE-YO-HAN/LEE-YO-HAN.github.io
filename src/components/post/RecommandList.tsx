@@ -1,30 +1,35 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { MarkDownProps } from "@/types/pages";
 import axios from "axios";
+import { useMdContextValue, useMdContextUpdate } from "@/context/MdContext";
 
 export const RecommandList = ({ description }: { description: string }) => {
   const { pathname } = useRouter();
   const router = useRouter();
 
-  const [recommandList, setrecommandList] = useState<MarkDownProps[]>([]);
+  // context
+  const recommandList = useMdContextValue();
+  const setRecommandList = useMdContextUpdate();
+
   const listfetch = async () => {
     const response = await axios.get("/api/md");
     if (pathname.split("/")[1] === "blog") {
-      setrecommandList(
+      setRecommandList(
         response.data.filter(
           (item: MarkDownProps) => item.category === "github",
         ),
       );
     } else {
-      setrecommandList(
+      setRecommandList(
         response.data.filter(
           (item: MarkDownProps) => item.category === pathname.split("/")[1],
         ),
       );
     }
   };
+
   useEffect(() => {
     listfetch();
   }, []);

@@ -42,7 +42,7 @@ export default function TypeScript({ posts }: { posts: MarkDownProps[] }) {
 export const getStaticProps: GetStaticProps<{
   posts: MarkDownProps[];
 }> = async () => {
-  const dirPath = join(process.cwd() + "/posting", "typescript");
+  const dirPath = join(process.cwd() + "/src" + "/posting", "typescript");
   const mdFiles = await getMdFiles(dirPath);
   const posts: MarkDownProps[] = [];
   for (const filePath of mdFiles) {

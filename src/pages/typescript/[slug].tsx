@@ -35,7 +35,10 @@ export default function BlogPost({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const postsDirectory = join(process.cwd() + "/posting", "typescript");
+  const postsDirectory = join(
+    process.cwd() + "/src" + "/posting",
+    "typescript",
+  );
   const filenames = await fs.readdir(postsDirectory);
   const paths = filenames.map(filename => ({
     params: { slug: filename.replace(/\.md$/, "") },
@@ -45,7 +48,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const slug = params?.slug as string;
-  const filePath = join(process.cwd() + "/posting", "typescript", `${slug}.md`);
+  const filePath = join(
+    process.cwd() + "/src" + "/posting",
+    "typescript",
+    `${slug}.md`,
+  );
   const fileContents = await fs.readFile(filePath, "utf8");
   const { data, content } = matter(fileContents);
   return {

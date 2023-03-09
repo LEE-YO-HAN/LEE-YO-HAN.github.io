@@ -35,7 +35,7 @@ export default function BlogPost({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const postsDirectory = join(process.cwd() + "/posting", "css");
+  const postsDirectory = join(process.cwd() + "/src" + "/posting", "css");
   const filenames = await fs.readdir(postsDirectory);
   const paths = filenames.map(filename => ({
     params: { slug: filename.replace(/\.md$/, "") },

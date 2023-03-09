@@ -33,7 +33,8 @@ export default async function handler(
 }
 
 export const getMdList = async () => {
-  const dirPath = join(process.cwd(), "posting");
+  const dirPath = join(process.cwd() + "/src", "posting");
+  console.log(dirPath);
   const mdFiles = await getMdFiles(dirPath);
   const posts: MarkDownProps[] = [];
   for (const filePath of mdFiles) {

@@ -15,7 +15,6 @@ export const PostGrid = ({ posts }: any) => {
     (a: MarkDownProps, b: MarkDownProps) =>
       dateHandler(b.date) - dateHandler(a.date),
   );
-  console.log("포스트리스트", postlist);
 
   const [activePage, setActivePage] = useState<number>(1);
   const handlePageChange = (page: number) => {

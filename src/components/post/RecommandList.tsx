@@ -4,21 +4,34 @@ import { useState, useEffect } from "react";
 import { MarkDownProps } from "@/types/pages";
 import axios from "axios";
 
-export const RecommandList = ({ title }: { title: string }) => {
+export const RecommandList = ({ description }: { description: string }) => {
   const { pathname } = useRouter();
+  const router = useRouter();
 
   const [recommandList, setrecommandList] = useState<MarkDownProps[]>([]);
-  const [postIndex, setPostIndex] = useState<number>(0);
   const listfetch = async () => {
     const response = await axios.get("/api/md");
-    setrecommandList(response.data);
-    setPostIndex(
-      response.data.findIndex((post: MarkDownProps) => post.title === title),
-    );
+    if (pathname.split("/")[1] === "blog") {
+      setrecommandList(
+        response.data.filter(
+          (item: MarkDownProps) => item.category === "github",
+        ),
+      );
+    } else {
+      setrecommandList(
+        response.data.filter(
+          (item: MarkDownProps) => item.category === pathname.split("/")[1],
+        ),
+      );
+    }
   };
   useEffect(() => {
     listfetch();
   }, []);
+
+  const postLinkHandler = (title: string) => {
+    router.push(title.replaceAll(" ", "-"));
+  };
 
   return (
     <RecommandBox>
@@ -30,18 +43,28 @@ export const RecommandList = ({ title }: { title: string }) => {
         </strong>{" "}
         카테고리의 다른 글
       </p>
-      {recommandList.map((item, index) => {
-        if (postIndex - 2 <= index && index <= postIndex + 2)
+      <ListBox>
+        {recommandList.map((item, index) => {
           return (
-            <li>
-              <span>{item.description}</span>
+            <li key={index}>
+              <span
+                onClick={() => postLinkHandler(item.title)}
+                style={
+                  description === item.description
+                    ? { fontWeight: "bold", color: "white" }
+                    : {}
+                }
+              >
+                {item.description}
+              </span>
             </li>
           );
-      })}
+        })}
+      </ListBox>
     </RecommandBox>
   );
 };
-const RecommandBox = styled.ul`
+const RecommandBox = styled.div`
   margin: 50px 0;
   padding: 15px;
   width: 100%;
@@ -53,6 +76,12 @@ const RecommandBox = styled.ul`
     padding-bottom: 10px;
     border-bottom: 1px solid #3a3a3a;
   }
+`;
+
+const ListBox = styled.ul`
+  height: 150px;
+  overflow-y: scroll;
+
   & li {
     margin-bottom: 5px;
   }
@@ -64,5 +93,14 @@ const RecommandBox = styled.ul`
       color: #3a3a3a;
       font-weight: bold;
     }
+  }
+
+  &::-webkit-scrollbar {
+    width: 2px;
+    background-color: #aaa;
+  }
+  &::-webkit-scrollbar-thumb {
+    height: 10vh;
+    background: rgb(100, 100, 100);
   }
 `;

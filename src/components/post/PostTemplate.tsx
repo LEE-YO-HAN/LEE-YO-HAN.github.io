@@ -54,7 +54,7 @@ export const PostTemplate = ({
           {content}
         </ReactMarkdown>
       </MainContent>
-      <RecommandList title={title} />
+      <RecommandList description={description} />
       <CommentBox>
         <p>COMMENTS</p>
         <Comment />

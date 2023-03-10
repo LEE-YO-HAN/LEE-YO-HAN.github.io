@@ -3,10 +3,12 @@ import styled from "styled-components";
 import Link from "next/link";
 import { BsGithub } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
+import { useMobile } from "@/hooks/useMediaQuery";
 
 export const Profile = () => {
+  const mobile = useMobile();
   return (
-    <ProfileArea>
+    <ProfileArea style={mobile ? { display: "none" } : {}}>
       <ProfileWrap>
         <Image
           src={`https://avatars.githubusercontent.com/u/85297720?v=4`}

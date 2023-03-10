@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { CategoryNav } from "./CategoryNav";
-
+import { useMobile } from "@/hooks/useMediaQuery";
 export const SideNav = () => {
+  const mobile = useMobile();
   return (
-    <SideArea>
+    <SideArea style={mobile ? { display: "none" } : {}}>
       <CategoryNav />
     </SideArea>
   );

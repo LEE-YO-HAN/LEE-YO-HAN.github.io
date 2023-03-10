@@ -72,7 +72,7 @@ export const RecommandList = ({ description }: { description: string }) => {
 const RecommandBox = styled.div`
   margin: 50px 0;
   padding: 15px;
-  width: 100%;
+  /* width: 100%; */
   list-style: none;
   border: 1px solid #3a3a3a;
 

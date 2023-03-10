@@ -4,9 +4,12 @@ import { useRouter } from "next/router";
 import { Pagination } from "./Pagination";
 import { useState } from "react";
 import { MarkDownProps } from "@/types/pages";
+import { PostInfiScroll } from "./PostInfiScroll";
+import { useMobile } from "@/hooks/useMediaQuery";
 
 export const PostGrid = ({ posts }: any) => {
   const router = useRouter();
+  const mobile = useMobile();
 
   const dateHandler = (date: string) => {
     return Number(new Date(date));
@@ -32,53 +35,59 @@ export const PostGrid = ({ posts }: any) => {
       : indexArray.map(item => item + (activePage - 1) * pagePerItems);
 
   return (
-    <GridContainer>
-      <p style={{ fontWeight: "bold", width: "660px" }}>
-        전체 글 ({posts.length})
-      </p>
-      <GridBox>
-        {postlist.map((item: any, index: number) => {
-          const { title, description, category, date, content } = item;
-          if (pageIndex[0] <= index && index <= pageIndex[5]) {
-            return (
-              <Card
-                key={index}
-                onClick={() =>
-                  router.push(
-                    `/${category === "github" ? "blog" : category}/${title
-                      .replaceAll(" ", "-")
-                      .toLowerCase()}`,
-                  )
-                }
-              >
-                <Image
-                  src={require(`../../images/${category.toUpperCase()}.png`)}
-                  alt="카테고리 이미지"
-                  width={200}
-                  height={150}
-                  priority
-                />
-                <CardBody>
-                  <p>
-                    {description.length > 30
-                      ? description.slice(0, 31) + "..."
-                      : description}
-                  </p>
-                  <span>{date.replaceAll("-", ". ")}</span>
-                </CardBody>
-              </Card>
-            );
-          }
-        })}
-      </GridBox>
-      <Pagination
-        activePage={activePage}
-        itemsCountPerPage={6}
-        totalItemsCount={posts.length}
-        handlePageChange={handlePageChange}
-        maxItems={5}
-      />
-    </GridContainer>
+    <>
+      {mobile ? (
+        <PostInfiScroll postlist={postlist} />
+      ) : (
+        <GridContainer>
+          <p style={{ fontWeight: "bold", width: "660px" }}>
+            전체 글 ({posts.length})
+          </p>
+          <GridBox>
+            {postlist.map((item: any, index: number) => {
+              const { title, description, category, date, content } = item;
+              if (pageIndex[0] <= index && index <= pageIndex[5]) {
+                return (
+                  <Card
+                    key={index}
+                    onClick={() =>
+                      router.push(
+                        `/${category === "github" ? "blog" : category}/${title
+                          .replaceAll(" ", "-")
+                          .toLowerCase()}`,
+                      )
+                    }
+                  >
+                    <Image
+                      src={require(`../../images/${category.toUpperCase()}.png`)}
+                      alt="카테고리 이미지"
+                      width={200}
+                      height={150}
+                      priority
+                    />
+                    <CardBody>
+                      <p>
+                        {description.length > 30
+                          ? description.slice(0, 31) + "..."
+                          : description}
+                      </p>
+                      <span>{date.replaceAll("-", ". ")}</span>
+                    </CardBody>
+                  </Card>
+                );
+              }
+            })}
+          </GridBox>
+          <Pagination
+            activePage={activePage}
+            itemsCountPerPage={6}
+            totalItemsCount={posts.length}
+            handlePageChange={handlePageChange}
+            maxItems={5}
+          />
+        </GridContainer>
+      )}
+    </>
   );
 };
 

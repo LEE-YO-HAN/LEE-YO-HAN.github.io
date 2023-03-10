@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
+// import { useMobile } from "@/hooks/useMediaQuery";
 
 export const CategoryNav = () => {
   const router = useRouter();
+  // const mobile = useMobile();
 
   const getList = (category: string) => {
     let cateUrl = category === "Simple Memo" ? "blog" : category.toLowerCase();

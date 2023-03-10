@@ -19,7 +19,7 @@ export const PostTemplate = ({
   content,
 }: MarkDownProps) => {
   return (
-    <>
+    <TemplateWrap>
       <HeaderSection>
         <p>{category}</p>
         <h1>{description}</h1>
@@ -59,9 +59,16 @@ export const PostTemplate = ({
         <p>COMMENTS</p>
         <Comment />
       </CommentBox>
-    </>
+    </TemplateWrap>
   );
 };
+
+const TemplateWrap = styled.main`
+  max-width: 640px;
+  @media only screen and (max-width: 480px) {
+    max-width: 480px;
+  }
+`;
 
 const HeaderSection = styled.section`
   margin-top: 40px;
@@ -73,28 +80,28 @@ const HeaderSection = styled.section`
   border-radius: 20px;
   & h1 {
     padding: 0 10px;
-    width: 640px;
+    width: 100%;
     font-weight: bold;
     font-size: 2rem;
   }
   & p {
     margin-top: 10px;
     padding: 0 10px;
-    width: 640px;
+    width: 100%;
     font-weight: bold;
     font-size: 1.2rem;
   }
   & span {
     padding: 0 10px;
-    width: 640px;
+    width: 100%;
     font-weight: bold;
     font-size: 0.9rem;
   }
 `;
 
 const MainContent = styled.main`
-  margin: 0px 0 50px 0;
-  width: 660px;
+  /* margin: 0px 0 50px 0; */
+  margin-bottom: 50px;
 
   // markdown
   .markdown {

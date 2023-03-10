@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import { MarkDownProps } from "@/types/pages";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { LoadingSpinner } from "@/util/LoadingSpinner";
+import { SkeletonCard } from "./SkeletonCard";
 import Image from "next/image";
-import type MutableRefObject from "react";
 
 export const PostInfiScroll = ({ postlist }: { postlist: MarkDownProps[] }) => {
-  // const [page, setPage] = useState<number>(1);
   const page = useRef<number>(1);
   const [isLoading, setisLoading] = useState(false);
 
@@ -14,26 +13,30 @@ export const PostInfiScroll = ({ postlist }: { postlist: MarkDownProps[] }) => {
   let indexArray = Array.from({ length: pagePerItems }, (item, index) => {
     return index;
   });
-  const [pageIndexArray, setpageIndexArray] = useState<number[]>([]);
-  let pageIndex: number[] = [];
-  pageIndex =
-    page.current === 1
-      ? indexArray
-      : indexArray.map(item => item + (page.current - 1) * pagePerItems);
+
+  const [fetchPost, setFetchPost] = useState<MarkDownProps[]>([]);
 
   const [hasNextPage, setHasNextPage] = useState(true);
-  const fatchData = () => {
+  const fatchData = (pageNum: number) => {
+    setisLoading(true);
     if (hasNextPage && !isLoading) {
-      setisLoading(true);
-      setHasNextPage(postlist.length > pageIndex.length);
+      let newIndex = indexArray.map(
+        item => item + (pageNum - 1) * pagePerItems,
+      );
+      let newPosts = postlist.filter((post, index) => {
+        if (newIndex[0] <= index && index <= newIndex[newIndex.length - 1]) {
+          return post;
+        }
+      });
+      setTimeout(() => {
+        setFetchPost(prev => prev.concat(newPosts));
+        setisLoading(false);
+      }, 400);
       page.current += 1;
-      setpageIndexArray(prev => prev.concat(pageIndex));
-      setisLoading(false);
+      setHasNextPage(postlist.length > fetchPost.length);
     }
+    setisLoading(false);
   };
-
-  console.log(page);
-  console.log(pageIndex);
 
   const observerRef: any = useRef();
   const observer = (node: any) => {
@@ -41,7 +44,7 @@ export const PostInfiScroll = ({ postlist }: { postlist: MarkDownProps[] }) => {
     if (observerRef.current) observerRef.current.disconnect();
     observerRef.current = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting && hasNextPage) {
-        fatchData();
+        fatchData(page.current);
       }
     });
     node && observerRef.current.observe(node);
@@ -50,33 +53,29 @@ export const PostInfiScroll = ({ postlist }: { postlist: MarkDownProps[] }) => {
   return (
     <>
       {isLoading ? <LoadingSpinner /> : null}
-      {postlist?.map((item, index) => {
+      {fetchPost?.map((item, index) => {
         const { description, date, category } = item;
-        if (
-          pageIndexArray[0] <= index &&
-          index <= pageIndexArray[pageIndex.length - 1]
-        ) {
-          return (
-            <Container key={index}>
-              <Image
-                src={require(`../../images/${category.toUpperCase()}.png`)}
-                alt={`${category}`}
-                width={150}
-                height={150}
-                priority
-              />
-              <ContentBody>
-                <p>
-                  {description.length < 45
-                    ? description
-                    : `${description.slice(0, 45)}...`}
-                </p>
-                <span>{date}</span>
-              </ContentBody>
-            </Container>
-          );
-        }
+        return (
+          <Container key={index}>
+            <Image
+              src={require(`../../images/${category.toUpperCase()}.png`)}
+              alt={`${category}`}
+              width={150}
+              height={150}
+              priority
+            />
+            <ContentBody>
+              <p>
+                {description.length < 45
+                  ? description
+                  : `${description.slice(0, 45)}...`}
+              </p>
+              <span>{date}</span>
+            </ContentBody>
+          </Container>
+        );
       })}
+      {isLoading ? <SkeletonCard /> : null}
       <IoTarget
         id="observeTarget"
         ref={observer}
@@ -86,7 +85,7 @@ export const PostInfiScroll = ({ postlist }: { postlist: MarkDownProps[] }) => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.li`
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 5px;

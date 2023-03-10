@@ -29,10 +29,7 @@ export const PostGrid = ({ posts }: any) => {
     return index;
   });
   let pageIndex: number[] = [];
-  pageIndex =
-    activePage === 1
-      ? indexArray
-      : indexArray.map(item => item + (activePage - 1) * pagePerItems);
+  pageIndex = indexArray.map(item => item + (activePage - 1) * pagePerItems);
 
   return (
     <>

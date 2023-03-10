@@ -9,8 +9,8 @@ export const PostInfiScroll = ({ postlist }: { postlist: MarkDownProps[] }) => {
   const page = useRef<number>(1);
   const [isLoading, setisLoading] = useState(false);
 
-  let pagePerItems = 10;
-  let indexArray = Array.from({ length: pagePerItems }, (item, index) => {
+  let itemsPerPage = 10;
+  let indexArray = Array.from({ length: itemsPerPage }, (item, index) => {
     return index;
   });
 
@@ -21,7 +21,7 @@ export const PostInfiScroll = ({ postlist }: { postlist: MarkDownProps[] }) => {
     setisLoading(true);
     if (hasNextPage && !isLoading) {
       let newIndex = indexArray.map(
-        item => item + (pageNum - 1) * pagePerItems,
+        item => item + (pageNum - 1) * itemsPerPage,
       );
       let newPosts = postlist.filter((post, index) => {
         if (newIndex[0] <= index && index <= newIndex[newIndex.length - 1]) {

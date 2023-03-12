@@ -40,4 +40,6 @@ const PostArea = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 660px;
+  width: 100%;
 `;

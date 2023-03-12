@@ -4,10 +4,9 @@ import { useState, useRef } from "react";
 import { LoadingSpinner } from "@/util/LoadingSpinner";
 import { SkeletonCard } from "./SkeletonCard";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 export const PostInfiScroll = ({ postlist }: { postlist: MarkDownProps[] }) => {
-  const router = useRouter();
   const page = useRef<number>(1);
   const [isLoading, setisLoading] = useState(false);
 
@@ -58,32 +57,30 @@ export const PostInfiScroll = ({ postlist }: { postlist: MarkDownProps[] }) => {
       {fetchPost?.map((item, index) => {
         const { description, date, category, title } = item;
         return (
-          <Container
+          <Link
             key={index}
-            onClick={() =>
-              router.push(
-                `/${
-                  category === "github" ? "blog" : category
-                }/${title.replaceAll(" ", "-")}`,
-              )
-            }
+            href={`/${
+              category === "github" ? "blog" : category
+            }/${title.replaceAll(" ", "-")}`}
           >
-            <Image
-              src={require(`../../images/${category.toUpperCase()}.png`)}
-              alt={`${category}`}
-              width={150}
-              height={150}
-              priority
-            />
-            <ContentBody>
-              <p>
-                {description.length < 45
-                  ? description
-                  : `${description.slice(0, 45)}...`}
-              </p>
-              <span>{date}</span>
-            </ContentBody>
-          </Container>
+            <Container>
+              <Image
+                src={require(`../../images/${category.toUpperCase()}.png`)}
+                alt={`${category}`}
+                width={150}
+                height={150}
+                priority
+              />
+              <ContentBody>
+                <p>
+                  {description.length < 45
+                    ? description
+                    : `${description.slice(0, 45)}...`}
+                </p>
+                <span>{date}</span>
+              </ContentBody>
+            </Container>
+          </Link>
         );
       })}
       {isLoading ? <SkeletonCard /> : null}

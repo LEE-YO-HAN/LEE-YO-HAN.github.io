@@ -80,27 +80,26 @@ const HeaderSection = styled.section`
   border-radius: 20px;
   & h1 {
     padding: 0 10px;
-    width: 100%;
+    width: 95%;
     font-weight: bold;
     font-size: 2rem;
   }
   & p {
     margin-top: 10px;
     padding: 0 10px;
-    width: 100%;
+    width: 95%;
     font-weight: bold;
     font-size: 1.2rem;
   }
   & span {
     padding: 0 10px;
-    width: 100%;
+    width: 95%;
     font-weight: bold;
     font-size: 0.9rem;
   }
 `;
 
 const MainContent = styled.main`
-  /* margin: 0px 0 50px 0; */
   margin-bottom: 50px;
 
   // markdown
@@ -137,13 +136,13 @@ const MainContent = styled.main`
   }
 
   .markdown img {
-    max-width: 45vw;
+    width: 100%;
     text-align: center;
   }
 
   .markdown pre {
     margin: 20px 0 80px 0;
-    padding: 20px;
+    padding: 10px;
     background-color: #161b22;
     font-size: 0.9rem;
     font-family: "Consolas", "Sans Mono", "Courier", "monospace";

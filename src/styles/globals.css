@@ -160,6 +160,16 @@ body {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: blanchedalmond;
+}
+a:link {
+  color: blanchedalmond;
+}
+
 body::-webkit-scrollbar {
   width: 2px;
   background-color: #aaa;

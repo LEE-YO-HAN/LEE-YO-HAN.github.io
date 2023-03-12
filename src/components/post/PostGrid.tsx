@@ -6,6 +6,7 @@ import { useState } from "react";
 import { MarkDownProps } from "@/types/pages";
 import { PostInfiScroll } from "./PostInfiScroll";
 import { useMobile } from "@/hooks/useMediaQuery";
+import Link from "next/link";
 
 export const PostGrid = ({ posts }: any) => {
   const router = useRouter();
@@ -45,32 +46,30 @@ export const PostGrid = ({ posts }: any) => {
               const { title, description, category, date, content } = item;
               if (pageIndex[0] <= index && index <= pageIndex[5]) {
                 return (
-                  <Card
+                  <Link
                     key={index}
-                    onClick={() =>
-                      router.push(
-                        `/${category === "github" ? "blog" : category}/${title
-                          .replaceAll(" ", "-")
-                          .toLowerCase()}`,
-                      )
-                    }
+                    href={`/${category === "github" ? "blog" : category}/${title
+                      .replaceAll(" ", "-")
+                      .toLowerCase()}`}
                   >
-                    <Image
-                      src={require(`../../images/${category.toUpperCase()}.png`)}
-                      alt="카테고리 이미지"
-                      width={200}
-                      height={150}
-                      priority
-                    />
-                    <CardBody>
-                      <p>
-                        {description.length > 30
-                          ? description.slice(0, 31) + "..."
-                          : description}
-                      </p>
-                      <span>{date.replaceAll("-", ". ")}</span>
-                    </CardBody>
-                  </Card>
+                    <Card>
+                      <Image
+                        src={require(`../../images/${category.toUpperCase()}.png`)}
+                        alt="카테고리 이미지"
+                        width={200}
+                        height={150}
+                        priority
+                      />
+                      <CardBody>
+                        <p>
+                          {description.length > 30
+                            ? description.slice(0, 31) + "..."
+                            : description}
+                        </p>
+                        <span>{date.replaceAll("-", ". ")}</span>
+                      </CardBody>
+                    </Card>
+                  </Link>
                 );
               }
             })}

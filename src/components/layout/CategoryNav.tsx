@@ -1,19 +1,15 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
-// import { useMobile } from "@/hooks/useMediaQuery";
+import Link from "next/link";
 
 export const CategoryNav = () => {
   const router = useRouter();
-  // const mobile = useMobile();
 
   const getList = (category: string) => {
     let cateUrl = category === "Simple Memo" ? "blog" : category.toLowerCase();
     let navData = {
       name: category,
       cateUrl: cateUrl,
-      goLink: () => {
-        router.push(`/${cateUrl}`);
-      },
     };
     return navData;
   };
@@ -34,11 +30,10 @@ export const CategoryNav = () => {
       <NavList>
         <li>Category</li>
         {CATEGORYS.map((item, index) => {
-          const { name, goLink, cateUrl } = item;
+          const { name, cateUrl } = item;
           return (
             <ListItem
               key={index}
-              onClick={goLink}
               style={
                 `/${cateUrl}` === router.pathname ||
                 `/${cateUrl}/[slug]` === router.pathname
@@ -46,7 +41,7 @@ export const CategoryNav = () => {
                   : {}
               }
             >
-              {name}
+              <Link href={`/${cateUrl}`}>{name}</Link>
             </ListItem>
           );
         })}

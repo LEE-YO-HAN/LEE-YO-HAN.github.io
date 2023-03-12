@@ -4,10 +4,10 @@ import { useEffect } from "react";
 import { MarkDownProps } from "@/types/pages";
 import axios from "axios";
 import { useMdContextValue, useMdContextUpdate } from "@/context/MdContext";
+import Link from "next/link";
 
 export const RecommandList = ({ description }: { description: string }) => {
   const { pathname } = useRouter();
-  const router = useRouter();
 
   // context
   const recommandList = useMdContextValue();
@@ -34,10 +34,6 @@ export const RecommandList = ({ description }: { description: string }) => {
     listfetch();
   }, []);
 
-  const postLinkHandler = (title: string) => {
-    router.push(title.replaceAll(" ", "-"));
-  };
-
   return (
     <RecommandBox>
       <p>
@@ -51,18 +47,19 @@ export const RecommandList = ({ description }: { description: string }) => {
       <ListBox>
         {recommandList.map((item, index) => {
           return (
-            <li key={index}>
-              <span
-                onClick={() => postLinkHandler(item.title)}
-                style={
-                  description === item.description
-                    ? { fontWeight: "bold", color: "white" }
-                    : {}
-                }
-              >
-                {item.description}
-              </span>
-            </li>
+            <Link key={index} href={`${item.title.replaceAll(" ", "-")}`}>
+              <li>
+                <span
+                  style={
+                    description === item.description
+                      ? { fontWeight: "bold", color: "white" }
+                      : {}
+                  }
+                >
+                  {item.description}
+                </span>
+              </li>
+            </Link>
           );
         })}
       </ListBox>
@@ -72,7 +69,6 @@ export const RecommandList = ({ description }: { description: string }) => {
 const RecommandBox = styled.div`
   margin: 50px 0;
   padding: 15px;
-  /* width: 100%; */
   list-style: none;
   border: 1px solid #3a3a3a;
 

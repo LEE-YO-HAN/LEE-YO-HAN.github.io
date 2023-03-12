@@ -1,46 +1,61 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
-import { MarkDownProps } from "@/types/pages";
+import { useState, useEffect } from "react";
+import { RecommandDate } from "@/types/pages";
 import axios from "axios";
-import { useMdContextValue, useMdContextUpdate } from "@/context/MdContext";
 import Link from "next/link";
 
 export const RecommandList = ({ description }: { description: string }) => {
   const { pathname } = useRouter();
+  const categoryName = pathname.split("/")[1];
 
-  // context
-  const recommandList = useMdContextValue();
-  const setRecommandList = useMdContextUpdate();
+  const options = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.NEXT_GITHUB_API_TOKEN}`,
+    },
+  };
 
-  const listfetch = async () => {
-    const response = await axios.get("/api/md");
-    if (pathname.split("/")[1] === "blog") {
-      setRecommandList(
-        response.data.filter(
-          (item: MarkDownProps) => item.category === "github",
-        ),
-      );
-    } else {
-      setRecommandList(
-        response.data.filter(
-          (item: MarkDownProps) => item.category === pathname.split("/")[1],
-        ),
-      );
+  const [recommandList, setRecommandList] = useState<RecommandDate[]>([]);
+
+  const eachMarkdown = async (mdURL: string, name: string) => {
+    const url = `https://api.github.com/repos/LEE-YO-HAN/LEE-YO-HAN.github.io/contents/src/posting/${categoryName}/${name}`;
+    const response = await axios.get(url, options);
+    const content = Buffer.from(response.data.content, "base64").toString();
+    const frontmatter = content.match(/^---\n([\s\S]+?)\n---/);
+    if (frontmatter) {
+      const matters = JSON.stringify(frontmatter[0]).split("\\n");
+      const dateRegex = /\d{4}-\d{2}-\d{2}/;
+      const match = matters[4].match(dateRegex);
+      if (match) {
+        const result = {
+          title: matters[1].split("title: ")[1].replaceAll(" ", "-"),
+          description: matters[2].split("description: ")[1],
+          category: matters[3].split("category: ")[1],
+          date: match[0],
+        };
+        setRecommandList(prev => prev.concat(result));
+      }
+    }
+  };
+
+  const githubREST = async () => {
+    const main = `https://api.github.com/repos/LEE-YO-HAN/LEE-YO-HAN.github.io/contents/src/posting/${categoryName}`;
+    const mainUrl = await axios.get(main, options);
+    for (const data of mainUrl.data) {
+      eachMarkdown(data.html_url, data.name);
     }
   };
 
   useEffect(() => {
-    listfetch();
+    githubREST();
   }, []);
 
   return (
     <RecommandBox>
       <p>
         <strong>
-          {pathname.split("/")[1] === "blog"
-            ? '"Simple Memo"'
-            : `"${pathname.split("/")[1]}"`}
+          {categoryName === "blog" ? '"Simple Memo"' : `"${categoryName}"`}
         </strong>{" "}
         카테고리의 다른 글
       </p>
@@ -58,6 +73,7 @@ export const RecommandList = ({ description }: { description: string }) => {
                 >
                   {item.description}
                 </span>
+                <span>{item.date}</span>
               </li>
             </Link>
           );
@@ -83,16 +99,25 @@ const ListBox = styled.ul`
   height: 150px;
   overflow-y: scroll;
 
+  & a {
+    cursor: auto;
+  }
   & li {
     margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
-  & span {
+  & span:first-child {
     cursor: pointer;
     transition: 0.3s;
 
     &:hover {
       color: #3a3a3a;
       font-weight: bold;
+    }
+    & span:last-child {
+      cursor: auto;
     }
   }
 

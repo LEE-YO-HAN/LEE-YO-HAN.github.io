@@ -9,6 +9,8 @@ export const RecommandList = ({ description }: { description: string }) => {
   const { pathname } = useRouter();
   const categoryName = pathname.split("/")[1];
 
+  const BASE_URL =
+    "https://api.github.com/repos/LEE-YO-HAN/LEE-YO-HAN.github.io/contents/src/posting";
   const options = {
     headers: {
       "Content-Type": "application/json",
@@ -18,8 +20,8 @@ export const RecommandList = ({ description }: { description: string }) => {
 
   const [recommandList, setRecommandList] = useState<RecommandDate[]>([]);
 
-  const eachMarkdown = async (mdURL: string, name: string) => {
-    const url = `https://api.github.com/repos/LEE-YO-HAN/LEE-YO-HAN.github.io/contents/src/posting/${categoryName}/${name}`;
+  const eachMarkdown = async (name: string) => {
+    const url = `${BASE_URL}/${categoryName}/${name}`;
     const response = await axios.get(url, options);
     const content = Buffer.from(response.data.content, "base64").toString();
     const frontmatter = content.match(/^---\n([\s\S]+?)\n---/);
@@ -40,10 +42,10 @@ export const RecommandList = ({ description }: { description: string }) => {
   };
 
   const githubREST = async () => {
-    const main = `https://api.github.com/repos/LEE-YO-HAN/LEE-YO-HAN.github.io/contents/src/posting/${categoryName}`;
+    const main = `${BASE_URL}/${categoryName}`;
     const mainUrl = await axios.get(main, options);
     for (const data of mainUrl.data) {
-      eachMarkdown(data.html_url, data.name);
+      eachMarkdown(data.name);
     }
   };
 

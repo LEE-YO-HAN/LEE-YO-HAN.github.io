@@ -4,11 +4,7 @@ import { MarkDownProps } from "@/types/pages";
 import { RecommandList } from "./RecommandList";
 import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-// import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { dark } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { vsDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
-
 import { Comment } from "./Comment";
 
 export const PostTemplate = ({
@@ -37,9 +33,7 @@ export const PostTemplate = ({
                   language={match[1]}
                   PreTag="pre"
                   {...props}
-                  // style={dark}
                   style={darcula}
-                  // style={vsDark}
                 >
                   {String(children).replace(/\n$/, "")}
                 </SyntaxHighlighter>

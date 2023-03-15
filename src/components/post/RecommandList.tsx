@@ -14,7 +14,6 @@ export const RecommandList = ({ description }: { description: string }) => {
   const options = {
     headers: {
       "Content-Type": "application/json",
-      // Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_API_TOKEN}`,
     },
   };
 

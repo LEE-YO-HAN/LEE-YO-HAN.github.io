@@ -67,6 +67,7 @@ const TemplateWrap = styled.main`
   max-width: 640px;
   @media only screen and (max-width: 480px) {
     max-width: 480px;
+    width: 90vw;
   }
 `;
 

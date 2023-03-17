@@ -88,7 +88,7 @@ export const TestApp = () => {
 
 ![image](https://blog.kakaocdn.net/dn/cmaheq/btr36GRW8J1/uhzNP5d6ymqDxVDGFK4Ay1/img.gif)
 
-> contextAPI의 기본 사용법 : https://https://lee-yo-han.github.io/react/react-context-api
+> contextAPI의 기본 사용법 : https://lee-yo-han.github.io/react/react-context-api
 
 ---
 

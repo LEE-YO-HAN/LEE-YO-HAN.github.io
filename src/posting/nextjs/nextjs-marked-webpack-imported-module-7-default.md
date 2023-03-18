@@ -1,6 +1,6 @@
 ---
 title: nextjs marked webpack imported module 7 default
-description: TypeError: (0 , marked__WEBPACK_IMPORTED_MODULE_7__.default) is not a function
+description: TypeError (0 , marked__WEBPACK_IMPORTED_MODULE_7__.default) is not a function
 category: nextjs
 date: "2023-03-18"
 ---

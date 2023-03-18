@@ -1,5 +1,5 @@
 ---
-title: typescript react reduxtoolkit
+title: redux typescript react reduxtoolkit
 description: Typescript react에서 ReduxToolkit 사용해보기
 category: redux
 date: "2023-03-04"

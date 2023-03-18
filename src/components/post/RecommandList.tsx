@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { RecommandDate } from "@/types/pages";
+import { RecommandData } from "@/types/pages";
 import axios from "axios";
 import Link from "next/link";
 
@@ -17,7 +17,7 @@ export const RecommandList = ({ description }: { description: string }) => {
     },
   };
 
-  const [recommandList, setRecommandList] = useState<RecommandDate[]>([]);
+  const [recommandList, setRecommandList] = useState<RecommandData[]>([]);
 
   const eachMarkdown = async (name: string) => {
     const url = `${BASE_URL}/${categoryName}/${name}`;
@@ -46,6 +46,9 @@ export const RecommandList = ({ description }: { description: string }) => {
     for (const data of mainUrl.data) {
       eachMarkdown(data.name);
     }
+    setRecommandList(prev =>
+      prev.sort((a, b) => +new Date(b.date) - +new Date(a.date)),
+    );
   };
 
   useEffect(() => {

@@ -43,7 +43,7 @@ export default function SimpleMemo({ posts }: { posts: MarkDownProps[] }) {
 export const getStaticProps: GetStaticProps<{
   posts: MarkDownProps[];
 }> = async () => {
-  const dirPath = join(process.cwd() + "/src" + "/posting", "blog");
+  const dirPath = join(process.cwd() + "/src" + "/posting", "github");
   const mdFiles = await getMdFiles(dirPath);
   const posts: MarkDownProps[] = [];
   for (const filePath of mdFiles) {

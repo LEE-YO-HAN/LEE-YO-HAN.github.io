@@ -6,7 +6,7 @@ export interface MarkDownProps {
   content: string;
 }
 
-export interface RecommandDate {
+export interface RecommandData {
   title: string;
   description: string;
   category: string;

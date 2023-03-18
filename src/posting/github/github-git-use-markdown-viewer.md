@@ -1,5 +1,5 @@
 ---
-title: git use markdown viewer
+title: github git use markdown viewer
 description: Github pages 블로그 Markdown 불러오기
 category: github
 date: "2023-03-12"

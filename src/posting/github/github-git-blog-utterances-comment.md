@@ -1,5 +1,5 @@
 ---
-title: git blog utterances comment
+title: github git blog utterances comment
 description: utterances를 이용한 Nextjs Github 블로그 댓글 기능 구현
 category: github
 date: "2023-03-14"

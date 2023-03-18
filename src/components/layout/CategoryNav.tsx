@@ -6,7 +6,8 @@ export const CategoryNav = () => {
   const router = useRouter();
 
   const getList = (category: string) => {
-    let cateUrl = category === "Simple Memo" ? "blog" : category.toLowerCase();
+    let cateUrl =
+      category === "Simple Memo" ? "github" : category.toLowerCase();
     let navData = {
       name: category,
       cateUrl: cateUrl,
@@ -36,7 +37,7 @@ export const CategoryNav = () => {
               key={index}
               style={
                 `/${cateUrl}` === router.pathname ||
-                `/${cateUrl}/[slug]` === router.pathname
+                `/${cateUrl}` === router.asPath.split("-")[0]
                   ? { color: "white", fontWeight: "bold" }
                   : {}
               }

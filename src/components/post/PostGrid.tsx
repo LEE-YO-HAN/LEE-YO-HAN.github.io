@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { Pagination } from "./Pagination";
 import { useState } from "react";
 import { MarkDownProps } from "@/types/pages";
@@ -9,13 +8,12 @@ import { useMobile } from "@/hooks/useMediaQuery";
 import Link from "next/link";
 
 export const PostGrid = ({ posts }: any) => {
-  const router = useRouter();
   const mobile = useMobile();
 
   const dateHandler = (date: string) => {
     return Number(new Date(date));
   };
-  const postlist = posts.sort(
+  const postlist: MarkDownProps[] = posts.sort(
     (a: MarkDownProps, b: MarkDownProps) =>
       dateHandler(b.date) - dateHandler(a.date),
   );
@@ -42,16 +40,11 @@ export const PostGrid = ({ posts }: any) => {
             전체 글 ({posts.length})
           </p>
           <GridBox>
-            {postlist.map((item: any, index: number) => {
+            {postlist.map((item, index) => {
               const { title, description, category, date, content } = item;
               if (pageIndex[0] <= index && index <= pageIndex[5]) {
                 return (
-                  <Link
-                    key={index}
-                    href={`/${category === "github" ? "blog" : category}/${title
-                      .replaceAll(" ", "-")
-                      .toLowerCase()}`}
-                  >
+                  <Link key={index} href={`/${title.replaceAll(" ", "-")}`}>
                     <Card>
                       <Image
                         src={require(`../../images/${category.toUpperCase()}.png`)}

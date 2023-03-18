@@ -94,7 +94,7 @@ export const DynamicImport = () => {
 
 > 참고사항 : Dynamic import는 일반 스크립트에서도 동작하기 때문에 script type="module"이 없어도 된다.
 
-## 주의사항 : import()는 함수 호출과 문법이 유사해 보이지만 함수 호출이 아니다. super()처럼 괄호를 사용하는 특별한 문법 중 하나이다. 따라서 import를 변수에 복사하거나 call/apply 등의 사용은 불가능하다.
+### 주의사항 : import()는 함수 호출과 문법이 유사해 보이지만 함수 호출이 아니다. super()처럼 괄호를 사용하는 특별한 문법 중 하나이다. 따라서 import를 변수에 복사하거나 call/apply 등의 사용은 불가능하다.
 
 ---
 

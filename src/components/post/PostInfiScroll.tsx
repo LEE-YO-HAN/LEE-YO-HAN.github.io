@@ -57,12 +57,7 @@ export const PostInfiScroll = ({ postlist }: { postlist: MarkDownProps[] }) => {
       {fetchPost?.map((item, index) => {
         const { description, date, category, title } = item;
         return (
-          <Link
-            key={index}
-            href={`/${
-              category === "github" ? "blog" : category
-            }/${title.replaceAll(" ", "-")}`}
-          >
+          <Link key={index} href={`/${title.replaceAll(" ", "-")}`}>
             <Container>
               <Image
                 src={require(`../../images/${category.toUpperCase()}.png`)}

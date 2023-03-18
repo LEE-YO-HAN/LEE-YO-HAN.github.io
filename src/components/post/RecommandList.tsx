@@ -6,8 +6,8 @@ import axios from "axios";
 import Link from "next/link";
 
 export const RecommandList = ({ description }: { description: string }) => {
-  const { pathname } = useRouter();
-  const categoryName = pathname.split("/")[1];
+  const { asPath } = useRouter();
+  const categoryName = asPath.split("-")[0].replace("/", "");
 
   const BASE_URL =
     "https://api.github.com/repos/LEE-YO-HAN/LEE-YO-HAN.github.io/contents/src/posting";
@@ -56,7 +56,7 @@ export const RecommandList = ({ description }: { description: string }) => {
     <RecommandBox>
       <p>
         <strong>
-          {categoryName === "blog" ? '"Simple Memo"' : `"${categoryName}"`}
+          {categoryName === "github" ? '"Simple Memo"' : `"${categoryName}"`}
         </strong>{" "}
         카테고리의 다른 글
       </p>

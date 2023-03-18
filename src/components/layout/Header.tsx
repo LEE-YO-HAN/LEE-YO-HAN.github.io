@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 export const Header = () => {
-  const router = useRouter();
-
   return (
     <HeaderWrap>
-      <h1 onClick={() => router.push("/")}>Rain Sugar BangBang</h1>
+      <h1>
+        <Link href={"/"}>Rain Sugar BangBang</Link>
+      </h1>
     </HeaderWrap>
   );
 };

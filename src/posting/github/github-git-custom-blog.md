@@ -1,5 +1,5 @@
 ---
-title: git custom blog
+title: github git custom blog
 description: Nextjs를 이용한 Github pages 블로그 만들기
 category: github
 date: "2023-03-11"

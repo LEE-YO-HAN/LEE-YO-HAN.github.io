@@ -13,7 +13,7 @@ export default function SimpleMemo({ posts }: { posts: MarkDownProps[] }) {
         <title>Rain Sugar BangBang Front-End</title>
         <meta name="description" content="developer's blog" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta httpEquiv="subject" content="developer blog" />
+        <meta httpEquiv="subject" content="github" />
         <meta property="og:title" content="Rain Sugar BangBang" />
         <meta property="og:description" content="welcome to developer's blog" />
         <meta

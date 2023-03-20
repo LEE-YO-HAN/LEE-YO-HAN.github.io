@@ -33,16 +33,18 @@ export const CategoryNav = () => {
         {CATEGORYS.map((item, index) => {
           const { name, cateUrl } = item;
           return (
-            <ListItem
-              key={index}
-              style={
-                `/${cateUrl}` === router.pathname ||
-                `/${cateUrl}` === router.asPath.split("-")[0]
-                  ? { color: "white", fontWeight: "bold" }
-                  : {}
-              }
-            >
-              <Link href={`/${cateUrl}`}>{name}</Link>
+            <ListItem key={index}>
+              <Link
+                href={`/${cateUrl}`}
+                style={
+                  `/${cateUrl}` === router.pathname ||
+                  `/${cateUrl}` === router.asPath.split("-")[0]
+                    ? { color: "white", fontWeight: "bold" }
+                    : {}
+                }
+              >
+                {name}
+              </Link>
             </ListItem>
           );
         })}
@@ -70,8 +72,11 @@ const ListItem = styled.li`
   margin-bottom: 7px;
   cursor: pointer;
 
-  &:hover {
-    font-weight: bold;
-    color: white;
+  & a {
+    color: ${props => props.theme.componentFontColor};
+    &:hover {
+      font-weight: bold;
+      color: white;
+    }
   }
 `;

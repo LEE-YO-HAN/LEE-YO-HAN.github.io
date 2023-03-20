@@ -17,15 +17,18 @@ const HeaderWrap = styled.header`
   justify-content: center;
   align-items: center;
   height: 99px;
-  border-bottom: 1px solid #3a3a3a;
-  background-color: #2c2c2c;
+  border-bottom: 1px solid ${props => props.theme.layoutBorderColor};
+  background-color: ${props => props.theme.componentBackground};
   & h1 {
     width: 500px;
     text-align: center;
     cursor: pointer;
+  }
+  & a {
     transition: 0.3s;
+    color: ${props => props.theme.componentFontColor};
     &:hover {
-      color: white;
+      color: ${props => props.theme.componentHover};
     }
   }
 `;

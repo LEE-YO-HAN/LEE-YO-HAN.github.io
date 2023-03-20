@@ -37,7 +37,9 @@ const Spinner = styled.div`
     margin-left: -32px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-color: #2c2c2c blanchedalmond #2c2c2c blanchedalmond;
+    border-top: 3px solid ${props => props.theme.loading};
+    border-right: 3px solid ${props => props.theme.loading};
+    border-bottom: 3px solid ${props => props.theme.loading};
     animation: spinner 0.6s infinite;
   }
 `;

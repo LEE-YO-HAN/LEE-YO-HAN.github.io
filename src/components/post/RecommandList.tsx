@@ -66,20 +66,18 @@ export const RecommandList = ({ description }: { description: string }) => {
       <ListBox>
         {recommandList.map((item, index) => {
           return (
-            <Link key={index} href={`${item.title.replaceAll(" ", "-")}`}>
-              <li>
+            <li key={index}>
+              <Link href={`${item.title.replaceAll(" ", "-")}`}>
                 <span
-                  style={
-                    description === item.description
-                      ? { fontWeight: "bold", color: "white" }
-                      : {}
-                  }
+                  className={description === item.description ? "thisPost" : ""}
                 >
-                  {item.description}
+                  {item.description.length < 50
+                    ? item.description
+                    : item.description.slice(0, 50) + "..."}
                 </span>
-                <span>{item.date}</span>
-              </li>
-            </Link>
+              </Link>
+              <span>{item.date}</span>
+            </li>
           );
         })}
       </ListBox>
@@ -91,6 +89,8 @@ const RecommandBox = styled.div`
   padding: 15px;
   list-style: none;
   border: 1px solid #3a3a3a;
+  color: ${props => props.theme.componentFontColor};
+  background-color: ${props => props.theme.componentBackground};
 
   & p {
     margin-bottom: 15px;
@@ -105,24 +105,26 @@ const ListBox = styled.ul`
 
   & a {
     cursor: auto;
+    & span {
+      color: ${props => props.theme.componentFontColor};
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        color: ${props => props.theme.componentHover};
+        font-weight: bold;
+      }
+    }
+    & .thisPost {
+      color: ${props => props.theme.componentHover};
+      font-weight: bold;
+    }
   }
   & li {
     margin-bottom: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-  & span:first-child {
-    cursor: pointer;
-    transition: 0.3s;
-
-    &:hover {
-      color: #3a3a3a;
-      font-weight: bold;
-    }
-    & span:last-child {
-      cursor: auto;
-    }
   }
 
   &::-webkit-scrollbar {

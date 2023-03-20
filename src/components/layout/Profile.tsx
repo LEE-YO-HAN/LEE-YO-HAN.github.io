@@ -42,7 +42,8 @@ const ProfileArea = styled.aside`
   align-items: center;
   width: 200px;
   height: 350px;
-  background-color: #2c2c2c;
+  color: ${props => props.theme.componentFontColor};
+  background-color: ${props => props.theme.componentBackground};
   border-radius: 10px;
 `;
 
@@ -67,14 +68,14 @@ const LinkBox = styled.div`
   & a {
     display: flex;
     align-items: center;
-    color: blanchedalmond;
+    color: ${props => props.theme.componentFontColor};
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
     transition: 0.3s;
 
     &:hover {
-      color: white;
+      color: ${props => props.theme.componentHover};
     }
     & svg {
       font-size: 15px;

@@ -1,11 +1,11 @@
 ---
 title: nextjs marked webpack imported module 7 default
-description: TypeError (0 , marked__WEBPACK_IMPORTED_MODULE_7__.default) is not a function
+description: WEBPACK_IMPORTED_MODULE_7_default is not a function 에러 해결
 category: nextjs
 date: "2023-03-18"
 ---
 
-# TypeError: (0 , marked\_\_WEBPACK_IMPORTED_MODULE\_\__7_.default) is not a function 에러 해결 방법
+# 에러 해결 방법
 
 나의 경우 SSR 데이터를 contextAPI를 통해 패치하려 했으나, 정상적으로 받아오지 못할때 발생한 오류였다.
 

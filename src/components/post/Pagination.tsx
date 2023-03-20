@@ -64,7 +64,7 @@ export const Pagination = ({
             handlePageChange(activePage - 1);
           }
         }}
-        style={activePage === 1 ? { backgroundColor: `gray` } : {}}
+        className={activePage === 1 ? "noPrev" : ""}
       >
         <BsCaretLeftFill />
       </li>
@@ -93,9 +93,7 @@ export const Pagination = ({
             handlePageChange(activePage + 1);
           }
         }}
-        style={
-          activePage === pagingArray.length ? { backgroundColor: `gray` } : {}
-        }
+        className={activePage === pagingArray.length ? "noNext" : ""}
       >
         <BsCaretRightFill />
       </li>
@@ -125,26 +123,34 @@ const PagingUl = styled.ul`
     height: 35px;
     text-align: center;
     font-size: 25px;
+    color: ${props => props.theme.buttonFontColor};
     border-radius: 5px;
     transition: 0.3s;
     cursor: pointer;
     &:hover {
-      color: black;
-      background-color: blanchedalmond;
+      color: ${props => props.theme.activeButtonColor};
+      background-color: ${props => props.theme.activeBackgroundColor};
     }
   }
   & .activePage {
-    color: black;
-    background-color: blanchedalmond;
+    color: ${props => props.theme.activeButtonColor};
+    background-color: ${props => props.theme.activeBackgroundColor};
   }
   & li:first-child,
   li:last-child {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #2c2c2c;
+    color: ${props => props.theme.prevNextFont};
+    background-color: ${props => props.theme.prevNextBackground};
     &:hover {
-      background-color: #585858;
+      background-color: ${props => props.theme.prevNextHover};
     }
+  }
+  & li:first-child.noPrev,
+  li:last-child.noNext {
+    color: ${props => props.theme.noPrevNextFont};
+    background-color: ${props => props.theme.noPrevNextBackground};
+    cursor: auto;
   }
 `;

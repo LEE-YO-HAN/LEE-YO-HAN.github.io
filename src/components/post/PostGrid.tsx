@@ -101,14 +101,14 @@ const GridBox = styled.ul`
 const Card = styled.li`
   height: 300px;
   border-radius: 5px 5px 5px 5px;
-  background-color: #2c2c2c;
+  background-color: ${props => props.theme.componentBackground};
   cursor: pointer;
   transition: 0.3s;
   & img {
     border-radius: 5px 5px 0 0;
   }
   &:hover {
-    box-shadow: 1px 1px 3px 4px #777777;
+    box-shadow: 1px 1px 4px 2px ${props => props.theme.componentShadow};
   }
 `;
 
@@ -118,8 +118,14 @@ const CardBody = styled.div`
   justify-content: space-around;
   padding: 10px;
   height: 133px;
+  color: ${props => props.theme.componentFontColor};
+  font-weight: bold;
+  & p {
+    width: 100%;
+    overflow-x: hidden;
+  }
   & span {
     font-size: 0.8rem;
-    color: #968a79;
+    color: ${props => props.theme.componentSubFontColor};
   }
 `;

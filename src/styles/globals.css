@@ -149,8 +149,10 @@ body {
 
   /* test */
 
-  color: blanchedalmond;
-  background-color: rgb(27, 27, 27);
+  /* color: blanchedalmond; */
+  /* color: rgb(255, 249, 193); */
+  /* background-color: rgb(27, 27, 27); */
+  background-color: #dbdffd;
   /* borderbottom color */
   /* border-bottom: 1px solid #3a3a3a; */
 }
@@ -162,12 +164,6 @@ body {
 
 a {
   text-decoration: none;
-}
-a:visited {
-  color: blanchedalmond;
-}
-a:link {
-  color: blanchedalmond;
 }
 
 body::-webkit-scrollbar {

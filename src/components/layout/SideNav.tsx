@@ -21,6 +21,7 @@ const SideArea = styled.aside`
   align-items: flex-start;
   width: 200px;
   height: 350px;
-  background-color: #2c2c2c;
+  color: ${props => props.theme.componentFontColor};
+  background-color: ${props => props.theme.componentBackground};
   border-radius: 10px;
 `;

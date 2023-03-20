@@ -70,14 +70,17 @@ const HeaderSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   height: 200px;
-  background-color: #2c2c2c;
+  color: ${props => props.theme.componentFontColor};
+  background-color: ${props => props.theme.componentBackground};
   border-radius: 20px;
   & h1 {
     padding: 0 10px;
     width: 95%;
     font-weight: bold;
     font-size: 2rem;
+    overflow-x: hidden;
   }
   & p {
     margin-top: 10px;
@@ -96,11 +99,17 @@ const HeaderSection = styled.section`
 
 const MainContent = styled.main`
   margin-bottom: 50px;
+  color: ${props => props.theme.mainFontColor};
 
   // markdown
   .markdown {
     font-size: 1.2rem;
     line-height: 1.5;
+  }
+
+  .markdown hr {
+    margin-top: 100px;
+    margin-bottom: 50px;
   }
 
   .markdown h1 {
@@ -116,7 +125,7 @@ const MainContent = styled.main`
   }
 
   .markdown h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
@@ -128,6 +137,10 @@ const MainContent = styled.main`
   .markdown a {
     color: #0070f3;
     text-decoration: underline;
+    transition: 0.3s;
+    &:hover {
+      color: ${props => props.theme.componentHover};
+    }
   }
 
   .markdown img {

@@ -25,8 +25,6 @@ export const Layout = ({ children }: ChildrenProps) => {
 const LayoutWrap = styled.div`
   margin: 0 auto;
   padding: 0 20px;
-  /* max-width: 1200px; */
-  /* width: 1080px; */
 `;
 
 const ContentWrap = styled.section`

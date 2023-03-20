@@ -97,7 +97,9 @@ const Container = styled.li`
   align-items: center;
   width: 90vw;
   height: 150px;
-  box-shadow: 1px 1px 4px 1px #444444;
+  color: ${props => props.theme.componentFontColor};
+  background-color: ${props => props.theme.componentBackground};
+  box-shadow: 1px 1px 4px 1px ${props => props.theme.componentShadow};
 `;
 
 const ContentBody = styled.div`
@@ -109,6 +111,7 @@ const ContentBody = styled.div`
   height: 100px;
   & p {
     font-weight: bold;
+    overflow-x: hidden;
   }
   & span {
     text-align: right;

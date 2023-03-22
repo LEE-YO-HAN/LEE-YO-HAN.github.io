@@ -8,7 +8,10 @@ import Link from "next/link";
 
 export const PostInfiScroll = ({ postlist }: { postlist: MarkDownProps[] }) => {
   const page = useRef<number>(1);
-  const [isLoading, setisLoading] = useState(false);
+  const [isLoading, setisLoading] = useState(true);
+  setTimeout(() => {
+    setisLoading(false);
+  }, 1000);
 
   let itemsPerPage = 10;
   let indexArray = Array.from({ length: itemsPerPage }, (item, index) => {
@@ -19,7 +22,6 @@ export const PostInfiScroll = ({ postlist }: { postlist: MarkDownProps[] }) => {
 
   const [hasNextPage, setHasNextPage] = useState(true);
   const fatchData = (pageNum: number) => {
-    setisLoading(true);
     if (hasNextPage && !isLoading) {
       let newIndex = indexArray.map(
         item => item + (pageNum - 1) * itemsPerPage,
@@ -29,14 +31,10 @@ export const PostInfiScroll = ({ postlist }: { postlist: MarkDownProps[] }) => {
           return post;
         }
       });
-      setTimeout(() => {
-        setFetchPost(prev => prev.concat(newPosts));
-        setisLoading(false);
-      }, 400);
+      setFetchPost(prev => prev.concat(newPosts));
       page.current += 1;
       setHasNextPage(postlist.length > fetchPost.length);
     }
-    setisLoading(false);
   };
 
   const observerRef: any = useRef();
@@ -45,7 +43,11 @@ export const PostInfiScroll = ({ postlist }: { postlist: MarkDownProps[] }) => {
     if (observerRef.current) observerRef.current.disconnect();
     observerRef.current = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting && hasNextPage) {
+        setisLoading(true);
         fatchData(page.current);
+        setTimeout(() => {
+          setisLoading(false);
+        }, 1500);
       }
     });
     node && observerRef.current.observe(node);

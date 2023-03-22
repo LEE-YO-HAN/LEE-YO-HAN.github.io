@@ -28,17 +28,16 @@ const Container = styled.li`
   align-items: center;
   width: 90vw;
   height: 150px;
-  box-shadow: 1px 1px 4px 1px #444444;
+  box-shadow: 1px 1px 4px 1px ${props => props.theme.componentShadow};
   @keyframes skeleton {
     from {
-      filter: brightness(1);
+      filter: brightness(0.8);
     }
-
     50% {
-      filter: brightness(200%);
+      filter: brightness(1);
     }
     to {
-      filter: brightness(1);
+      filter: brightness(0.8);
     }
   }
 `;
@@ -46,9 +45,9 @@ const Container = styled.li`
 const ImageBox = styled.div`
   width: 150px;
   height: 150px;
-  background: #383838;
-  filter: brightness(1);
-  animation: skeleton 1s infinite;
+  background: ${props => props.theme.componentBackground};
+  filter: brightness(0.8);
+  animation: skeleton 1.2s infinite;
 `;
 
 const ContentBody = styled.div`
@@ -65,16 +64,16 @@ const SkeletonDescription = styled.p`
   width: 50vw;
   height: 20px;
   font-weight: bold;
-  background: #383838;
+  background: ${props => props.theme.componentBackground};
   filter: brightness(1);
-  animation: skeleton 1s infinite;
+  animation: skeleton 1.2s infinite;
 `;
 const SkeletonDate = styled.span`
   text-align: right;
   font-size: 0.8rem;
   width: 10vw;
   height: 20px;
-  background: #383838;
+  background: ${props => props.theme.componentBackground};
   filter: brightness(1);
-  animation: skeleton 1s infinite;
+  animation: skeleton 1.2s infinite;
 `;

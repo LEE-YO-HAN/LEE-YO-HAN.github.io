@@ -36,9 +36,7 @@ export const PostGrid = ({ posts }: any) => {
         <PostInfiScroll postlist={postlist} />
       ) : (
         <GridContainer>
-          <p style={{ fontWeight: "bold", width: "660px" }}>
-            전체 글 ({posts.length})
-          </p>
+          <CountPost>전체 글 ({posts.length})</CountPost>
           <GridBox>
             {postlist.map((item, index) => {
               const { title, description, category, date, content } = item;
@@ -84,9 +82,13 @@ const GridContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 660px;
-  & p {
-    margin: 0 auto;
-  }
+`;
+
+const CountPost = styled.p`
+  margin: 0 auto;
+  color: ${props => props.theme.componentShadow};
+  font-weight: bold;
+  width: 660px;
 `;
 
 const GridBox = styled.ul`

@@ -105,6 +105,7 @@ const PagingUl = styled.ul`
   padding: 0;
   margin: auto;
   margin-top: 50px;
+  margin-bottom: 50px;
   width: 300px;
   display: flex;
   justify-content: center;

@@ -128,38 +128,14 @@ table {
 /* css init */
 /* css init */
 
-body {
-  /* color: #1A120B; */
-  /* color: #3c2a21; */
-  /* color: #D5CEA3; */
-  /* color: #E5E5CB; */
-  /* background: #262a35; */
-  /* background: #1a120b; */
-  /* background: #3c2a21; */
-  /* background: #ebe3b4; */
-  /* background: #E5E5CB; */
-  /* background: linear-gradient(45deg, black, lightgray); */
-  /* 1A120B - brown
-    3C2A21 - lightbrown
-    D5CEA3 - vanilla
-    E5E5CB -light vanilla
-    ebe3b4 - better light vanilla
-    3c2a213b - hr or lean border line
-    */
-
-  /* test */
-
-  /* color: blanchedalmond; */
-  /* color: rgb(255, 249, 193); */
-  /* background-color: rgb(27, 27, 27); */
-  background-color: #dbdffd;
-  /* borderbottom color */
-  /* border-bottom: 1px solid #3a3a3a; */
-}
-
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: #dbdffd;
+  /* background-color: #c3e8ff; */
 }
 
 a {
@@ -174,9 +150,3 @@ body::-webkit-scrollbar-thumb {
   height: 10vh;
   background: rgb(100, 100, 100);
 }
-
-/* markdown */
-/* markdown */
-/* markdown */
-/* markdown */
-/* markdown */

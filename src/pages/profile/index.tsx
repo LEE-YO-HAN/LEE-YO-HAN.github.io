@@ -21,6 +21,13 @@ export default function MyProfile() {
   };
   useEffect(() => {
     console.log(scrollCheck);
+    if (scrollCheck === "UP") {
+      useInnerHeight.current -= window.innerHeight;
+      //   scrollToSmoothly(useInnerHeight.current, 500);
+    } else if (scrollCheck === "DOWN") {
+      useInnerHeight.current += window.innerHeight;
+      //   scrollToSmoothly(useInnerHeight.current, 500);
+    }
   }, [scrollCheck]);
 
   return (

@@ -105,7 +105,7 @@ const Card = styled.li`
   border-radius: 5px 5px 5px 5px;
   background-color: ${props => props.theme.componentBackground};
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.1s;
   & img {
     border-radius: 5px 5px 0 0;
   }

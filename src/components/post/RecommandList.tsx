@@ -108,7 +108,7 @@ const ListBox = styled.ul`
     & span {
       color: ${props => props.theme.componentFontColor};
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.2s;
 
       &:hover {
         color: ${props => props.theme.componentHover};

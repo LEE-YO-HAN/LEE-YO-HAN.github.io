@@ -10,12 +10,14 @@ export const Profile = () => {
   return (
     <ProfileArea style={mobile ? { display: "none" } : {}}>
       <ProfileWrap>
-        <Image
-          src={`https://avatars.githubusercontent.com/u/85297720?v=4`}
-          alt="profile"
-          width={100}
-          height={100}
-        />
+        <Link href={"/profile"}>
+          <Image
+            src={`https://avatars.githubusercontent.com/u/85297720?v=4`}
+            alt="profile"
+            width={100}
+            height={100}
+          />
+        </Link>
         <p>Hanbbi</p>
       </ProfileWrap>
       <LinkBox>
@@ -66,13 +68,14 @@ const ProfileWrap = styled.div`
 const LinkBox = styled.div`
   margin: 20px 0;
   & a {
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     color: ${props => props.theme.componentFontColor};
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
 
     &:hover {
       color: ${props => props.theme.componentHover};

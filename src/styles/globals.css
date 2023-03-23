@@ -127,15 +127,19 @@ table {
 /* css init */
 /* css init */
 /* css init */
-
+html {
+  scroll-behavior: smooth;
+}
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-color: #dbdffd;
-  /* background-color: #c3e8ff; */
+  background-color: #dbf1fd;
+  /* background-color: #c3e8fd; */
+  /* 임시 배경색 */
+  overflow-x: hidden;
 }
 
 a {

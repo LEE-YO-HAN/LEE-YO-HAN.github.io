@@ -15,7 +15,8 @@ export default function Home({ posts }: { posts: MarkDownProps[] }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="subject" content="developer blog" />
         <meta property="og:title" content="Rain Sugar BangBang" />
-        <meta property="og:description" content="welcome to developer's blog" />
+        <meta property="og:description" content="welcome to devLog" />
+        <meta property="og:image" content={require("../images/GITHUB.png")} />
         <meta
           name="naver-site-verification"
           content="af9c8049662a7c6c85ea946e9eb561086e70062c"
@@ -25,7 +26,6 @@ export default function Home({ posts }: { posts: MarkDownProps[] }) {
           content="Zgp7rA3RAdcRnhPPsGLK-t4KVTO86AejlDIQQIGpvLg"
         />
 
-        <meta property="og:image" content={require("../images/GITHUB.png")} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PostGrid posts={posts} />

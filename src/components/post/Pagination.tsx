@@ -114,7 +114,7 @@ const PagingUl = styled.ul`
   font-weight: bold;
   user-select: none;
   -webkit-user-select: none;
-  transition: 0.3s;
+  transition: 0.2s;
   & ul,
   li {
     list-style: none;
@@ -126,7 +126,7 @@ const PagingUl = styled.ul`
     font-size: 25px;
     color: ${props => props.theme.buttonFontColor};
     border-radius: 5px;
-    transition: 0.3s;
+    transition: 0.2s;
     cursor: pointer;
     &:hover {
       color: ${props => props.theme.activeButtonColor};

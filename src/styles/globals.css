@@ -127,6 +127,10 @@ table {
 /* css init */
 /* css init */
 /* css init */
+/* html {
+  scroll-behavior: smooth; // 적용 시 requestAnimationFrame 안됨
+  transition: 1s;
+} */
 
 * {
   margin: 0;

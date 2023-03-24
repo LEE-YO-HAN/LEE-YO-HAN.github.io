@@ -35,6 +35,11 @@ export const MdContext = ({ children }: ProviderProps) => {
   );
 };
 
+// provider setting
+// import { MdContext } from "@/context/MdContext";
+// <MdContext>
+// </MdContext>
+
 // usage in another component
 // import { useMdContextUpdate } from "@/context/MdContext";
 // const update = useMdContextUpdate();

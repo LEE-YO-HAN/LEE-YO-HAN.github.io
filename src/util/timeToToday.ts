@@ -1,3 +1,8 @@
+/**
+ *
+ * @param createdAt new Date(someTime)
+ * @returns 00 분/시간/일/주/개월/년 전
+ */
 export function TimeToToday(createdAt: any) {
   const milliSeconds = -new Date() - createdAt;
   const seconds = milliSeconds / 1000;

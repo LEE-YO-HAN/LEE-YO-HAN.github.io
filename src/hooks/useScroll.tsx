@@ -22,7 +22,7 @@ export const useScroll = () => {
         setTimeout(() => {
           scrollMove.current = false;
           setScrollCheck("");
-        }, 550);
+        }, 600);
       }
       prevScrollPos.current = currentScrollPos;
     };

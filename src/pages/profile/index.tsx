@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { EclipsLoadingSpinner } from "@/util/EclipsLoadingSpinner";
 import { scrollToSmoothly } from "@/components/profile/SmoothScroll";
 import { useScroll } from "@/hooks/useScroll";
+import Link from "next/link";
 
 export default function MyProfile() {
   const [isLoading, setIsLoading] = useState(true);
@@ -10,23 +11,8 @@ export default function MyProfile() {
   const scrollRef = useRef({
     height: 0,
   });
-  console.log(scrollRef.current.height);
 
-  const moveScroll = () => {
-    scrollTo({ top: 0, behavior: "smooth" });
-  };
-  const moveScrollByUp = () => {
-    window.scrollBy(0, -window.innerHeight);
-  };
-  const moveScrollByDown = () => {
-    window.scrollBy(0, window.innerHeight);
-  };
-  const moveScrollTo = () => {
-    window.scrollTo(0, window.innerHeight);
-  };
-
-  useEffect(() => {
-    console.log(scrollCheck);
+  const smoothScrollHandler = () => {
     let maxHeight = window.innerHeight * 6;
     let currentHeight = scrollRef.current.height;
     if (scrollCheck === "UP" && currentHeight !== 0) {
@@ -36,26 +22,21 @@ export default function MyProfile() {
       scrollRef.current.height += window.innerHeight;
       scrollToSmoothly(scrollRef.current.height, 500);
     }
+  };
+
+  useEffect(() => {
+    smoothScrollHandler();
   }, [scrollCheck]);
 
   return (
     <ProfileContainer>
-      <NavBtn>
-        <button onClick={moveScroll}>최상단</button>
-        <button onClick={moveScrollByUp}>moveScrollByUp</button>
-        <button onClick={moveScrollByDown}>moveScrollByDown</button>
-        <button onClick={moveScrollTo}>moveScrollTo</button>
-        <button onClick={() => scrollToSmoothly(1500, 500)}>
-          SmoothScroll
-        </button>
-      </NavBtn>
       {/* <EclipsLoadingSpinner /> */}
-      <TestContainer1 />
-      <TestContainer2 />
-      <TestContainer3 />
-      <TestContainer4 />
-      <TestContainer5 />
-      <TestContainer6 />
+      <TestContainer1 id="box1" />
+      <TestContainer2 id="box2" />
+      <TestContainer3 id="box3" />
+      <TestContainer4 id="box4" />
+      <TestContainer5 id="box5" />
+      <TestContainer6 id="box6" />
     </ProfileContainer>
   );
 }
@@ -67,35 +48,43 @@ const NavBtn = styled.div`
   top: 30%;
   display: flex;
   flex-direction: column;
+  border: 1px solid white;
+  background-color: white;
 `;
 
 const TestContainer1 = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: red;
+  background-color: #ff7c7c;
+  scroll-behavior: smooth;
 `;
 const TestContainer2 = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: green;
+  scroll-behavior: smooth;
 `;
 const TestContainer3 = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: black;
+  scroll-behavior: smooth;
 `;
 const TestContainer4 = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #50b2ca;
+  scroll-behavior: smooth;
 `;
 const TestContainer5 = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #3a2b7e;
+  scroll-behavior: smooth;
 `;
 const TestContainer6 = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #f1ff2b;
+  scroll-behavior: smooth;
 `;

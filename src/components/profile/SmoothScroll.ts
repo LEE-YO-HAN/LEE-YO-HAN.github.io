@@ -11,21 +11,32 @@ export const scrollToSmoothly = (pos: number, time: number) => {
   // 애니메이션 시작시간
   let startTime: null | number = null;
 
+  /**
+   * @param currentTime requestAnimationFrame의 callback 인자
+   */
   const animation = (currentTime: number) => {
     if (startTime === null) startTime = currentTime;
     // 애니메이션 진행 시간
-    let timeElapsed = currentTime - startTime;
+    let runningTime = currentTime - startTime;
     // 현재 위치
-    let ease = easeInOutQuad(timeElapsed, currentPos, distance, time);
+    let ease = easeInOut(runningTime, currentPos, distance, time);
     window.scrollTo(0, ease);
-    if (timeElapsed < time) requestAnimationFrame(animation);
+    if (runningTime < time) requestAnimationFrame(animation);
   };
 
-  function easeInOutQuad(t: number, b: number, c: number, d: number) {
-    t /= d / 2;
-    if (t < 1) return (c / 2) * t * t + b;
-    t--;
-    return (-c / 2) * (t * (t - 2) - 1) + b;
+  /**
+   *
+   * @param a 애니메이션 진행 시간
+   * @param b 현재 스크롤 위치
+   * @param c 이동 거리
+   * @param d 이동하는 총 시간(ms) - props
+   * @returns
+   */
+  function easeInOut(a: number, b: number, c: number, d: number) {
+    a = a / (d / 2);
+    if (a < 1) return (c / 2) * a * a + b;
+    a--;
+    return (-c / 2) * (a * (a - 2) - 1) + b;
   }
 
   requestAnimationFrame(animation);

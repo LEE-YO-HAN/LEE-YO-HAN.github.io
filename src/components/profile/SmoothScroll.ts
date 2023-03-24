@@ -1,3 +1,8 @@
+/**
+ *
+ * @param pos 이동하려는 절대 위치
+ * @param time 이동하는 총 시간(ms)
+ */
 export const scrollToSmoothly = (pos: number, time: number) => {
   // 현재 스크롤 위치
   let currentPos = window.pageYOffset;

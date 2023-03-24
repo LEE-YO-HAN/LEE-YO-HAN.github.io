@@ -7,8 +7,10 @@ import { useScroll } from "@/hooks/useScroll";
 export default function MyProfile() {
   const [isLoading, setIsLoading] = useState(true);
   const { scrollCheck } = useScroll();
-  //   const [useInnerHeight, setUseInnerHeight] = useState(0);
-  const useInnerHeight = useRef(0);
+  const scrollRef = useRef({
+    height: 0,
+  });
+  console.log(scrollRef.current.height);
 
   const moveScroll = () => {
     scrollTo({ top: 0, behavior: "smooth" });
@@ -19,14 +21,20 @@ export default function MyProfile() {
   const moveScrollByDown = () => {
     window.scrollBy(0, window.innerHeight);
   };
+  const moveScrollTo = () => {
+    window.scrollTo(0, window.innerHeight);
+  };
+
   useEffect(() => {
     console.log(scrollCheck);
-    if (scrollCheck === "UP") {
-      useInnerHeight.current -= window.innerHeight;
-      //   scrollToSmoothly(useInnerHeight.current, 500);
-    } else if (scrollCheck === "DOWN") {
-      useInnerHeight.current += window.innerHeight;
-      //   scrollToSmoothly(useInnerHeight.current, 500);
+    let maxHeight = window.innerHeight * 6;
+    let currentHeight = scrollRef.current.height;
+    if (scrollCheck === "UP" && currentHeight !== 0) {
+      scrollRef.current.height -= window.innerHeight;
+      scrollToSmoothly(scrollRef.current.height, 500);
+    } else if (scrollCheck === "DOWN" && currentHeight !== maxHeight) {
+      scrollRef.current.height += window.innerHeight;
+      scrollToSmoothly(scrollRef.current.height, 500);
     }
   }, [scrollCheck]);
 
@@ -34,9 +42,12 @@ export default function MyProfile() {
     <ProfileContainer>
       <NavBtn>
         <button onClick={moveScroll}>최상단</button>
-        <button onClick={moveScrollByUp}>UP</button>
-        <button onClick={moveScrollByDown}>Down</button>
-        <button onClick={() => scrollToSmoothly(500, 500)}>Smooth</button>
+        <button onClick={moveScrollByUp}>moveScrollByUp</button>
+        <button onClick={moveScrollByDown}>moveScrollByDown</button>
+        <button onClick={moveScrollTo}>moveScrollTo</button>
+        <button onClick={() => scrollToSmoothly(1500, 500)}>
+          SmoothScroll
+        </button>
       </NavBtn>
       {/* <EclipsLoadingSpinner /> */}
       <TestContainer1 />

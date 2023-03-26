@@ -16,7 +16,7 @@ const HeaderWrap = styled.header`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 99px;
+  height: 79px;
   border-bottom: 1px solid ${props => props.theme.layoutBorderColor};
   background-color: ${props => props.theme.componentBackground};
   & h1 {

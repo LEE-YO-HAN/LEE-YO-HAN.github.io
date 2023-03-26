@@ -10,8 +10,8 @@ interface ChildrenProps {
 export const Layout = ({ children }: ChildrenProps) => {
   return (
     <>
-      <Header />
       <LayoutWrap>
+        <Header />
         <ContentWrap>
           <Profile />
           <PostArea>{children}</PostArea>
@@ -24,7 +24,7 @@ export const Layout = ({ children }: ChildrenProps) => {
 
 const LayoutWrap = styled.div`
   margin: 0 auto;
-  padding: 0 20px;
+  width: 100vw;
 `;
 
 const ContentWrap = styled.section`

@@ -12,7 +12,7 @@ const Spinner = styled.div`
   display: block;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   z-index: 999;

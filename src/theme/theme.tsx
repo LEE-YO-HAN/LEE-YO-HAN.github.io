@@ -9,7 +9,6 @@ export const mainTheme = {
   // component block
   componentFontColor: "white",
   componentSubFontColor: "#dbdffd",
-  // componentBackground: "#7986ff", // 초기값
   componentBackground: "#8a96ff",
   componentShadow: "#5d6dff",
   componentHover: "#292846",

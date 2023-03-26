@@ -12,7 +12,8 @@ export const NextHead = ({ title, description, category }: Props) => {
       <title>Rain Sugar BangBang Front-End</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content={`${description}`} />
-      <meta name="keywords" content={`${category}, ${category}-${title}`} />
+      <meta name="keywords" content={`${category}, ${title}`} />
+      <meta httpEquiv="title" content={`${description}`} />
       <meta httpEquiv="subject" content={`${category}`} />
       <meta property="og:title" content={`${title}`} />
       <meta property="og:description" content={`${description}`} />

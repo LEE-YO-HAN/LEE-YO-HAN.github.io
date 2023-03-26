@@ -1,18 +1,21 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Link from "next/link";
+import { useState } from "react";
 import { BsGithub } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { useMobile } from "@/hooks/useMediaQuery";
 
 export const Profile = () => {
   const mobile = useMobile();
+  const [profileHover, setProfileHover] = useState(false);
+
   return (
     <ProfileArea style={mobile ? { display: "none" } : {}}>
       <ProfileWrap>
         <Link href={"/profile"}>
           <Image
-            src={`https://avatars.githubusercontent.com/u/85297720?v=4`}
+            src={`../../images/profile/cathover.png`}
             alt="profile"
             width={100}
             height={100}

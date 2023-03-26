@@ -7,7 +7,11 @@ import { PostInfiScroll } from "./PostInfiScroll";
 import { useMobile } from "@/hooks/useMediaQuery";
 import Link from "next/link";
 
-export const PostGrid = ({ posts }: any) => {
+interface Props {
+  posts: MarkDownProps[];
+}
+
+export const PostGrid = ({ posts }: Props) => {
   const mobile = useMobile();
 
   const dateHandler = (date: string) => {

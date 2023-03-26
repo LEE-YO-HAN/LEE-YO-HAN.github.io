@@ -6,7 +6,11 @@ import { SkeletonCard } from "./SkeletonCard";
 import Image from "next/image";
 import Link from "next/link";
 
-export const PostInfiScroll = ({ postlist }: { postlist: MarkDownProps[] }) => {
+interface Props {
+  postlist: MarkDownProps[];
+}
+
+export const PostInfiScroll = ({ postlist }: Props) => {
   const page = useRef<number>(1);
   const [isLoading, setisLoading] = useState(true);
   setTimeout(() => {

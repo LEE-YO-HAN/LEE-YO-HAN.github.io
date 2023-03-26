@@ -131,10 +131,11 @@ table {
   scroll-behavior: smooth; // 적용 시 requestAnimationFrame 안됨
   transition: 1s;
 } */
-
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 * {
   margin: 0;
   padding: 0;
+  font-family: "Jua", sans-serif;
 }
 
 body {
@@ -149,10 +150,12 @@ a {
 }
 
 body::-webkit-scrollbar {
-  width: 2px;
-  background-color: #aaa;
+  width: 7px;
+  background-color: rgb(201, 201, 201);
+  border-radius: 100px;
 }
 body::-webkit-scrollbar-thumb {
   height: 10vh;
-  background: rgb(100, 100, 100);
+  background: gold;
+  border-radius: 100px;
 }

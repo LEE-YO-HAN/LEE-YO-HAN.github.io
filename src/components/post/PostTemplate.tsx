@@ -131,7 +131,8 @@ const MainContent = styled.main`
   }
 
   .markdown p {
-    margin-bottom: 1rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
   }
 
   .markdown a {
@@ -142,7 +143,9 @@ const MainContent = styled.main`
       color: ${props => props.theme.componentHover};
     }
   }
-
+  .markdown li {
+    margin-left: 40px;
+  }
   .markdown img {
     width: 100%;
     text-align: center;
@@ -155,6 +158,16 @@ const MainContent = styled.main`
     font-size: 0.9rem;
     font-family: "Consolas", "Sans Mono", "Courier", "monospace";
     border-radius: 10px;
+    &::-webkit-scrollbar {
+      width: 2px;
+      background-color: #aaa;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      height: 10vh;
+      background: rgb(100, 100, 100);
+      border-radius: 10px;
+    }
   }
 
   .markdown code {

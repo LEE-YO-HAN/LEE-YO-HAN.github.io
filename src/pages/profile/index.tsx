@@ -20,10 +20,12 @@ export default function MyProfile() {
     let maxHeight = window.innerHeight * 4;
     let currentHeight = scrollRef.current.height;
     if (scrollCheck === "UP" && currentHeight !== 0) {
-      scrollRef.current.height -= window.innerHeight;
+      // scrollRef.current.height -= window.innerHeight;
+      scrollRef.current.height -= (window.innerHeight * 2) / 3;
       scrollToSmoothly(scrollRef.current.height, 500);
     } else if (scrollCheck === "DOWN" && currentHeight !== maxHeight) {
-      scrollRef.current.height += window.innerHeight;
+      // scrollRef.current.height += window.innerHeight;
+      scrollRef.current.height += (window.innerHeight * 2) / 3;
       scrollToSmoothly(scrollRef.current.height, 500);
     }
   };

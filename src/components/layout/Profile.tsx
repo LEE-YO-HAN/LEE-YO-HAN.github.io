@@ -9,17 +9,22 @@ import { useMobile } from "@/hooks/useMediaQuery";
 export const Profile = () => {
   const mobile = useMobile();
   const [profileHover, setProfileHover] = useState(false);
-
+  const profileHandler = () => {
+    setProfileHover(!profileHover);
+  };
   return (
     <ProfileArea style={mobile ? { display: "none" } : {}}>
       <ProfileWrap>
         <Link href={"/profile"}>
           <Image
-            src={`../../images/profile/cathover.png`}
+            src={
+              "https://user-images.githubusercontent.com/85297720/227774217-57222e9b-baca-493d-80a1-dfc5be3f93ed.png"
+            }
             alt="profile"
             width={100}
             height={100}
           />
+          <span>Go Profile!</span>
         </Link>
         <p>Hanbbi</p>
       </ProfileWrap>
@@ -65,6 +70,23 @@ const ProfileWrap = styled.div`
     margin: 10px 15px 0 15px;
     font-weight: bold;
     font-size: 1.4rem;
+  }
+  & span {
+    position: absolute;
+    top: 8%;
+    left: 25%;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    color: transparent;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.2s;
+    &:hover {
+      color: white;
+      background-color: #00000067;
+    }
   }
 `;
 

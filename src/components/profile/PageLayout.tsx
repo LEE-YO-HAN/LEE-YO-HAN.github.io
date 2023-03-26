@@ -12,4 +12,6 @@ export const PageLayout = ({ children }: Props) => {
 const Layout = styled.section`
   width: 100vw;
   height: 100vh;
+  /* background-color: black;
+  color: white; */
 `;

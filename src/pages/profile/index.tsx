@@ -5,11 +5,12 @@ import { EclipsLoadingSpinner } from "@/util/EclipsLoadingSpinner";
 import { scrollToSmoothly } from "@/components/profile/SmoothScroll";
 import { useScroll } from "@/hooks/useScroll";
 import { Intro } from "@/components/profile/Intro";
-import { TechStack } from "@/components/profile/TechStack";
+import { TechStackMemo } from "@/components/profile/TechStack";
 import { Portpolio } from "@/components/profile/Portpolio";
 import { Etc } from "@/components/profile/Etc";
 
 export default function MyProfile() {
+  const easterEgg = useRef(false);
   const [isLoading, setIsLoading] = useState(true);
   const { scrollCheck } = useScroll();
   const scrollRef = useRef({
@@ -20,29 +21,42 @@ export default function MyProfile() {
     let maxHeight = window.innerHeight * 4;
     let currentHeight = scrollRef.current.height;
     if (scrollCheck === "UP" && currentHeight !== 0) {
-      // scrollRef.current.height -= window.innerHeight;
-      scrollRef.current.height -= (window.innerHeight * 2) / 3;
+      scrollRef.current.height -= window.innerHeight;
+      // scrollRef.current.height -= (window.innerHeight * 2) / 3;
       scrollToSmoothly(scrollRef.current.height, 500);
     } else if (scrollCheck === "DOWN" && currentHeight !== maxHeight) {
-      // scrollRef.current.height += window.innerHeight;
-      scrollRef.current.height += (window.innerHeight * 2) / 3;
+      scrollRef.current.height += window.innerHeight;
+      // scrollRef.current.height += (window.innerHeight * 2) / 3;
       scrollToSmoothly(scrollRef.current.height, 500);
     }
   };
-
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === "#easteregg") easterEgg.current = true;
+    setTimeout(() => {
+      setIsLoading(!isLoading);
+    }, 1500);
+  }, []);
   useEffect(() => {
     smoothScrollHandler();
   }, [scrollCheck]);
 
   return (
     <ProfileContainer>
-      {/* <EclipsLoadingSpinner /> */}
+      {isLoading && <EclipsLoadingSpinner />}
       <Intro />
-      <TechStack />
+      <TechStackMemo />
       <Portpolio />
       <Etc />
     </ProfileContainer>
   );
 }
 
-const ProfileContainer = styled.div``;
+const ProfileContainer = styled.div`
+  background-image: radial-gradient(
+    circle,
+    #fffd95 31%,
+    #ffffae 73%,
+    #ffffe4 98%
+  );
+`;

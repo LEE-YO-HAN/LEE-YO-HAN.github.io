@@ -122,6 +122,7 @@ const PagingUl = styled.ul`
   & li {
     width: 35px;
     height: 35px;
+    line-height: 35px;
     text-align: center;
     font-size: 25px;
     color: ${props => props.theme.buttonFontColor};

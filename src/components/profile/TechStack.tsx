@@ -8,6 +8,7 @@ export const TechStack = () => {
   const librarys = ["reduxtoolkit", "reactquery", "jest"];
   const devOps = ["git", "sourcetree", "vsc"];
   const nowLearning = ["nest", "postgresql"];
+
   return (
     <PageLayout>
       <TechSkill>
@@ -18,8 +19,7 @@ export const TechStack = () => {
           return (
             <Image
               key={index}
-              src={`${require("../../images/profile/css.png")}`}
-              // src={`../../images/CSS.png`}
+              src={`${require("../../images/REACT.png")}`}
               alt="stackCard"
               width={50}
               height={50}

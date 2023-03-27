@@ -66,7 +66,7 @@ export const PostInfiScroll = ({ postlist }: Props) => {
           <Link key={index} href={`/${title.replaceAll(" ", "-")}`}>
             <Container>
               <Image
-                src={require(`../../images/${category.toUpperCase()}.png`)}
+                src={`/images/cards/${category.toUpperCase()}.png`}
                 alt={`${category}`}
                 width={150}
                 height={150}

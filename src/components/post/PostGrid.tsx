@@ -49,7 +49,8 @@ export const PostGrid = ({ posts }: Props) => {
                   <Link key={index} href={`/${title.replaceAll(" ", "-")}`}>
                     <Card>
                       <Image
-                        src={require(`../../images/${category.toUpperCase()}.png`)}
+                        // src={require(`../../images/${category.toUpperCase()}.png`)}
+                        src={`/images/cards/${category.toUpperCase()}.png`}
                         alt="카테고리 이미지"
                         width={200}
                         height={150}

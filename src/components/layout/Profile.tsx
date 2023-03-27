@@ -17,9 +17,7 @@ export const Profile = () => {
       <ProfileWrap>
         <Link href={"/profile"}>
           <Image
-            src={
-              "https://user-images.githubusercontent.com/85297720/227774217-57222e9b-baca-493d-80a1-dfc5be3f93ed.png"
-            }
+            src={"/images/profileImage/cat.png"}
             alt="profile"
             width={100}
             height={100}

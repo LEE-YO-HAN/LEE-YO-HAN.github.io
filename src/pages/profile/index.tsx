@@ -8,6 +8,7 @@ import { Intro } from "@/components/profile/Intro";
 import { TechStackMemo } from "@/components/profile/TechStack";
 import { Portpolio } from "@/components/profile/Portpolio";
 import { Etc } from "@/components/profile/Etc";
+import { ScrollProgress } from "@/components/profile/ScrollProgress";
 
 export default function MyProfile() {
   const easterEgg = useRef(false);
@@ -37,6 +38,7 @@ export default function MyProfile() {
       setIsLoading(!isLoading);
     }, 1500);
   }, []);
+
   useEffect(() => {
     smoothScrollHandler();
   }, [scrollCheck]);
@@ -44,6 +46,7 @@ export default function MyProfile() {
   return (
     <ProfileContainer>
       {isLoading && <EclipsLoadingSpinner />}
+      <ScrollProgress />
       <Intro />
       <TechStackMemo />
       <Portpolio />

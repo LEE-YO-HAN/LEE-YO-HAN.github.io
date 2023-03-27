@@ -72,7 +72,7 @@ export const stackStatus = [
   makeStatus(
     "reactquery",
     "ReactQuery",
-    2,
+    1,
     "비동기 요청을 수월하게 관리하기 위해 사용합니다.",
   ),
   makeStatus("jest", "Jest", 1, "간편한 테스트코드를 위해 사용합니다."),

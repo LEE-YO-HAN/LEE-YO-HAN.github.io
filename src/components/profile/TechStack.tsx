@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { PageLayout } from "./PageLayout";
 import { ActiveStack } from "./ActiveStack";
+import { useObserver } from "@/hooks/useObserver";
 
 export const TechStack = () => {
   const languages = ["Languages", "html", "css", "javascript", "typescript"];
@@ -20,11 +21,16 @@ export const TechStack = () => {
 
   const [activeItem, setactiveItem] = useState("");
 
+  const { observer, isObserved } = useObserver();
+
   return (
     <PageLayout>
-      <ContentWrap onClick={() => setactiveItem("")}>
+      <ContentWrap
+        onClick={() => setactiveItem("")}
+        style={isObserved ? { opacity: "1" } : {}}
+      >
         <TechSkill>
-          <h2>Skills</h2>
+          <h2 ref={observer}>Skills</h2>
           {skillsArray.map((arr, idx) => {
             return (
               <React.Fragment key={idx}>
@@ -39,6 +45,7 @@ export const TechStack = () => {
                           alt="stackCard"
                           width={100}
                           height={100}
+                          priority
                           onClick={e => {
                             e.stopPropagation();
                             setactiveItem(item);
@@ -70,6 +77,8 @@ const ContentWrap = styled.section`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  transition: 1.5s;
+  opacity: 0;
 `;
 
 const TechSkill = styled.div`

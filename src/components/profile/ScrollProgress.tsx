@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 export const ScrollProgress = () => {
@@ -17,6 +17,7 @@ export const ScrollProgress = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <ScrollProgressBar
       style={{

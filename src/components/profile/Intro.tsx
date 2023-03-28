@@ -51,7 +51,7 @@ export const Intro = () => {
           alt="profile"
           priority
         />
-        <span>Yo Han</span>
+        <span>Yo Han (26)</span>
       </FirstProfile>
       <Introduction>
         <h2>Introduction</h2>
@@ -62,7 +62,7 @@ export const Intro = () => {
             있습니다.
           </li>
           <li>
-            작은 것이라도 새로이 배운 것은 메모나 블로그를 통해 꾸준히
+            작은 것이라도 새롭게 배운 것은 Github나 블로그를 통해 꾸준히
             기록합니다.
           </li>
           <li>좋은 코드에 대해 끊임없이 고민하고 있습니다.</li>
@@ -129,7 +129,7 @@ const BackToBlog = styled.span`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 130px;
+  width: 135px;
   font-weight: bold;
   font-size: 1.2rem;
   color: #838383;
@@ -137,7 +137,7 @@ const BackToBlog = styled.span`
   cursor: pointer;
 
   &:hover {
-    color: #333333;
+    color: black;
   }
 `;
 
@@ -147,7 +147,7 @@ const FirstProfile = styled.div`
   justify-content: center;
   align-items: center;
   height: 25%;
-  animation: ProfileFadeIn 2.5s ease-in-out;
+  animation: ProfileFadeIn 2s ease-in-out;
   @keyframes ProfileFadeIn {
     0% {
       opacity: 0;
@@ -174,7 +174,7 @@ const Introduction = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 1.4rem;
-  animation: IntroductionFadeIn 2.5s ease-in-out;
+  animation: IntroductionFadeIn 2s ease-in-out;
   @keyframes IntroductionFadeIn {
     0% {
       opacity: 0;
@@ -233,7 +233,7 @@ const ContactAndChannel = styled.div`
   flex-direction: column;
   align-items: flex-end;
   font-size: 1.2rem;
-  animation: ContactFadeIn 2.5s ease-in-out;
+  animation: ContactFadeIn 2s ease-in-out;
   @keyframes ContactFadeIn {
     0% {
       opacity: 0;

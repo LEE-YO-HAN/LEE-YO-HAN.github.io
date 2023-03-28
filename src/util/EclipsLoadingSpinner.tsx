@@ -72,39 +72,4 @@ const LoadingSpinner = styled.div`
       transform: translate(24px, 0);
     }
   }
-  @keyframes colorful {
-    0% {
-      background: #ff0000;
-    }
-    10% {
-      background: #ff5e00;
-    }
-    20% {
-      background: #ffd000;
-    }
-    30% {
-      background: #d0ff00;
-    }
-    40% {
-      background: #00ff22;
-    }
-    50% {
-      background: #00ffd5;
-    }
-    60% {
-      background: #00aeff;
-    }
-    70% {
-      background: #0026ff;
-    }
-    80% {
-      background: #8400ff;
-    }
-    90% {
-      background: #ff00dd;
-    }
-    100% {
-      background: #ff0077;
-    }
-  }
 `;

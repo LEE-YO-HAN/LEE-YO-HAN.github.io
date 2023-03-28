@@ -9,9 +9,8 @@ export const PageLayout = ({ children }: Props) => {
   return <Layout>{children}</Layout>;
 };
 
-const Layout = styled.section`
-  width: 100vw;
+const Layout = styled.div`
+  margin: 0 auto;
+  width: 95vw;
   height: 100vh;
-  /* background-color: black;
-  color: white; */
 `;

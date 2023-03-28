@@ -54,7 +54,7 @@ export const stackStatus = [
   makeStatus(
     "next",
     "NextJS",
-    3,
+    2,
     "SSR, SEO, Dynamic routing 등 다양한 기능을 쉽게 사용할 수 있는 React 프레임워크로 사용합니다.",
   ),
   makeStatus(

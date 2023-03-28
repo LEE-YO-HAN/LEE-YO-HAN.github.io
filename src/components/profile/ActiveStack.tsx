@@ -86,7 +86,7 @@ export const ActiveStack = ({ activeItem }: Props) => {
 };
 
 const Container = styled.div`
-  margin: 20px 70px 20px 0;
+  margin: 20px 80px 20px 0;
   padding: 30px;
   width: 35vw;
   min-height: 15vh;
@@ -95,18 +95,18 @@ const Container = styled.div`
   background-color: #f8f0ca7c;
   transition: 0.3s;
 
-  animation: ActiveStack 0.4s ease-in;
+  animation: ActiveStack 0.3s ease-in-out;
   @keyframes ActiveStack {
     0% {
       opacity: 0;
-      margin-right: 300px;
+      margin-right: 500px;
     }
     /* 50% {
       opacity: 0.5;
     } */
     100% {
       opacity: 1;
-      margin-right: 70px;
+      margin-right: 80px;
     }
   }
   & h2 {
@@ -173,7 +173,6 @@ const RatingHelp = styled.div`
   padding: 10px;
   position: absolute;
   width: 200px;
-  border: 1px solid black;
   border-radius: 10px;
   border: 3px solid gold;
   background-color: #fde87cc5;
@@ -184,5 +183,3 @@ const RatingHelp = styled.div`
     text-align: left;
   }
 `;
-
-const LinkArea = styled.div``;

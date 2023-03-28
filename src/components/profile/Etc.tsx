@@ -4,7 +4,11 @@ import { PageLayout } from "./PageLayout";
 export const Etc = () => {
   return (
     <PageLayout>
-      <p>new Component</p>
+      <ContentWrap>
+        <h2></h2>
+      </ContentWrap>
     </PageLayout>
   );
 };
+
+const ContentWrap = styled.section``;

@@ -43,8 +43,8 @@ export const TechStack = () => {
                         <Image
                           src={`/images/stack/${item}.png`}
                           alt="stackCard"
-                          width={100}
-                          height={100}
+                          width={80}
+                          height={80}
                           priority
                           onClick={e => {
                             e.stopPropagation();
@@ -73,6 +73,8 @@ export const TechStack = () => {
 export const TechStackMemo = React.memo(TechStack);
 
 const ContentWrap = styled.section`
+  margin: 0 auto;
+  /* width: 90%; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -82,7 +84,8 @@ const ContentWrap = styled.section`
 `;
 
 const TechSkill = styled.div`
-  margin: 20px 0 20px 50px;
+  margin: 0 50px;
+  margin-top: 20px;
   min-width: 440px;
   & h2 {
     font-size: 2rem;

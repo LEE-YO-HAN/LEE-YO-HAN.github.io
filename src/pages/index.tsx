@@ -16,7 +16,7 @@ export default function Home({ posts }: { posts: MarkDownProps[] }) {
         <meta httpEquiv="subject" content="developer blog" />
         <meta property="og:title" content="Rain Sugar BangBang" />
         <meta property="og:description" content="welcome to devLog" />
-        <meta property="og:image" content={require("../images/GITHUB.png")} />
+        <meta property="og:image" content={"/images/cards/GITHUB.png"} />
         <meta
           name="naver-site-verification"
           content="af9c8049662a7c6c85ea946e9eb561086e70062c"

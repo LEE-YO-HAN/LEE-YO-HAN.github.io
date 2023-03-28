@@ -31,18 +31,18 @@ export const stackStatus = [
     "css",
     "CSS3",
     3,
-    "기본적인 style과 동적인 UI 적용을 위해 사용하며, animationo/keyFrame/mediaQuery 등 적용 가능합니다.",
+    "기본적인 style과 동적인 UI 적용을 위해 사용하며, animation/keyFrame/mediaQuery 등을 적용할 수 있습니다.",
   ),
   makeStatus(
     "javascript",
     "JavaScript",
     3,
-    "웹 동작을 제어하기 위한 주력으로 사용하는 언어입니다.",
+    "웹 동작을 제어하기 위한 주력으로 사용합니다.",
   ),
   makeStatus(
     "typescript",
     "TypeScript",
-    3,
+    2,
     "type 변경이 자유로운 js 특성상 발생할 수 있는 오류를 최소화하기 위해 사용합니다.",
   ),
   makeStatus(

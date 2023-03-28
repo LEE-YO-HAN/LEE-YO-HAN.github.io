@@ -1,4 +1,24 @@
 import Swal from "sweetalert2";
+import { Octokit } from "octokit";
+
+const octokit = new Octokit({
+  auth: `${process.env.NEXT_PUBLIC_GITHUB_API_TOKEN}`,
+});
+
+const issueUpdate = async (name: string, feed: string) => {
+  await octokit.request(
+    "POST /repos/LEE-YO-HAN/LEE-YO-HAN.github.io/issues/7/comments",
+    {
+      owner: "LEE-YO-HAN",
+      repo: "LEE-YO-HAN.github.io",
+      title: `${name}님 피드백`,
+      body: `${name}님 ${feed}`,
+      // headers: { // https://github.com/orgs/community/discussions/40619 version in headers -d
+      //   "X-GitHub-Api-Version": "2022-11-28",
+      // },
+    },
+  );
+};
 
 type Target = HTMLElement | null;
 export const feedbackAlert = () => {
@@ -50,9 +70,13 @@ export const feedbackAlert = () => {
         confirmButtonColor: "gold",
         cancelButtonColor: "rgb(160, 160, 160)",
       }).then(() => {
-        // console.log(nameText);
-        // console.log(feedText);
-        // console.log("전송완료");
+        issueUpdate(nameText, feedText);
+        Swal.fire({
+          title: "소중한 의견 감사합니다!",
+          icon: "success",
+          iconColor: "gold",
+          confirmButtonColor: "gold",
+        });
       });
     }
   });

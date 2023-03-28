@@ -71,6 +71,8 @@ export const ActiveStack = ({ activeItem }: Props) => {
               />
               <RatingHelp style={question ? { opacity: "1" } : {}}>
                 <p>별점 기준</p>
+                <li>실력이 아닌 사용 빈도로 구분했습니다!</li>
+                <hr />
                 <li>1 : 사용 빈도가 많진 않지만 사용 방법은 아는 정도</li>
                 <li>2 : 간간히 사용하며 어느정도 익숙함.</li>
                 <li>3 : 주로 사용하는 스택</li>
@@ -101,9 +103,6 @@ const Container = styled.div`
       opacity: 0;
       margin-right: 500px;
     }
-    /* 50% {
-      opacity: 0.5;
-    } */
     100% {
       opacity: 1;
       margin-right: 80px;
@@ -116,7 +115,7 @@ const Container = styled.div`
   & hr {
     margin: 10px 0 10px 0;
     border: none;
-    box-shadow: 0 0 0 1px lightgray;
+    box-shadow: 0 0 0 1px gold;
   }
   & p {
     margin: 10px 0 10px 0;
@@ -172,11 +171,12 @@ const QCircle = styled.div`
 const RatingHelp = styled.div`
   padding: 10px;
   position: absolute;
-  width: 200px;
+  width: 300px;
   border-radius: 10px;
   border: 3px solid gold;
-  background-color: #fde87cc5;
+  background-color: #fde77cd8;
   opacity: 0;
+  font-weight: bold;
   transition: 0.4s;
   & li {
     list-style: none;

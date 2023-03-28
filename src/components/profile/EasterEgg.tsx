@@ -96,7 +96,7 @@ export const EasterEgg = () => {
             <QBody>
               <RatingHelp style={isQuestion ? { opacity: "1" } : {}}>
                 <p>아직 많이 부족하지만 점점 채우고 있습니다!</p>
-                <li>자유롭게 의견을 남겨주시면 감사합니다!!</li>
+                <li>자유롭게 의견을 남겨주신다면 미리 감사드립니다!!</li>
               </RatingHelp>
             </QBody>
           </FeedbackBtnWrap>
@@ -233,11 +233,12 @@ const RatingHelp = styled.div`
   padding: 10px;
   position: absolute;
   transform: translate(-103%, 5%);
-  width: 250px;
+  width: 350px;
   border-radius: 10px;
   border: 3px solid gold;
   background-color: #fde77c;
   opacity: 0;
+  font-size: 0.9rem;
   transition: 0.4s;
   & li {
     list-style: none;

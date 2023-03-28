@@ -36,6 +36,9 @@ export const Intro = () => {
         </BackToBlog>
       </Link>
       <IntroHeader>
+        <SpinningStar>
+          <BsStar className="star2" />
+        </SpinningStar>
         Welcome To My Profile{" "}
         <SpinningStar>
           <BsStar />
@@ -104,7 +107,8 @@ const IntroHeader = styled.header`
 `;
 
 const SpinningStar = styled.div`
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,8 +121,19 @@ const SpinningStar = styled.div`
       transform: rotate(360deg);
     }
   }
+  @keyframes spinningStar2 {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
   & svg {
     animation: spinningStar 1.5s infinite ease-in-out;
+  }
+  & .star2 {
+    animation: spinningStar2 1.5s infinite ease-in-out;
   }
 `;
 

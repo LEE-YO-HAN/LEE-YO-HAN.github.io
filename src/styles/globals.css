@@ -143,7 +143,6 @@ table {
     Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji",
     "Segoe UI Symbol";
   -webkit-font-smoothing: antialiased;
-  font-weight: 700;
 }
 
 body {
@@ -166,4 +165,32 @@ body::-webkit-scrollbar-thumb {
   height: 10vh;
   background: gold;
   border-radius: 100px;
+}
+
+/* easterEgg swal */
+/* easterEgg swal */
+div.swal2-popup {
+  background-color: rgb(255, 245, 189);
+  color: black;
+}
+input.swal2-input {
+  width: 250px;
+  height: 40px;
+  background-color: white;
+  transition: 0.1s;
+}
+input.swal2-input:focus {
+  border: 1px solid gold;
+  box-shadow: 0 0 0 2px gold;
+}
+textarea.swal2-input {
+  width: 250px;
+  height: 144px;
+  padding: 5px;
+  background-color: white;
+  resize: none;
+}
+textarea.swal2-input:focus {
+  border: 1px solid gold;
+  box-shadow: 0 0 0 2px gold;
 }

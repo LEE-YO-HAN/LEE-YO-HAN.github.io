@@ -4,6 +4,7 @@ import Image from "next/image";
 import { VscClose } from "react-icons/vsc";
 import { GrFormPrevious } from "react-icons/gr";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
+import { feedbackAlert } from "./swal";
 
 export const EasterEgg = () => {
   const [eggs, setEggs] = useState("");
@@ -44,6 +45,7 @@ export const EasterEgg = () => {
   const questionHandler = () => {
     setIsQuestion(!isQuestion);
   };
+
   return (
     <Content
       style={
@@ -84,7 +86,7 @@ export const EasterEgg = () => {
           </p>
           <span>블로그를 먼저 보시려면 좌측 상단의 버튼을 눌러주세요!</span>
           <FeedbackBtnWrap>
-            <button>Feedback</button>
+            <button onClick={feedbackAlert}>Feedback</button>
             <Qwrap
               onMouseEnter={questionHandler}
               onMouseLeave={questionHandler}
@@ -93,8 +95,8 @@ export const EasterEgg = () => {
             </Qwrap>
             <QBody>
               <RatingHelp style={isQuestion ? { opacity: "1" } : {}}>
-                <p>아직 많이 부족하지만 점점 채워나가겠습니다!</p>
-                <li>자유롭게 의견을 남겨주시면 감사드리겠습니다!!</li>
+                <p>아직 많이 부족하지만 점점 채우고 있습니다!</p>
+                <li>자유롭게 의견을 남겨주시면 감사합니다!!</li>
               </RatingHelp>
             </QBody>
           </FeedbackBtnWrap>
@@ -231,7 +233,7 @@ const RatingHelp = styled.div`
   padding: 10px;
   position: absolute;
   transform: translate(-103%, 5%);
-  width: 200px;
+  width: 250px;
   border-radius: 10px;
   border: 3px solid gold;
   background-color: #fde77c;

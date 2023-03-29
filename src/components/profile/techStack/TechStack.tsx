@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import { PageLayout } from "./PageLayout";
+import { PageLayout } from "../PageLayout";
 import { ActiveStack } from "./ActiveStack";
 import { useObserver } from "@/hooks/useObserver";
 

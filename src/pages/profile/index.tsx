@@ -3,13 +3,13 @@ import { useState, useEffect, useRef } from "react";
 import { EclipsLoadingSpinner } from "@/util/EclipsLoadingSpinner";
 import { scrollToSmoothly } from "@/components/profile/SmoothScroll";
 import { useScroll } from "@/hooks/useScroll";
-import { Intro } from "@/components/profile/Intro";
-import { TechStackMemo } from "@/components/profile/TechStack";
+import { Intro } from "@/components/profile/intro/Intro";
+import { TechStackMemo } from "@/components/profile/techStack/TechStack";
 import { Portpolio } from "@/components/profile/Portpolio";
-import { Etc } from "@/components/profile/Etc";
+import { Etc } from "@/components/profile/etc/Etc";
 import { ScrollProgress } from "@/components/profile/ScrollProgress";
 import { Curtain } from "@/components/profile/Curtain";
-import { EasterEggMemo } from "@/components/profile/EasterEgg";
+import { EasterEggMemo } from "@/components/profile/easterEgg/EasterEgg";
 
 export default function MyProfile() {
   const [isLoading, setIsLoading] = useState(true);
@@ -57,8 +57,10 @@ export default function MyProfile() {
 const ProfileContainer = styled.div`
   background-image: radial-gradient(
     circle,
-    #fffd95 31%,
-    #ffffae 73%,
-    #ffffe4 98%
+    #ffffe4 20%,
+    #ffffae 40%,
+    #fffd95 60%,
+    #ffffae 80%,
+    #ffffe4 100%
   );
 `;

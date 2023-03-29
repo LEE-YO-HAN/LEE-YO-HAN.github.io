@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { ActiveStatus } from "./stackannotations";
+import { ActiveStatus } from "../stackannotations";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { BsStarFill, BsStar } from "react-icons/bs";
 
@@ -23,7 +23,7 @@ export const ActiveStack = ({ activeItem }: Props) => {
 
   const getStatus = async (activeItem: string) => {
     if (activeItem !== "") {
-      const { stackStatus } = await import("./stackannotations");
+      const { stackStatus } = await import("../stackannotations");
       const thisStacks = stackStatus.filter(
         stack => stack.callName === activeItem,
       )[0];

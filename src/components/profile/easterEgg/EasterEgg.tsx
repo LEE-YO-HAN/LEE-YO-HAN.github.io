@@ -72,12 +72,10 @@ const CloseBtn = styled.div`
   border-radius: 5px 0 0 5px;
   background-color: gold;
   transition: 0.3s;
-
   cursor: pointer;
-  & svg {
-    color: black;
-    &:hover {
-      color: white;
-    }
+
+  color: black;
+  &:hover {
+    color: white;
   }
 `;

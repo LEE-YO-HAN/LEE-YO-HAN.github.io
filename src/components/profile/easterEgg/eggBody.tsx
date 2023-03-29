@@ -79,7 +79,7 @@ const QBody = styled.div`
 const RatingHelp = styled.div`
   padding: 10px;
   position: absolute;
-  transform: translate(-103%, 5%);
+  transform: translate(-100%, 20%);
   width: 350px;
   border-radius: 10px;
   border: 3px solid gold;

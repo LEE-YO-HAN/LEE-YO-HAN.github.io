@@ -120,7 +120,7 @@ const ContentBody = styled.div`
     font-weight: bold;
   }
   & a {
-    color: black;
+    color: #796aff;
     transition: 0.2s;
     &:hover {
       color: gold;

@@ -71,7 +71,7 @@ export const ActiveStack = ({ activeItem }: Props) => {
               />
               <RatingHelp style={question ? { opacity: "1" } : {}}>
                 <p>별점 기준</p>
-                <li>실력이 아닌 사용 빈도로 구분했습니다!</li>
+                <li>실력이 아닌 사용 익숙함의 정도로 구분했습니다!</li>
                 <hr />
                 <li>1 : 사용 빈도가 많진 않지만 사용 방법은 아는 정도</li>
                 <li>2 : 간간히 사용하며 어느정도 익숙함.</li>
@@ -171,6 +171,7 @@ const QCircle = styled.div`
 const RatingHelp = styled.div`
   padding: 10px;
   position: absolute;
+  transform: translate(-92%, -4%);
   width: 300px;
   border-radius: 10px;
   border: 3px solid gold;

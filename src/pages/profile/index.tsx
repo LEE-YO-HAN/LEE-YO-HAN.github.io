@@ -55,11 +55,11 @@ export default function MyProfile() {
 }
 
 const ProfileContainer = styled.div`
-  background-image: radial-gradient(
-    circle,
-    #ffffe4 20%,
+  background: linear-gradient(
+    70deg,
+    #ffff97 20%,
     #ffffae 40%,
-    #fffd95 60%,
+    #fffec8 60%,
     #ffffae 80%,
     #ffffe4 100%
   );

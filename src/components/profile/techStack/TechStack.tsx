@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { PageLayout } from "../PageLayout";
@@ -79,7 +79,7 @@ const ContentWrap = styled.section`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  transition: 1.5s;
+  transition: 1.5s ease-in-out;
   opacity: 0;
 `;
 

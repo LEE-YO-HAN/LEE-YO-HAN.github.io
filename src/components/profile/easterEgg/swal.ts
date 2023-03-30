@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { Octokit } from "octokit";
 
 const octokit = new Octokit({
-  auth: `${process.env.NEXT_PUBLIC_GITHUB_API_TOKEN}`,
+  auth: `github_pat_${process.env.NEXT_PUBLIC_API_TOKEN}`,
 });
 
 const issueUpdate = async (name: string, feed: string) => {

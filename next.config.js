@@ -8,7 +8,7 @@ const nextConfig = {
     styledComponents: true,
   },
   env: {
-    NEXT_PUBLIC_GITHUB_API_TOKEN: process.env.NEXT_PUBLIC_GITHUB_API_TOKEN,
+    NEXT_PUBLIC_API_TOKEN: process.env.NEXT_PUBLIC_API_TOKEN,
   },
 };
 

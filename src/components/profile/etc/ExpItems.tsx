@@ -99,7 +99,7 @@ export const UniverseItem = () => {
             href={"https://github.com/ever-rent/ever-rent-FE"}
             target={"_blank"}
           >
-            Ever-Rent (6주)
+            Ever-Rent (8주)
           </Link>
         </li>
         <li>

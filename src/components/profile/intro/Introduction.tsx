@@ -15,7 +15,7 @@ export const Introduction = () => {
           기록합니다.
         </li>
         <li>좋은 코드에 대해 끊임없이 고민하고 있습니다.</li>
-        <li>음악과 달달한 음식, 그리고 개인의 성장에 관심이 많습니다.</li>
+        <li>개인의 성장에 많은 관심이 있습니다.</li>
       </IntroList>
     </IntroductionWrap>
   );

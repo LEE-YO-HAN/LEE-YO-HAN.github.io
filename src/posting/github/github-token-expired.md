@@ -99,22 +99,9 @@ headers는 별도로 추가하지 말고 auth만 설정해준 후 사용해 주�
 
 API key와 같은 토큰은 대부분 .env를 통해 변수를 설정해 사용해줘야 한다.
 
-하지만 아래와 같이 요청한 경우 유효시간을 30일, 60일, 90일로 설정해도 요청과 동시에 토큰이 만료된다.
+하지만 .env에 토큰을 설정하고 commit을 하게되면 gitignore를 설정해줘도 github가 자동으로 감지해 토큰을 만료시키기 때문에 .env.local서 테스트하고 .env의 토큰은 지운 뒤에 사용해주자.
 
-```javascript
-const octokit = new Octokit({
-  auth: `${process.env.NEXT_PUBLIC_API_TOKEN}`,
-});
-API key가 노출된 것으로 인식해 자동으로 만료되는 것 같았다.
-
-때문에 아래와 같이 설정해주고 난 후, 요청이 정상적으로 작동하는 것을 볼 수 있었다.
-
-const octokit = new Octokit({
-  auth: `github_pat_${process.env.NEXT_PUBLIC_API_TOKEN}`,
-});
-```
-
-만일 배포 환경에서 Github API Token이 비정상적으로 만료되는 경우 위와 같이 적용해봐도 좋을 것 같다.
+![image](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FuJQsS%2Fbtr62Xh6jLO%2FHkR7hA4k0cMffBKY55DHu1%2Fimg.png)
 
 ---
 

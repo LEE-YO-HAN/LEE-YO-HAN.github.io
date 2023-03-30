@@ -196,3 +196,13 @@ textarea.swal2-input:focus {
   border: 1px solid gold;
   box-shadow: 0 0 0 2px gold;
 }
+textarea.swal2-input::-webkit-scrollbar {
+  width: 7px;
+  background-color: rgb(201, 201, 201);
+  border-radius: 100px;
+}
+textarea.swal2-input::-webkit-scrollbar-thumb {
+  height: 10vh;
+  background: gold;
+  border-radius: 100px;
+}

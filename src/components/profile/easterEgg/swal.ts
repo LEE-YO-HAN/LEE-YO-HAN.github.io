@@ -25,7 +25,7 @@ export const feedbackAlert = () => {
   Swal.fire({
     title: "자유롭게 의견을 적어주세요!",
     html:
-      '<input id="swal-input1" class="swal2-input" placeholder="이름 (필수x)" />' +
+      '<input id="swal-input1" class="swal2-input" placeholder="이름 (필수x)" maxlength="20" />' +
       '<textarea id="swal-input2" class="swal2-input"  placeholder="내용 - 최대 200자" maxlength="200" />',
     inputAttributes: {
       autocapitalize: "off",

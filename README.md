@@ -12,12 +12,8 @@
 
 ## 📚 Librarys 📚
 
-<img src="https://img.shields.io/badge/styled-components
--DB7093?style=flat&logo=styled-components
-&logoColor=white" />
-<img src="https://img.shields.io/badge/Octokit
--181717?style=flat&logo=GitHub
-&logoColor=white" />
+<img src="https://img.shields.io/badge/styled-components-DB7093?style=flat&logo=styled-components&logoColor=white" />
+<img src="https://img.shields.io/badge/Octokit-181717?style=flat&logo=Github&logoColor=white" />
 
 <br/>
 <br/>

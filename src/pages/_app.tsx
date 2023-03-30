@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { ThemeProvider } from "styled-components";
 import { Layout } from "@/components/layout/Layout";
-import { mainTheme } from "@/theme/theme";
+import { mainTheme, darkTheme } from "@/theme/theme";
 import { LoadingSpinner } from "@/util/LoadingSpinner";
 import { useLoading } from "@/hooks/useLoading";
 
@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
 
   return (
-    <ThemeProvider theme={mainTheme}>
+    <ThemeProvider theme={darkTheme}>
       {pathname !== "/profile" ? (
         <Layout>
           <Component {...pageProps} />

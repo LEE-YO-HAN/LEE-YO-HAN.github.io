@@ -135,15 +135,23 @@ table {
 * {
   margin: 0;
   padding: 0;
-  font-family: "Jua", sans-serif;
-  -webkit-font-smoothing: antialiased;
 }
 
+@font-face {
+  font-family: maplestory;
+  src: url("./fonts/Maplestory\ Light.ttf");
+}
+@font-face {
+  font-family: maplestoryBold;
+  src: url("./fonts/Maplestory\ Bold.ttf");
+}
 body {
   /* background-color: #dbf1fd; */
   /* background-color: #c3e8fd; */
   /* 임시 배경색 */
   overflow-x: hidden;
+  font-family: "Jua", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {

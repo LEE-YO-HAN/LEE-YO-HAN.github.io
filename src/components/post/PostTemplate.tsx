@@ -59,6 +59,7 @@ export const PostTemplate = ({
 
 const TemplateWrap = styled.main`
   max-width: 640px;
+
   @media only screen and (max-width: 480px) {
     max-width: 480px;
     width: 90vw;
@@ -72,7 +73,7 @@ const HeaderSection = styled.section`
   justify-content: space-around;
   align-items: center;
   height: 200px;
-  color: ${props => props.theme.componentFontColor};
+  color: ${props => props.theme.mainFontColor};
   background-color: ${props => props.theme.componentBackground};
   border-radius: 20px;
   & h1 {
@@ -156,7 +157,7 @@ const MainContent = styled.main`
     padding: 10px;
     background-color: #161b22;
     font-size: 0.9rem;
-    font-family: "Consolas", "Sans Mono", "Courier", "monospace";
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     border-radius: 10px;
     &::-webkit-scrollbar {
       width: 2px;

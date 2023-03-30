@@ -25,12 +25,17 @@ export const Layout = ({ children }: ChildrenProps) => {
 const LayoutWrap = styled.div`
   margin: 0 auto;
   width: 100vw;
+  height: 100vh;
+  font-family: maplestory;
+  background-color: ${props => props.theme.backgroundColor};
 `;
 
 const ContentWrap = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-color: ${props => props.theme.backgroundColor};
+  color: ${props => props.theme.mainFontColor};
 `;
 
 const PostArea = styled.article`

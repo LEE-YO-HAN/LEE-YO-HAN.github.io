@@ -30,32 +30,32 @@ export const mainTheme = {
 
 export const darkTheme = {
   // main
-  backgroundColor: "#dbdffd",
-  mainFontColor: "black",
+  backgroundColor: "#111111",
+  mainFontColor: "white",
 
   // Layout
-  layoutBorderColor: "#717dee",
+  layoutBorderColor: "gray",
 
   // component block
-  componentFontColor: "white",
-  componentSubFontColor: "#dbdffd",
-  componentBackground: "#7986ff",
-  componentShadow: "#5d6dff",
-  componentHover: "#292846",
+  componentFontColor: "#ffec43",
+  componentSubFontColor: "lightgray",
+  componentBackground: "black",
+  componentShadow: "gold",
+  componentHover: "white",
 
   // loadingSpinner
-  loading: "#615cff",
+  loading: "gold",
 
   // pagination
-  prevNextFont: "#dbdffd",
-  prevNextBackground: "#7986ff",
-  prevNextHover: "#5d6dff",
-  noPrevNextFont: "#dbdffd",
-  noPrevNextBackground: "#a7b0ff",
-  buttonFontColor: "#808eff",
+  prevNextFont: "#000000",
+  prevNextBackground: "#ffee52",
+  prevNextHover: "#ffed47",
+  noPrevNextFont: "#97904e",
+  noPrevNextBackground: "#fff6a1",
+  buttonFontColor: "gold",
   buttonBackgroundColor: "",
-  activeButtonColor: "#dbdffd",
-  activeBackgroundColor: "#7986ff",
+  activeButtonColor: "#000000",
+  activeBackgroundColor: "#ffee52",
 };
 
 // theme color

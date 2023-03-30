@@ -29,4 +29,4 @@
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white" />
 <img src="https://img.shields.io/badge/Next.js-000000?style=flat&logo=Next.js&logoColor=white" />
 <img src="https://img.shields.io/badge/NestJS-E0234E?style=flat&logo=NestJS&logoColor=white" />
-<img src="https://img.shields.io/badge/ETC-4285F4?style=flat&logo=Google Chrome&logoColor=white" />
+<img src="https://img.shields.io/badge/ETC-4285F4?style=flat&logo=GoogleChrome&logoColor=white" />

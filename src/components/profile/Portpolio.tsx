@@ -85,14 +85,19 @@ export const Portpolio = () => {
 
 const ContentWrap = styled.section`
   margin: 0 auto;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   & h2 {
+    margin: 0 auto;
     font-size: 2rem;
-    padding-top: 10px;
+    width: 80vw;
   }
 `;
 
 const ProjectBox = styled.div`
-  margin: 30px 0 30px 0;
   & h3 {
     font-size: 1.6rem;
   }

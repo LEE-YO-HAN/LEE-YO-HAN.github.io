@@ -43,8 +43,8 @@ export const TechStack = () => {
                         <Image
                           src={`/images/stack/${item}.png`}
                           alt="stackCard"
-                          width={80}
-                          height={80}
+                          width={70}
+                          height={70}
                           priority
                           onClick={e => {
                             e.stopPropagation();
@@ -74,7 +74,8 @@ export const TechStackMemo = React.memo(TechStack);
 
 const ContentWrap = styled.section`
   margin: 0 auto;
-  /* width: 90%; */
+  width: 85%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

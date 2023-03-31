@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Link from "next/link";
 import { PageLayout } from "../PageLayout";
 import { NowItem, WantedItem, UniverseItem, SpartaItem } from "./ExpItems";
-import { useState } from "react";
+import { EXPbar } from "./EXPbar";
+import React, { useState } from "react";
 
 export const Etc = () => {
   const [currentExp, setCurrentExp] = useState(1);
@@ -11,44 +11,43 @@ export const Etc = () => {
     setCurrentExp(n);
   };
 
+  const expItems = [
+    { id: 1, label: "Now Doing", component: <NowItem /> },
+    { id: 2, label: "원티드 프리온보딩 인턴십", component: <WantedItem /> },
+    { id: 3, label: "팀스파르타 부트캠프", component: <SpartaItem /> },
+    { id: 4, label: "학사", component: <UniverseItem /> },
+  ];
+
+  const EXP_ANNOT_TRANSLATE = [0, 25, 60, 75];
+
   return (
     <PageLayout>
       <ContentWrap>
-        <h2>Personal Experience</h2>
+        <h2 className="title">Personal Experience</h2>
         <EXPContainer>
           <EXPnav>
-            <li onClick={() => expHandler(1)}>Now Doing</li>
-            <li onClick={() => expHandler(2)}>원티드 프리온보딩 인턴십</li>
-            <li onClick={() => expHandler(3)}>팀스파르타 부트캠프</li>
-            <li onClick={() => expHandler(4)}>학사</li>
+            {expItems.map(item => {
+              const { id, label } = item;
+              return (
+                <li key={id} onClick={() => expHandler(id)}>
+                  {label}
+                </li>
+              );
+            })}
           </EXPnav>
-          <EXPbar>
-            <After onClick={() => expHandler(1)}>
-              <Pointer
-                style={currentExp === 1 ? { backgroundColor: "#6360ff" } : {}}
-              ></Pointer>
-            </After>
-            <Wanted onClick={() => expHandler(2)}>
-              <Pointer
-                style={currentExp === 2 ? { backgroundColor: "#60b2ff" } : {}}
-              ></Pointer>
-            </Wanted>
-            <Sparta onClick={() => expHandler(3)}>
-              <Pointer
-                style={currentExp === 3 ? { backgroundColor: "#ffad60" } : {}}
-              ></Pointer>
-            </Sparta>
-            <University onClick={() => expHandler(4)}>
-              <Pointer
-                style={currentExp === 4 ? { backgroundColor: "#ff6060" } : {}}
-              ></Pointer>
-            </University>
-          </EXPbar>
-          <EXPannot>
-            {currentExp === 1 ? <NowItem /> : null}
-            {currentExp === 2 ? <WantedItem /> : null}
-            {currentExp === 3 ? <UniverseItem /> : null}
-            {currentExp === 4 ? <SpartaItem /> : null}
+          <EXPbar currentExp={currentExp} expHandler={expHandler} />
+          <EXPannot
+            style={{
+              transform: `translate(0%,${
+                EXP_ANNOT_TRANSLATE[currentExp - 1]
+              }%)`,
+            }}
+          >
+            {expItems.map(item => (
+              <div key={item.id}>
+                {currentExp === item.id && item.component}
+              </div>
+            ))}
           </EXPannot>
         </EXPContainer>
       </ContentWrap>
@@ -57,15 +56,23 @@ export const Etc = () => {
 };
 
 const ContentWrap = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
   & h2 {
+    margin: 0 auto;
+    padding-top: 5vh;
     font-size: 2rem;
-    margin-bottom: 10px;
-    padding-top: 10px;
+    width: 85vw;
+  }
+  & .title {
+    height: 20vh;
   }
 `;
 
 const EXPContainer = styled.div`
-  margin-top: 20vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -104,86 +111,6 @@ const EXPnav = styled.nav`
       border-radius: 0 0 15px 0;
     }
   }
-`;
-
-const EXPbar = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25%;
-`;
-
-const After = styled.div`
-  width: 15px;
-  height: 40%;
-  background-color: #6360ff;
-  border-radius: 10px 10px 0 0;
-  cursor: pointer;
-  & div {
-    border: 3px solid #6360ff;
-    transform: translate(-30%, 225%);
-    transition: 0.2s;
-    &:hover {
-      background-color: #6360ff;
-    }
-  }
-`;
-
-const Wanted = styled.div`
-  width: 15px;
-  height: 30%;
-  background-color: #60b2ff;
-  border-radius: 10px 10px 0 0;
-  cursor: pointer;
-  & div {
-    border: 3px solid #60b2ff;
-    transform: translate(-30%, 150%);
-    transition: 0.2s;
-    &:hover {
-      background-color: #60b2ff;
-    }
-  }
-`;
-
-const Sparta = styled.div`
-  width: 15px;
-  height: 20%;
-  background-color: #ffad60;
-  cursor: pointer;
-  & div {
-    border: 3px solid #ffad60;
-    transform: translate(-30%, 90%);
-    transition: 0.2s;
-    &:hover {
-      background-color: #ffad60;
-    }
-  }
-`;
-const University = styled.div`
-  width: 15px;
-  height: 10%;
-  background-color: #ff6060;
-  border-radius: 0 0 10px 10px;
-  cursor: pointer;
-  & div {
-    border: 3px solid #ff6060;
-    transform: translate(-30%, 15%);
-    transition: 0.2s;
-    &:hover {
-      background-color: #ff6060;
-    }
-  }
-`;
-
-const Pointer = styled.div`
-  position: absolute;
-  transform: translate(-30%, 250%);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: white;
-  border: 3px solid gold;
-  cursor: pointer;
 `;
 
 const EXPannot = styled.div`

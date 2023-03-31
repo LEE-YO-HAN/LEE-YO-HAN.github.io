@@ -79,6 +79,7 @@ const ContactAndChannel = styled.div`
   flex-direction: column;
   align-items: flex-end;
   font-size: 1.2rem;
+  width: 90%;
   animation: ContactFadeIn 2s ease-in-out;
   @keyframes ContactFadeIn {
     0% {

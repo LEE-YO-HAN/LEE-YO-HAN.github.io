@@ -61,6 +61,7 @@ const ContentWrap = styled.section`
   justify-content: flex-start;
   align-items: center;
   height: 100%;
+  overflow-y: hidden;
   & h2 {
     margin: 0 auto;
     padding-top: 5vh;
@@ -81,7 +82,7 @@ const EXPContainer = styled.div`
 
 const EXPnav = styled.nav`
   position: absolute;
-  transform: translate(-228%, 150%);
+  transform: translate(-230%, 150%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,7 +119,7 @@ const EXPannot = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 50%;
-
+  overflow-x: hidden;
   & li {
     list-style: none;
   }

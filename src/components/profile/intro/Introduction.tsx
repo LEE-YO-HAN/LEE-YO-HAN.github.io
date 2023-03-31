@@ -22,10 +22,11 @@ export const Introduction = () => {
 };
 
 const IntroductionWrap = styled.div`
-  margin: 20px 0 20px 50px;
+  margin: 20px 0 20px 5%;
   display: flex;
   flex-direction: column;
   font-size: 1.4rem;
+  width: 90%;
   animation: IntroductionFadeIn 2s ease-in-out;
   @keyframes IntroductionFadeIn {
     0% {

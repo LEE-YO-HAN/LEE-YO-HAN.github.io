@@ -2,11 +2,13 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { RecommandData } from "@/types/pages";
+import { useMobile } from "@/hooks/useMediaQuery";
 import axios from "axios";
 import Link from "next/link";
 
 export const RecommandList = ({ description }: { description: string }) => {
   const { asPath } = useRouter();
+  const mobile = useMobile();
   const categoryName = asPath.split("-")[0].replace("/", "");
 
   const BASE_URL =
@@ -19,7 +21,9 @@ export const RecommandList = ({ description }: { description: string }) => {
 
   const [recommandList, setRecommandList] = useState<RecommandData[]>([]);
 
-  const eachMarkdown = async (name: string) => {
+  const eachMarkdown = async (
+    name: string,
+  ): Promise<RecommandData | undefined> => {
     const url = `${BASE_URL}/${categoryName}/${name}`;
     const response = await axios.get(url, options);
     const content = Buffer.from(response.data.content, "base64").toString();
@@ -29,13 +33,13 @@ export const RecommandList = ({ description }: { description: string }) => {
       const dateRegex = /\d{4}-\d{2}-\d{2}/;
       const match = matters[4].match(dateRegex);
       if (match) {
-        const result = {
+        const result: RecommandData = {
           title: matters[1].split("title: ")[1].replaceAll(" ", "-"),
           description: matters[2].split("description: ")[1],
           category: matters[3].split("category: ")[1],
           date: match[0],
         };
-        setRecommandList(prev => prev.concat(result));
+        return result;
       }
     }
   };
@@ -43,12 +47,13 @@ export const RecommandList = ({ description }: { description: string }) => {
   const githubREST = async () => {
     const main = `${BASE_URL}/${categoryName}`;
     const mainUrl = await axios.get(main, options);
+    let recommandSet: RecommandData[] = [];
     for (const data of mainUrl.data) {
-      eachMarkdown(data.name);
+      let listitem = await eachMarkdown(data.name);
+      if (listitem) recommandSet.push(listitem);
     }
-    setRecommandList(prev =>
-      prev.sort((a, b) => +new Date(b.date) - +new Date(a.date)),
-    );
+    recommandSet.sort((a, b) => +new Date(b.date) - +new Date(a.date));
+    setRecommandList(recommandSet);
   };
 
   useEffect(() => {
@@ -76,7 +81,7 @@ export const RecommandList = ({ description }: { description: string }) => {
                     : item.description.slice(0, 50) + "..."}
                 </span>
               </Link>
-              <span>{item.date}</span>
+              <span style={mobile ? { display: "none" } : {}}>{item.date}</span>
             </li>
           );
         })}

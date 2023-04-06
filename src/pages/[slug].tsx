@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import path, { join } from "path";
+import { join } from "path";
 import fs from "fs/promises";
 import matter from "gray-matter";
 import { NextHead } from "@/components/post/NextHead";

@@ -6,21 +6,24 @@ import { Layout } from "@/components/layout/Layout";
 import { mainTheme, darkTheme } from "@/theme/theme";
 import { LoadingSpinner } from "@/util/LoadingSpinner";
 import { useLoading } from "@/hooks/useLoading";
+import { MdContext } from "@/context/MdContext";
 
 export default function App({ Component, pageProps }: AppProps) {
   const isLoadnig = useLoading();
   const { pathname } = useRouter();
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      {pathname !== "/profile" ? (
-        <Layout>
+    <MdContext>
+      <ThemeProvider theme={darkTheme}>
+        {pathname !== "/profile" ? (
+          <Layout>
+            <Component {...pageProps} />
+            {isLoadnig ? <LoadingSpinner /> : null}
+          </Layout>
+        ) : (
           <Component {...pageProps} />
-          {isLoadnig ? <LoadingSpinner /> : null}
-        </Layout>
-      ) : (
-        <Component {...pageProps} />
-      )}
-    </ThemeProvider>
+        )}
+      </ThemeProvider>
+    </MdContext>
   );
 }

@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import Image from "next/image";
 import { Pagination } from "./Pagination";
+import { PostSearch } from "./PostSearch";
 import { useState } from "react";
-import { MarkDownProps } from "@/types/pages";
+import { MarkDownProps, RecommandData, MarkDownList } from "@/types/pages";
 import { PostInfiScroll } from "./PostInfiScroll";
 import { useMobile } from "@/hooks/useMediaQuery";
 import Link from "next/link";
 
 interface Props {
-  posts: MarkDownProps[];
+  posts: MarkDownList[];
 }
 
 export const PostGrid = ({ posts }: Props) => {
@@ -17,8 +18,8 @@ export const PostGrid = ({ posts }: Props) => {
   const dateHandler = (date: string) => {
     return Number(new Date(date));
   };
-  const postlist: MarkDownProps[] = posts.sort(
-    (a: MarkDownProps, b: MarkDownProps) =>
+  const postlist: MarkDownList[] = posts.sort(
+    (a: MarkDownList, b: MarkDownList) =>
       dateHandler(b.date) - dateHandler(a.date),
   );
 
@@ -40,10 +41,13 @@ export const PostGrid = ({ posts }: Props) => {
         <PostInfiScroll postlist={postlist} />
       ) : (
         <GridContainer>
-          <CountPost>전체 글 ({posts.length})</CountPost>
+          <CountPost>
+            <span>전체 글 ({posts.length})</span>
+            <PostSearch />
+          </CountPost>
           <GridBox>
             {postlist.map((item, index) => {
-              const { title, description, category, date, content } = item;
+              const { title, description, category, date } = item;
               if (pageIndex[0] <= index && index <= pageIndex[5]) {
                 return (
                   <Link key={index} href={`/${title.replaceAll(" ", "-")}`}>
@@ -89,11 +93,23 @@ const GridContainer = styled.div`
   width: 660px;
 `;
 
-const CountPost = styled.p`
+const CountPost = styled.div`
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   color: ${props => props.theme.componentShadow};
   font-weight: bold;
   width: 660px;
+
+  & svg {
+    font-size: 1.3rem;
+    cursor: pointer;
+    &:hover {
+      color: ${props => props.theme.componentHover};
+    }
+  }
 `;
 
 const GridBox = styled.ul`

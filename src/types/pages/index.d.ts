@@ -12,3 +12,5 @@ export interface RecommandData {
   category: string;
   date: string;
 }
+
+export type MarkDownList = MarkDownProps | RecommandData;

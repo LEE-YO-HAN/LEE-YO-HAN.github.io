@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MarkDownProps } from "@/types/pages";
+import { MarkDownProps, MarkDownList } from "@/types/pages";
 import { useState, useRef } from "react";
 import { LoadingSpinner } from "@/util/LoadingSpinner";
 import { SkeletonCard } from "./SkeletonCard";
@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface Props {
-  postlist: MarkDownProps[];
+  postlist: MarkDownList[];
 }
 
 export const PostInfiScroll = ({ postlist }: Props) => {
@@ -22,7 +22,7 @@ export const PostInfiScroll = ({ postlist }: Props) => {
     return index;
   });
 
-  const [fetchPost, setFetchPost] = useState<MarkDownProps[]>([]);
+  const [fetchPost, setFetchPost] = useState<MarkDownList[]>([]);
 
   const [hasNextPage, setHasNextPage] = useState(true);
   const fatchData = (pageNum: number) => {

@@ -6,6 +6,7 @@ import { useState } from "react";
 import { MarkDownProps, RecommandData, MarkDownList } from "@/types/pages";
 import { PostInfiScroll } from "./PostInfiScroll";
 import { useMobile } from "@/hooks/useMediaQuery";
+import { useRouter } from "next/router";
 import Link from "next/link";
 
 interface Props {
@@ -35,6 +36,11 @@ export const PostGrid = ({ posts }: Props) => {
   let pageIndex: number[] = [];
   pageIndex = indexArray.map(item => item + (activePage - 1) * pagePerItems);
 
+  const router = useRouter();
+  const { searchItem } = router.query;
+  const pathname = router.pathname;
+  const listName =
+    pathname === "/search" ? `"${searchItem}" 관련 글` : "전체 글";
   return (
     <>
       {mobile ? (
@@ -42,7 +48,9 @@ export const PostGrid = ({ posts }: Props) => {
       ) : (
         <GridContainer>
           <CountPost>
-            <span>전체 글 ({posts.length})</span>
+            <span>
+              {listName} ({posts.length})
+            </span>
             <PostSearch />
           </CountPost>
           <GridBox>

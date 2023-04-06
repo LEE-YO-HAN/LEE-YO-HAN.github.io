@@ -22,7 +22,7 @@ export default function Search() {
   const searchFilter = (list: RecommandData[], searchItem: string) => {
     if (searchItem) {
       const newList = list.filter(item =>
-        item.description.includes(searchItem),
+        item.description.toLowerCase().includes(searchItem.toLowerCase()),
       );
       return newList;
     }

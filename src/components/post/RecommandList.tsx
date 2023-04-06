@@ -11,8 +11,7 @@ export const RecommandList = ({ description }: { description: string }) => {
   const mobile = useMobile();
   const categoryName = asPath.split("-")[0].replace("/", "");
 
-  const BASE_URL =
-    "https://api.github.com/repos/LEE-YO-HAN/LEE-YO-HAN.github.io/contents/src/posting";
+  const BASE_URL = process.env.NEXT_PUBLIC_GHB_URL;
   const options = {
     headers: {
       "Content-Type": "application/json",

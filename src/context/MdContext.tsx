@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { MarkDownProps } from "@/types/pages";
 import { ProviderProps, CreateContext } from ".";
 import { RecommandData } from "@/types/pages";
 import axios from "axios";
@@ -28,8 +27,7 @@ export const useMdContextUpdate = () => {
 export const MdContext = ({ children }: ProviderProps) => {
   const [posts, setPosts] = useState<RecommandData[]>([]);
 
-  const BASE_URL =
-    "https://api.github.com/repos/LEE-YO-HAN/LEE-YO-HAN.github.io/contents/src/posting";
+  const BASE_URL = process.env.NEXT_PUBLIC_GHB_URL;
   const options = {
     headers: {
       "Content-Type": "application/json",

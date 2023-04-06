@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Pagination } from "./Pagination";
 import { PostSearch } from "./PostSearch";
 import { useState } from "react";
-import { MarkDownProps, RecommandData, MarkDownList } from "@/types/pages";
+import { MarkDownList } from "@/types/pages";
 import { PostInfiScroll } from "./PostInfiScroll";
 import { useMobile } from "@/hooks/useMediaQuery";
 import { useRouter } from "next/router";
@@ -61,7 +61,6 @@ export const PostGrid = ({ posts }: Props) => {
                   <Link key={index} href={`/${title.replaceAll(" ", "-")}`}>
                     <Card>
                       <Image
-                        // src={require(`../../images/${category.toUpperCase()}.png`)}
                         src={`/images/cards/${category.toUpperCase()}.png`}
                         alt="카테고리 이미지"
                         width={200}

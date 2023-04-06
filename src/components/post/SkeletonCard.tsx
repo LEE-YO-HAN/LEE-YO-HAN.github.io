@@ -5,7 +5,7 @@ export const SkeletonCard = () => {
 
   return (
     <>
-      {skeletonArray.map((item, index) => (
+      {skeletonArray.map((_, index) => (
         <Container key={index}>
           <ImageBox />
           <ContentBody>

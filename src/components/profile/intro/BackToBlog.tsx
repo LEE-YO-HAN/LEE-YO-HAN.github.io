@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { TfiControlBackward } from "react-icons/Tfi";
+import { TfiControlBackward } from "react-icons/tfi";
 
 export const BackToBlog = () => {
   return (

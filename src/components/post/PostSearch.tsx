@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { FaSearch, FaWindowClose } from "react-icons/fa";
 import React, { useState, useRef } from "react";
+import { FaSearch, FaWindowClose } from "react-icons/fa";
 import { useRouter } from "next/router";
 
 export const PostSearch = () => {

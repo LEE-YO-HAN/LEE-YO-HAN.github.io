@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MarkDownProps, MarkDownList } from "@/types/pages";
+import { MarkDownList } from "@/types/pages";
 import { useState, useRef } from "react";
 import { LoadingSpinner } from "@/util/LoadingSpinner";
 import { SkeletonCard } from "./SkeletonCard";

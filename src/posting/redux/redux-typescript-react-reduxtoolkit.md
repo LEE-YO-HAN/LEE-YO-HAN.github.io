@@ -40,7 +40,6 @@ dispatch 함수와 useSelector 실행을 위해, Redux hook을 따로 설정해�
 ```typescript
 // useRedux.ts
 
-import { useDispatch, useSelector } from "react-redux";
 import type { TypedUseSelectorHook } from "react-redux";
 import type { RootState, AppDispatch } from "../redux/store"; // store에서 미리 설정해준 state와 dispatch type
 

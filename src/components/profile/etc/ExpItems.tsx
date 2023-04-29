@@ -1,23 +1,45 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-const listMaker = (link: string, body: string) => {
+const listMaker = (
+  link: string,
+  body: string,
+  sub?: string,
+  github?: string,
+) => {
   return {
     link,
     body,
+    sub,
+    github,
   };
 };
 
 export const NowItem = () => {
   const LIST = [
-    listMaker("https://lee-yo-han.github.io/", "GITHUB Blog 제작"),
     listMaker(
-      "https://github.com/ToyCode-org/ToyCode",
-      "ToyCode - 간단한 기능 복습",
+      "https://www.na-hon-bob.shop/",
+      "나혼밥 레시피",
+      "혼자 사는 사람들의 레시피 공유 사이트",
+      "https://github.com/ToyCode-org/na-hon-bob-fe",
     ),
     listMaker(
+      "https://lee-yo-han.github.io/",
+      "GITHUB Blog",
+      "개인 블로그 개발",
+      "https://github.com/LEE-YO-HAN/LEE-YO-HAN.github.io",
+    ),
+    listMaker(
+      "https://toy-code.vercel.app/",
+      "ToyCode",
+      "간단한 기능 복습",
+      "https://github.com/ToyCode-org/ToyCode",
+    ),
+    listMaker(
+      "https://marketplace.visualstudio.com/items?itemName=LEE-YO-HAN.react-redux-optional-snippets",
+      "코드스니펫",
+      "반복되는 코드를 최소화하기 위한 간단한 스니펫 제작",
       "https://github.com/ToyCode-org/optional-React-Redux-snippet",
-      "코드스니펫 제작 - 반복되는 코드를 최소화하기 위한 간단한 스니펫 제작",
     ),
   ];
   return (
@@ -25,18 +47,38 @@ export const NowItem = () => {
       <h2>Now Doing</h2>
       <p>개인 프로젝트</p>
       {LIST.map((item, index) => {
-        const { link, body } = item;
+        const { link, body, sub, github } = item;
         return (
-          <li key={index}>
-            <Link href={link} target={"_blank"}>
+          <ProjectList key={index}>
+            <Link href={link} target="_black">
               {body}
             </Link>
-          </li>
+            <span> - {sub}</span>
+            <span>
+              -{" "}
+              <Link
+                href={github as string}
+                target="_black"
+                className="githubLink"
+              >
+                github Link
+              </Link>
+            </span>
+          </ProjectList>
         );
       })}
     </Content>
   );
 };
+const ProjectList = styled.li`
+  display: flex;
+  flex-direction: column;
+
+  .githubLink {
+    color: black;
+    font-size: 1rem;
+  }
+`;
 
 export const WantedItem = () => {
   const LIST = [

@@ -115,6 +115,10 @@ res.cookie("cookieName", "cookieValue", {
 });
 ```
 
+secure 속성을 사용하기 위한 https 설정은 아래를 참고할 수 있다.
+
+### [Localhost 환경에서 https 적용하기](https://lee-yo-han.github.io/nestjs-localhost-https)
+
 그 결과 쿠키를 브라우저에서 잘 받는 것을 볼 수 있었다.
 
 ![image](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FJwJs6%2Fbtr9SkupB08%2FbXf0Hf9swCaY3uL8cxMh7K%2Fimg.png)

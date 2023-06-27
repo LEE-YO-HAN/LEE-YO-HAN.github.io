@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { BsCaretLeftFill, BsCaretRightFill } from "react-icons/bs";
 
 interface Props {
   activePage: number;
@@ -66,7 +65,17 @@ export const Pagination = ({
         }}
         className={activePage === 1 ? "noPrev" : ""}
       >
-        <BsCaretLeftFill />
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 16 16"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"></path>
+        </svg>
       </li>
       {pagingArray.map((item, index) => {
         if (
@@ -95,7 +104,17 @@ export const Pagination = ({
         }}
         className={activePage === pagingArray.length ? "noNext" : ""}
       >
-        <BsCaretRightFill />
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 16 16"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path>
+        </svg>
       </li>
     </PagingUl>
   );

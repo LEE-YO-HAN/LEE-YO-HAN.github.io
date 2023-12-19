@@ -11,7 +11,11 @@ export const Profile = () => {
   return (
     <ProfileArea style={mobile ? { display: "none" } : {}}>
       <ProfileWrap>
-        <Link href={"/profile"}>
+        <Link
+          href={"https://portfolio-sigma-wheat-63.vercel.app/"}
+          target="_blank"
+        >
+          {/* <Link href={"/profile"}> 프로필 -> 포트폴리오 사이트로 변경 */}
           <Image
             src={"/images/profileImage/cat.png"}
             alt="profile"

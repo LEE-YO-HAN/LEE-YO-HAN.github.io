@@ -18,7 +18,7 @@ export default function Sw({ posts }: { posts: MarkDownProps[] }) {
 export const getStaticProps: GetStaticProps<{
   posts: MarkDownProps[];
 }> = async () => {
-  const dirPath = join(process.cwd() + "/src" + "/posting", "sw");
+  const dirPath = join(process.cwd() + "/src" + "/posting", "정보처리기사");
   const mdFiles = await getMdFiles(dirPath);
   const posts: MarkDownProps[] = [];
   for (const filePath of mdFiles) {

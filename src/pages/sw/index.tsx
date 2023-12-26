@@ -9,7 +9,7 @@ import { CategoryHead } from "@/components/layout/CategoryHead";
 export default function Sw({ posts }: { posts: MarkDownProps[] }) {
   return (
     <>
-      <CategoryHead content="정보처리기사" backgroundImage="정보처리기사" />
+      <CategoryHead content="정보처리기사" backgroundImage="sw" />
       <PostGrid posts={posts} />
     </>
   );
@@ -18,7 +18,7 @@ export default function Sw({ posts }: { posts: MarkDownProps[] }) {
 export const getStaticProps: GetStaticProps<{
   posts: MarkDownProps[];
 }> = async () => {
-  const dirPath = join(process.cwd() + "/src" + "/posting", "정보처리기사");
+  const dirPath = join(process.cwd() + "/src" + "/posting", "sw");
   const mdFiles = await getMdFiles(dirPath);
   const posts: MarkDownProps[] = [];
   for (const filePath of mdFiles) {

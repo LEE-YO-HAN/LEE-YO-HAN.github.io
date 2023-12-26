@@ -39,10 +39,10 @@ export const CategoryNav = () => {
           return (
             <div key={index}>
               <CategoryName>{NameList[index]}</CategoryName>
-              {item.map((item, index) => {
-                const { name, cateUrl } = item;
+              {item.map((item1, index1) => {
+                const { name, cateUrl } = item1;
                 return (
-                  <ListItem key={index}>
+                  <ListItem key={index1}>
                     <Link
                       href={`/${cateUrl}`}
                       style={

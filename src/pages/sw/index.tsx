@@ -6,10 +6,10 @@ import { PostGrid } from "@/components/post/PostGrid";
 import { MarkDownProps } from "@/types/pages";
 import { CategoryHead } from "@/components/layout/CategoryHead";
 
-export default function CS({ posts }: { posts: MarkDownProps[] }) {
+export default function Sw({ posts }: { posts: MarkDownProps[] }) {
   return (
     <>
-      <CategoryHead content="CS-ComputerScience" backgroundImage="CS" />
+      <CategoryHead content="정보처리기사" backgroundImage="CS" />
       <PostGrid posts={posts} />
     </>
   );
@@ -18,7 +18,7 @@ export default function CS({ posts }: { posts: MarkDownProps[] }) {
 export const getStaticProps: GetStaticProps<{
   posts: MarkDownProps[];
 }> = async () => {
-  const dirPath = join(process.cwd() + "/src" + "/posting", "cs");
+  const dirPath = join(process.cwd() + "/src" + "/posting", "sw");
   const mdFiles = await getMdFiles(dirPath);
   const posts: MarkDownProps[] = [];
   for (const filePath of mdFiles) {

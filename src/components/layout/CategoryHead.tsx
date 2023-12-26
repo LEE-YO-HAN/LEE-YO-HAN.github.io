@@ -13,7 +13,6 @@ export const CategoryHead = ({ content, backgroundImage }: Props) => {
       <meta name="description" content="developer's blog" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta httpEquiv="subject" content={content} />
-      {/* <meta httpEquiv="subject" content="CS-ComputerScience" /> */}
       <meta property="og:title" content="Rain Sugar BangBang" />
       <meta property="og:description" content="welcome to developer's blog" />
       <meta

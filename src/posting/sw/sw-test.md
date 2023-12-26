@@ -1,7 +1,7 @@
 ---
 title: sw test
 description: 정보처리기사 테스트
-category: 정보처리기사
+category: sw
 date: "2023-12-27"
 ---
 

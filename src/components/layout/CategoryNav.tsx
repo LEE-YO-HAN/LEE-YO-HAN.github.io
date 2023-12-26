@@ -5,12 +5,11 @@ import Link from "next/link";
 export const CategoryNav = () => {
   const router = useRouter();
 
-  const getList = (category: string) => {
-    let cateUrl =
-      category === "Simple Memo" ? "github" : category.toLowerCase();
+  const getList = (category: string, url?: string) => {
+    let categoryUrl = url || category.toLowerCase();
     let navData = {
       name: category,
-      cateUrl: cateUrl,
+      cateUrl: categoryUrl,
     };
     return navData;
   };
@@ -25,8 +24,8 @@ export const CategoryNav = () => {
     getList("Nextjs"),
   ];
   const BE = [getList("Nestjs")];
-  const CS = [getList("정보처리기사")];
-  const ETC = [getList("Simple Memo")];
+  const CS = [getList("정보처리기사", "sw")];
+  const ETC = [getList("Simple Memo", "gtihub")];
 
   const CATEGORYS = [FE, BE, CS, ETC];
   const NameList = ["FE", "BE", "CS", "ETC"];

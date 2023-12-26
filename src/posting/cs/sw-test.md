@@ -1,15 +1,20 @@
 ---
 title: sw test
 description: 정보처리기사 테스트
-category: ㅊㄴ
+category: cs
 date: "2023-12-27"
 ---
 
 # TEST
+
 # TEST
+
 # TEST
+
 # TEST
+
 # TEST
+
 # TEST
 
 ```typescript

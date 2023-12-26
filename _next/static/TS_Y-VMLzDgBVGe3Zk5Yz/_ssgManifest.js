@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002F","\u002F[slug]","\u002Fcss","\u002Fgithub","\u002Fhtml","\u002Fjavascript","\u002Fnestjs","\u002Fnextjs","\u002Freact","\u002Fredux","\u002Fsw","\u002Ftypescript"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

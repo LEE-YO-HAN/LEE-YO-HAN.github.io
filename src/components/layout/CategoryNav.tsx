@@ -6,10 +6,9 @@ export const CategoryNav = () => {
   const router = useRouter();
 
   const getList = (category: string, url?: string) => {
-    let categoryUrl = url || category.toLowerCase();
     let navData = {
       name: category,
-      cateUrl: categoryUrl,
+      cateUrl: url || category.toLowerCase(),
     };
     return navData;
   };

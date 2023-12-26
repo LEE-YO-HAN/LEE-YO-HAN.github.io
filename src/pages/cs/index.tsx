@@ -6,10 +6,10 @@ import { PostGrid } from "@/components/post/PostGrid";
 import { MarkDownProps } from "@/types/pages";
 import { CategoryHead } from "@/components/layout/CategoryHead";
 
-export default function Redux({ posts }: { posts: MarkDownProps[] }) {
+export default function CS({ posts }: { posts: MarkDownProps[] }) {
   return (
     <>
-      <CategoryHead content="redux" backgroundImage="REDUX" />
+      <CategoryHead content="CS-ComputerScience" backgroundImage="CS" />
       <PostGrid posts={posts} />
     </>
   );
@@ -18,7 +18,7 @@ export default function Redux({ posts }: { posts: MarkDownProps[] }) {
 export const getStaticProps: GetStaticProps<{
   posts: MarkDownProps[];
 }> = async () => {
-  const dirPath = join(process.cwd() + "/src" + "/posting", "redux");
+  const dirPath = join(process.cwd() + "/src" + "/posting", "cs");
   const mdFiles = await getMdFiles(dirPath);
   const posts: MarkDownProps[] = [];
   for (const filePath of mdFiles) {

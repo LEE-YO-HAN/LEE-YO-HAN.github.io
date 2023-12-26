@@ -11,6 +11,7 @@ export const SideNav = () => {
 };
 
 const SideArea = styled.aside`
+  padding: 20px 0;
   position: relative;
   top: 100px;
   right: 0;
@@ -20,7 +21,8 @@ const SideArea = styled.aside`
   justify-content: center;
   align-items: flex-start;
   width: 200px;
-  height: 350px;
+  /* height: 350px; */
+  height: max-content;
   color: ${props => props.theme.componentFontColor};
   background-color: ${props => props.theme.componentBackground};
   border-radius: 10px;

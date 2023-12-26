@@ -15,8 +15,7 @@ export const CategoryNav = () => {
     return navData;
   };
 
-  const CATEGORYS = [
-    getList("Simple Memo"),
+  const FE = [
     getList("HTML"),
     getList("CSS"),
     getList("JavaScript"),
@@ -24,28 +23,41 @@ export const CategoryNav = () => {
     getList("Redux"),
     getList("React"),
     getList("Nextjs"),
-    getList("Nestjs"),
   ];
+  const BE = [getList("Nestjs")];
+  const CS = [getList("정보처리기사")];
+  const ETC = [getList("Simple Memo")];
+
+  const CATEGORYS = [FE, BE, CS, ETC];
+  const NameList = ["FE", "BE", "CS", "ETC"];
+
   return (
     <CategoryNavWrap>
       <NavList>
-        <li>Category</li>
+        <p>Category</p>
         {CATEGORYS.map((item, index) => {
-          const { name, cateUrl } = item;
           return (
-            <ListItem key={index}>
-              <Link
-                href={`/${cateUrl}`}
-                style={
-                  `/${cateUrl}` === router.pathname ||
-                  `/${cateUrl}` === router.asPath.split("-")[0]
-                    ? { color: "white", fontWeight: "bold" }
-                    : {}
-                }
-              >
-                {name}
-              </Link>
-            </ListItem>
+            <div key={index}>
+              <CategoryName>{NameList[index]}</CategoryName>
+              {item.map((item, index) => {
+                const { name, cateUrl } = item;
+                return (
+                  <ListItem key={index}>
+                    <Link
+                      href={`/${cateUrl}`}
+                      style={
+                        `/${cateUrl}` === router.pathname ||
+                        `/${cateUrl}` === router.asPath.split("-")[0]
+                          ? { color: "white", fontWeight: "bold" }
+                          : {}
+                      }
+                    >
+                      {name}
+                    </Link>
+                  </ListItem>
+                );
+              })}
+            </div>
           );
         })}
       </NavList>
@@ -60,12 +72,20 @@ const CategoryNavWrap = styled.nav`
 const NavList = styled.ul`
   list-style: none;
   transition: 0.3s;
-  & li:first-child {
+  & p:first-child {
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 1.2rem;
     cursor: auto;
   }
+`;
+
+const CategoryName = styled.p`
+  margin: 20px 0 10px 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: ${props => props.theme.componentAccentFontColor};
+  cursor: auto;
 `;
 
 const ListItem = styled.li`

@@ -9,6 +9,7 @@ export const mainTheme = {
   // component block
   componentFontColor: "white",
   componentSubFontColor: "#dbdffd",
+  componentAccentFontColor: "lightgray",
   componentBackground: "#8a96ff",
   componentShadow: "#5d6dff",
   componentHover: "#292846",
@@ -39,6 +40,7 @@ export const darkTheme = {
   // component block
   componentFontColor: "#ffec43",
   componentSubFontColor: "lightgray",
+  componentAccentFontColor: "orange",
   componentBackground: "black",
   componentShadow: "gold",
   componentHover: "white",

@@ -9,7 +9,7 @@ import { CategoryHead } from "@/components/layout/CategoryHead";
 export default function Sw({ posts }: { posts: MarkDownProps[] }) {
   return (
     <>
-      <CategoryHead content="정보처리기사" backgroundImage="CS" />
+      <CategoryHead content="정보처리기사" backgroundImage="정보처리기사" />
       <PostGrid posts={posts} />
     </>
   );

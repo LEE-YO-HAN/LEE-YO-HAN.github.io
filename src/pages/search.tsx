@@ -40,6 +40,7 @@ export default function Search() {
       <NextHead
         title={"title"}
         description={"description"}
+        keyword="keyword"
         category={"category"}
       />
       <PostGrid posts={searchList} />

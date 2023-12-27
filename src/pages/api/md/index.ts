@@ -43,6 +43,7 @@ export const getMdList = async () => {
       title: data.title,
       description: data.description,
       category: data.category,
+      keyword: data.keyword,
       date: data.date,
       content,
     });

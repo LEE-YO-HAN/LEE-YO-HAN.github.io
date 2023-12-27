@@ -3,10 +3,10 @@ import { join } from "path";
 import fs from "fs/promises";
 import matter from "gray-matter";
 import { PostGrid } from "@/components/post/PostGrid";
-import { MarkDownProps } from "@/types/pages";
+import { PostGridProps } from "@/types/pages";
 import { CategoryHead } from "@/components/layout/CategoryHead";
 
-export default function TypeScript({ posts }: { posts: MarkDownProps[] }) {
+export default function TypeScript({ posts }: { posts: PostGridProps[] }) {
   return (
     <>
       <CategoryHead content="typescript" backgroundImage="TYPESCRIPT" />
@@ -16,11 +16,11 @@ export default function TypeScript({ posts }: { posts: MarkDownProps[] }) {
 }
 
 export const getStaticProps: GetStaticProps<{
-  posts: MarkDownProps[];
+  posts: PostGridProps[];
 }> = async () => {
   const dirPath = join(process.cwd() + "/src" + "/posting", "typescript");
   const mdFiles = await getMdFiles(dirPath);
-  const posts: MarkDownProps[] = [];
+  const posts: PostGridProps[] = [];
   for (const filePath of mdFiles) {
     const fileContents = await fs.readFile(filePath, "utf8");
     const { data, content } = matter(fileContents);

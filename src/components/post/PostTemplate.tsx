@@ -11,6 +11,7 @@ export const PostTemplate = ({
   title,
   description,
   category,
+  keyword,
   date,
   content,
 }: MarkDownProps) => {

@@ -4,15 +4,16 @@ interface Props {
   title: string;
   description: string;
   category: string;
+  keyword: string;
 }
 
-export const NextHead = ({ title, description, category }: Props) => {
+export const NextHead = ({ title, description, keyword, category }: Props) => {
   return (
     <Head>
       <title>Rain Sugar BangBang Front-End</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content={`${description}`} />
-      <meta name="keywords" content={`${category}, ${title}`} />
+      <meta name="keywords" content={`${category}, ${title}, ${keyword}`} />
       <meta httpEquiv="title" content={`${description}`} />
       <meta httpEquiv="subject" content={`${category}`} />
       <meta property="og:title" content={`${title}`} />

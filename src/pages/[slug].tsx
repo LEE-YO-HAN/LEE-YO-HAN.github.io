@@ -4,30 +4,30 @@ import fs from "fs/promises";
 import matter from "gray-matter";
 import { NextHead } from "@/components/post/NextHead";
 import { PostTemplate } from "@/components/post/PostTemplate";
-
-interface Props {
-  title: string;
-  description: string;
-  category: string;
-  date: string;
-  content: string;
-}
+import { MarkDownProps } from "@/types/pages";
 
 export default function Posts({
   title,
   description,
   category,
+  keyword,
   date,
   content,
-}: Props) {
+}: MarkDownProps) {
   return (
     <>
-      <NextHead title={title} description={description} category={category} />
+      <NextHead
+        title={title}
+        description={description}
+        keyword={keyword}
+        category={category}
+      />
       <PostTemplate
         title={title}
         description={description}
         category={category}
         date={date}
+        keyword={keyword}
         content={content}
       />
     </>
@@ -60,7 +60,9 @@ async function getMdFiles(dirPath: string): Promise<string[]> {
   return mdFiles;
 }
 
-export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<MarkDownProps> = async ({
+  params,
+}) => {
   const slug = params?.slug as string;
   const filePath = join(
     process.cwd() + "/src" + "/posting",
@@ -74,6 +76,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
       title: data.title,
       description: data.description,
       category: data.category,
+      keyword: data.keyword,
       date: data.date,
       content,
     },

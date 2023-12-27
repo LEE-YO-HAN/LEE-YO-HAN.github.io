@@ -42,10 +42,12 @@ export const getStaticProps: GetStaticProps<{
   for (const filePath of mdFiles) {
     const fileContents = await fs.readFile(filePath, "utf8");
     const { data, content } = matter(fileContents);
+
     posts.push({
       title: data.title,
       description: data.description,
       category: data.category,
+      keyword: data.keyword,
       date: data.date,
       content,
     });

@@ -2,6 +2,7 @@
 title: github github api get repo data
 description: GithubAPI를 이용한 repository 내 Markdown 파일 정보 불러오기
 category: github
+keyword: github, api
 date: "2023-03-13"
 ---
 

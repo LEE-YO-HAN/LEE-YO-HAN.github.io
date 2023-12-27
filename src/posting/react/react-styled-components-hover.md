@@ -2,6 +2,7 @@
 title: react styled components hover
 description: react에 styled-components를 이용해 hover 적용하기
 category: react
+keyword: react, hover
 date: "2023-03-03"
 ---
 

@@ -2,6 +2,7 @@
 title: react submit prevent default
 description: form 태그에서 submit 이벤트 방지하기
 category: react
+keyword: form이벤트, submit 방지
 date: "2023-03-03"
 ---
 

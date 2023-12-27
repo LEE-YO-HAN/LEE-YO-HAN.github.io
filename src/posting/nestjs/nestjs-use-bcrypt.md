@@ -2,6 +2,7 @@
 title: nestjs use bcrypt
 description: Nestjs에서 bcrypt 사용하기
 category: nestjs
+keyword: Nestjs, bcrypt
 date: "2023-04-13"
 ---
 

@@ -2,6 +2,7 @@
 title: javascript how to use promise.all
 description: Promise.all()은 언제 쓰고 왜 쓰나요? - 여러 비동기 요청 한 번에 처리하기
 category: javascript
+keyword: javascript, Promise.all
 date: "2023-05-19"
 ---
 

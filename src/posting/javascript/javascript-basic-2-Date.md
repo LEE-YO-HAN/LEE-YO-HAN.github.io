@@ -2,6 +2,7 @@
 title: javascript basic 2 date
 description: javascript 기초 2 날짜다루기
 category: javascript
+keyword: javascript, date
 date: "2023-03-06"
 ---
 

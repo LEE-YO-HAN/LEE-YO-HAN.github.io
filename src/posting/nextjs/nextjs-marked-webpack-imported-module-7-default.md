@@ -2,6 +2,7 @@
 title: nextjs marked webpack imported module 7 default
 description: WEBPACK_IMPORTED_MODULE_7_default is not a function 에러 해결
 category: nextjs
+keyword: WEBPACK_IMPORTED_MODULE_7_default is not a function ERROR
 date: "2023-03-18"
 ---
 

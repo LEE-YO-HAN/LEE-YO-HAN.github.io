@@ -2,6 +2,7 @@
 title: nextjs pages api dir unsupported
 description: NextJS에서 API 디렉토리가 사용되지 않는 이유
 category: nextjs
+keyword: nextjs api 디렉토리
 date: "2023-04-30"
 ---
 

@@ -2,6 +2,7 @@
 title: html meta tag
 description: SEO(검색엔진 최적화)를 위한 HTML의 meta tag 간단 정리
 category: html
+keyword: html, SEO
 date: "2023-03-09"
 ---
 

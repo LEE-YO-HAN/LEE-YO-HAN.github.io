@@ -2,6 +2,7 @@
 title: nextjs prop classname did not match
 description: prop `classname` did not match. with styled-components
 category: nextjs
+keyword: prop 'classname' did not match. with styled-components
 date: "2023-04-30"
 ---
 

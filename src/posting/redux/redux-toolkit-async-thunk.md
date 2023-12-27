@@ -2,6 +2,7 @@
 title: redux toolkit async thunk
 description: React reduxToolkit과 미들웨어 AsyncThunk 사용해보기
 category: redux
+keyword: redux, 미들웨어
 date: "2023-03-04"
 ---
 

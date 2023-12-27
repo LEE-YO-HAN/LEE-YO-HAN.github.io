@@ -2,6 +2,7 @@
 title: github token expired
 description: Github Token을 이용한 GithubAPI 사용
 category: github
+keyword: github, api
 date: "2023-03-31"
 ---
 

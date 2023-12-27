@@ -2,6 +2,7 @@
 title: react modal non library
 description: 라이브러리 없이 React Modal 만들기
 category: react
+keyword: react, modal
 date: "2023-03-03"
 ---
 

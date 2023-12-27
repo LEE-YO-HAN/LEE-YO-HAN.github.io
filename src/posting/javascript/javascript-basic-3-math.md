@@ -2,6 +2,7 @@
 title: javascript basic 3 math
 description: javascript 기초 3 Math 다뤄보기
 category: javascript
+keyword: javascript, Math
 date: "2023-03-06"
 ---
 

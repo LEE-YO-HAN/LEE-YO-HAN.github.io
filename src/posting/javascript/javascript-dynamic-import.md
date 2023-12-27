@@ -2,6 +2,7 @@
 title: javascript dynamic import
 description: Dynamic import를 사용해 동적으로 모듈 가져오기
 category: javascript
+keyword: javascript, Dynamic import
 date: "2023-03-18"
 ---
 

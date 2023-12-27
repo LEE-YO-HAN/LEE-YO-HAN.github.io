@@ -2,6 +2,7 @@
 title: nestjs custom repository
 description: Entityrepository()를 대신한 Repository 생성
 category: nestjs
+keyword: nestjs, repository
 date: "2023-03-04"
 ---
 

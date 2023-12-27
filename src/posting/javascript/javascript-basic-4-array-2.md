@@ -2,6 +2,7 @@
 title: javascript basic 4 array 2
 description: javascript 기초 4 배열 다루기 - 2
 category: javascript
+keyword: javascript, 배열
 date: "2023-03-06"
 ---
 

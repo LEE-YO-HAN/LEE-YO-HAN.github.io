@@ -2,6 +2,7 @@
 title: github git cmd
 description: 깃 명령어 모음
 category: github
+keyword: github, 명령어
 date: "2023-03-09"
 ---
 

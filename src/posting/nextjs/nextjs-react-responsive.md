@@ -2,6 +2,7 @@
 title: nextjs react responsive
 description: nextjs에 react responsive 적용하기
 category: nextjs
+keyword: responseive, UI
 date: "2023-03-04"
 ---
 

@@ -2,6 +2,7 @@
 title: react media query
 description: React mediaQuery 사용법
 category: react
+keyword: react, mediaQuery
 date: "2023-03-03"
 ---
 

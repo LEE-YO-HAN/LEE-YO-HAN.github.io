@@ -2,6 +2,7 @@
 title: react component lifecycle
 description: React 함수형 컴포넌트와 Class형 컴포넌트 생명주기
 category: react
+keyword: react, 함수형 컴포넌트, Class형 컴포넌트
 date: "2023-03-23"
 ---
 

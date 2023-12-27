@@ -2,6 +2,7 @@
 title: react usememo
 description: useMemo를 이용한 컴포넌트 최적화하기
 category: react
+keyword: useMemo, 컴포넌트, 최적화
 date: "2023-03-16"
 ---
 

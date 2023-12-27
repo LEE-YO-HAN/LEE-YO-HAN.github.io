@@ -2,6 +2,7 @@
 title: javascript jest test code
 description: jest를 통한 테스트코드 사용
 category: javascript
+keyword: javascript, 테스트코드
 date: "2023-03-18"
 ---
 

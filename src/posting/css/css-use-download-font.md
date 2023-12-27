@@ -2,6 +2,7 @@
 title: css use download font
 description: CSS - 배포 사이트에 다운로드 폰트 적용하기
 category: css
+keyword: css, 폰트 적용
 date: "2023-03-31"
 ---
 

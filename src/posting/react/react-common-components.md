@@ -2,6 +2,7 @@
 title: react common components
 description: React 공통 컴포넌트 제작 (input, button)
 category: react
+keyword: react, 공통 컴포넌트
 date: "2023-04-13"
 ---
 

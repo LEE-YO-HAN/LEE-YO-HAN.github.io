@@ -2,6 +2,7 @@
 title: javascript basic 1 num str
 description: javascript 기초 1 숫자열문자열
 category: javascript
+keyword: javascript, string, number
 date: "2023-03-06"
 ---
 

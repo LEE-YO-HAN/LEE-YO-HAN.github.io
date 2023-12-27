@@ -2,6 +2,7 @@
 title: redux mock server
 description: postman을 이용해 redux Mock server(json-server) 사용해보기
 category: redux
+keyword: redux, mock server
 date: "2023-03-04"
 ---
 

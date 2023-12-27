@@ -2,6 +2,7 @@
 title: typescript syntax
 description: Typescript 사용을 위한 기본적인 문법 정리
 category: typescript
+keyword: typescript, 문법
 date: "2023-03-02"
 ---
 

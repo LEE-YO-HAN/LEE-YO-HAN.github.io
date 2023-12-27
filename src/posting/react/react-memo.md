@@ -2,6 +2,7 @@
 title: react memo
 description: React.memo() 를 통한 컴포넌트 최적화
 category: react
+keyword: react, memo()
 date: "2023-03-16"
 ---
 

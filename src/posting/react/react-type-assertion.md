@@ -2,6 +2,7 @@
 title: react type assertion
 description: React Form event type (feat. 타입 단언 as)
 category: react
+keyword: typescript, 이벤트타입
 date: "2023-04-13"
 ---
 

@@ -2,6 +2,7 @@
 title: nestjs server client cookie2
 description: NestJS에서 클라이언트로 쿠키 보내기 (왜 내 쿠키는 안받아줘요?) - 배포환경
 category: nestjs
+keyword: nestjs, 쿠키
 date: "2023-04-30"
 ---
 

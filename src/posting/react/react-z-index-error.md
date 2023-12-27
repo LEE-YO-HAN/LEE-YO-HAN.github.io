@@ -2,6 +2,7 @@
 title: react z index error
 description: z-index가 올바르게 적용되지 않을때 적용해볼 수 있는 방법
 category: react
+keyword: z-index
 date: "2023-03-03"
 ---
 

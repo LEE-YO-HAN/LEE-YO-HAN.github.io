@@ -2,6 +2,7 @@
 title: react smooth scroll
 description: React/Javascript 부드러운 스크롤 이동 적용
 category: react
+keyword: react, smoooth scroll
 date: "2023-03-25"
 ---
 

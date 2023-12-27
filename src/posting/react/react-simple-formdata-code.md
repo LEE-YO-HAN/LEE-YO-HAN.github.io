@@ -2,6 +2,7 @@
 title: react simple formdata code
 description: react formdata 코드간소화
 category: react
+keyword: react, 코드 간소화
 date: "2023-03-03"
 ---
 

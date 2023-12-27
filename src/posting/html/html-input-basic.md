@@ -2,6 +2,7 @@
 title: html input basic
 description: HTML input 속성 이용하기
 category: html
+keyword: html, input
 date: "2023-02-09"
 ---
 

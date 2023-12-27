@@ -2,6 +2,7 @@
 title: javascript basic 5 loop
 description: javascript 기초 5 반복문 다루기
 category: javascript
+keyword: javascript, 반복문
 date: "2023-03-06"
 ---
 

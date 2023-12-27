@@ -2,6 +2,7 @@
 title: react navigate props
 description: React navigate로 props 넘기기
 category: react
+keyword: react, navigate, props
 date: "2023-03-03"
 ---
 

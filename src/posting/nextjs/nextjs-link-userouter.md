@@ -2,6 +2,7 @@
 title: nextjs link userouter
 description: Nextjs Link와 useRouter의 차이
 category: nextjs
+keyword: nextjs, Link, useRouter
 date: "2023-03-18"
 ---
 

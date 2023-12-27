@@ -2,6 +2,7 @@
 title: redux typescript react reduxtoolkit
 description: Typescript react에서 ReduxToolkit 사용해보기
 category: redux
+keyword: redux, reduxtoolkit
 date: "2023-03-04"
 ---
 

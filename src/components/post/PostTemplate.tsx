@@ -117,12 +117,14 @@ const MainContent = styled.main`
     font-size: 1.8rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    color: ${props => props.theme.componentAccentFontColor};
   }
 
   .markdown h2 {
     font-size: 1.6rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    color: ${props => props.theme.componentAccentFontColor};
   }
 
   .markdown h3 {

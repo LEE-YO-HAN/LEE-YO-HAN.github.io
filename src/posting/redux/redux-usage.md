@@ -2,6 +2,7 @@
 title: redux usage
 description: redux 사용해보기
 category: redux
+keyword: redux사용법
 date: "2023-03-04"
 ---
 

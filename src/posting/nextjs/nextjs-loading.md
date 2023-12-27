@@ -2,6 +2,7 @@
 title: nextjs loading
 description: nextjs에서의 로딩처리
 category: nextjs
+keyword: nextjs, loading
 date: "2023-03-04"
 ---
 

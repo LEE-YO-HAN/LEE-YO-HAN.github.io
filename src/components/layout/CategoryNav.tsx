@@ -24,7 +24,7 @@ export const CategoryNav = () => {
   ];
   const BE = [getList("Nestjs")];
   const CS = [getList("정보처리기사", "sw")];
-  const ETC = [getList("Simple Memo", "gtihub")];
+  const ETC = [getList("Simple Memo", "github")];
 
   const CATEGORYS = [FE, BE, CS, ETC];
   const NameList = ["FE", "BE", "CS", "ETC"];

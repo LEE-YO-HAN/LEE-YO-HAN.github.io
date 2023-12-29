@@ -14,6 +14,8 @@ date: "2023-12-27"
 
 나의 경우 아래의 순서로 필기한 후, 기출문제를 많이 풀어본 후에 시험을 쳤다.
 
+표 등 일부 내용은 깃허브에서 보는 것이 더 편하다.
+
 1. [소프트웨어 설계](https://github.com/CS-AL-SW/SW/tree/main/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/1.%20%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%84%A4%EA%B3%84)
 
 2. [소프트웨어 개발](https://github.com/CS-AL-SW/SW/tree/main/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/2.%20%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EA%B0%9C%EB%B0%9C)
@@ -27,9 +29,6 @@ date: "2023-12-27"
 본문은 요약본으로, 노출 빈도가 높다고 느낀 키워드는 ★표로 강조하였다.
 
 ---
-
-<br>
-<br>
 
 # 모듈화와 결합도/응집도 ★★★
 
@@ -96,9 +95,6 @@ date: "2023-12-27"
 - 유지보수가 용이하도록 설계한다.
 - 모듈 크기는 시스템의 전반적인 기능과 구조를 이해하기 쉬운 크기로 설계한다.
 - 모듈 기능은 예측이 가능해야 하며 지나치게 제한적이어서는 안 된다.
-
-<br>
-<br>
 
 # C 언어
 
@@ -257,9 +253,6 @@ int main(int argc, char *argv[]) {
 - 조건식 ? 참일 경우 값 : 거짓일 경우 값
 - ex. big = a > b ? a:b; -> a와 b 중에서 큰 수가 big에 저장됨
 
-<br>
-<br>
-
 # Java 언어
 
 - 객체지향 언어이다.
@@ -279,8 +272,8 @@ int main(int argc, char *argv[]) {
 |        |  short  |   2byte   |                    -32,768 ~ +32,767                    |
 |        |   int   |   4byte   |             -2,147,483,648 ~ +2,147,483,648             |
 |        |  long   |   8byte   | -9,223,372,036,854,775,808 ~ +9,223,372,036,854,775,808 |
-| 실수형 |  float  |   4byte   |         단정도 실수형<br>(유효 자리는 7정도임)          |
-|        | double  |   8byte   |          배정도 실수형<br>(유효 자리는 15정도)          |
+| 실수형 |  float  |   4byte   |           단정도 실수형 (유효 자리는 7정도임)           |
+|        | double  |   8byte   |           배정도 실수형 (유효 자리는 15정도)            |
 | 문자형 |  char   |   2byte   |                   유니코드 문자열 1자                   |
 | 논리형 | boolean |   1byte   |                       true,false                        |
 
@@ -339,9 +332,6 @@ int main(int argc, char *argv[]) {
 - Java 언어에서는 static 메ㅓㅅ드의 오버라이딩을 허용하지 않는다.
 - 오버라이딩의 경우 하위 객체의 매개 변수 개수와 타입은 상위 객체와 같아야 한다.
 
-<br>
-<br>
-
 # 스크립트 언어
 
 - 소스 코드를 컴파일 과정을 거치지 않고 실행할 수 있는 프로그래밍 언어이다.
@@ -377,9 +367,6 @@ int main(int argc, char *argv[]) {
    - VBScript
      - 마이크로소프트가 개발한 액티브 스크립트 언어이다.
      - VBScript의 구분은 비주얼 베이직(Visual Basic) 프로그래밍 언어를 일부 반영한다.
-
-<br>
-<br>
 
 # 파이썬(Python)
 
@@ -444,9 +431,6 @@ print(s11) # 'el yh'
 
 ```
 
-<br>
-<br>
-
 # 운영체제(OS : Operating System)
 
 - 운영체제는 컴퓨터 사용자와 컴퓨터 하드웨어 간의 인터페이스로서 동작하는 시스템 소프트웨어이다.
@@ -500,9 +484,6 @@ print(s11) # 'el yh'
 7. 분산 처리 시스템(Distributed Processing System)
    - 여러 대의 컴퓨터로 작업을 나누어 처리하여 그 내용이나 결과를 통신망을 이용하여 상호 교환되도록 연결하는 방식이다.
 
-<br>
-<br>
-
 # 프로세스(Process)
 
 ### 프로세스의 정의
@@ -545,8 +526,6 @@ print(s11) # 'el yh'
 - 프로세스 내에서의 작업 단위로서 시스템의 여러 자원을 할당받아 실행하는 프로그램의 단위를 의미한다.
 - 하드웨어, 운영체제의 성능과 응용 프로그램의 처리율을 향상시킬 수 있다.
 - 한 개의 프로세스는 여러 개의 스레드를 가질 수 있다.
-
-<br>
 
 ## 프로세스 스케줄링(Process Scheduling)
 
@@ -591,9 +570,6 @@ print(s11) # 'el yh'
   - 다단계 피드백 큐(Multi-Level Feedback Queue)
     - 각 준비 상태 큐마다 부여된 시간 할당량 안에 완료하지 못한 프로세스는 다음 단계의 준비 상태 큐로 이동하는 기법이다.
 
-<br>
-<br>
-
 # OST(Open Systems Interconnection) 7계층 ★★★
 
 1. 물리 계층(Physical Layer)
@@ -629,9 +605,6 @@ print(s11) # 'el yh'
    - 응용 프로세스와 직접 관계하여 일반적인 응용 서비스를 수행한다.
    - 프로토콜 종류 : HTTP, FTP, SMTP, Telnet, DNS
 
-<br>
-<br>
-
 # TCP/IP 프로토콜(Transmission Control Protocol/Internet Protocol)
 
 - 인터넷에 연결된 서로 다른 기종의 컴퓨터 간에 데이터 송/수신이 가능하도록 도와주는 표준 프로토콜이다.
@@ -652,8 +625,6 @@ print(s11) # 'el yh'
 ### IP(Internet Protocol)
 
 - OSI 7계층의 네트워크 계층에 해당하며 비신뢰성 서비스를 제공한다.
-
-<br>
 
 ## TCP/IP의 구조
 
@@ -704,9 +675,6 @@ print(s11) # 'el yh'
     - 흐름 제어나 순서 제어가 없어 전송 속도가 빠르다.
     - 수신된 데이터의 순서 재조정 기능을 지원하지 않는다.
     - 복구 기능을 제공하지 않는다.
-
-<br>
-<br>
 
 # IP 주소 ★★★
 
@@ -768,12 +736,6 @@ print(s11) # 'el yh'
 - 네트워크 ID에 해당하는 모든 비트를 1로 설정하며, 호스트 ID에 해당하는 모든 비트를 0으로 설정한다.
 - CIDR 표기 형식 : 10진수의 IP/네트워크 ID의 1비트의 개수
 
-<br>
-<br>
-
 ---
-
-<br>
-<br>
 
 참조 : [Github repository](https://github.com/CS-AL-SW/SW/tree/main/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/4.%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%96%B8%EC%96%B4%20%ED%99%9C%EC%9A%A9)

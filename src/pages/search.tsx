@@ -12,28 +12,27 @@ export default function Search() {
   const allMDdata = useMdContextValue();
   const [searchList, setSearchList] = useState<MarkDownList[]>([
     {
-      title: "mcok",
-      description: "mcok",
-      category: "mcok",
-      date: "mcok",
+      title: "",
+      description: "",
+      category: "",
+      date: "",
     },
   ]);
 
-  const searchFilter = (list: RecommandData[], searchItem: string) => {
+  const searchFilter = () => {
     if (searchItem) {
-      const newList = list.filter(item =>
-        item.description.toLowerCase().includes(searchItem.toLowerCase()),
+      const searchString = searchItem as string;
+      const newList = allMDdata.filter(item =>
+        item.description.toLowerCase().includes(searchString.toLowerCase()),
       );
-      return newList;
+      setSearchList(newList);
     }
   };
   useEffect(() => {
-    const newList = searchFilter(
-      allMDdata,
-      searchItem as string,
-    ) as RecommandData[];
-    setSearchList(newList);
+    searchFilter();
   }, [searchItem]);
+
+  console.log(searchItem);
 
   return (
     <>

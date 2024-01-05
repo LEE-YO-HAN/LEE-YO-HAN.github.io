@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import Script from "next/script";
 import { join } from "path";
 import fs from "fs/promises";
 import matter from "gray-matter";
@@ -30,11 +31,11 @@ export default function Posts({
         keyword={keyword}
         content={content}
       />
-      <script
+      <Script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4077287316160146"
         crossOrigin="anonymous"
-      ></script>
+      ></Script>
     </>
   );
 }

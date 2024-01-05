@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { NextHead } from "@/components/post/NextHead";
 import { PostGrid } from "@/components/post/PostGrid";
 import { useMdContextValue } from "@/context/MdContext";
-import { RecommandData, MarkDownList } from "@/types/pages";
+import { MarkDownList } from "@/types/pages";
 
 export default function Search() {
   const router = useRouter();

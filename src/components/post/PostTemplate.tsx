@@ -6,6 +6,7 @@ import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Comment } from "./Comment";
+import { categoryName } from "./categoryName";
 
 export const PostTemplate = ({
   title,
@@ -18,7 +19,7 @@ export const PostTemplate = ({
   return (
     <TemplateWrap>
       <HeaderSection>
-        <p>{category}</p>
+        <p>{categoryName[category]}</p>
         <h1>{description}</h1>
         <span>{date}</span>
       </HeaderSection>

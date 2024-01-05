@@ -5,11 +5,12 @@ import { RecommandData } from "@/types/pages";
 import { useMobile } from "@/hooks/useMediaQuery";
 import axios from "axios";
 import Link from "next/link";
+import { categoryName } from "./categoryName";
 
 export const RecommandList = ({ description }: { description: string }) => {
   const { asPath } = useRouter();
   const mobile = useMobile();
-  const categoryName = asPath.split("-")[0].replace("/", "");
+  const categoryNameInURL = asPath.split("-")[0].replace("/", "");
 
   const BASE_URL = process.env.NEXT_PUBLIC_GHB_URL;
   const options = {
@@ -23,14 +24,14 @@ export const RecommandList = ({ description }: { description: string }) => {
   const eachMarkdown = async (
     name: string,
   ): Promise<RecommandData | undefined> => {
-    const url = `${BASE_URL}/${categoryName}/${name}`;
+    const url = `${BASE_URL}/${categoryNameInURL}/${name}`;
     const response = await axios.get(url, options);
     const content = Buffer.from(response.data.content, "base64").toString();
     const frontmatter = content.match(/^---\n([\s\S]+?)\n---/);
     if (frontmatter) {
       const matters = JSON.stringify(frontmatter[0]).split("\\n");
       const dateRegex = /\d{4}-\d{2}-\d{2}/;
-      const match = matters[4].match(dateRegex);
+      const match = matters[5].match(dateRegex);
       if (match) {
         const result: RecommandData = {
           title: matters[1].split("title: ")[1].replaceAll(" ", "-"),
@@ -44,7 +45,7 @@ export const RecommandList = ({ description }: { description: string }) => {
   };
 
   const githubREST = async () => {
-    const main = `${BASE_URL}/${categoryName}`;
+    const main = `${BASE_URL}/${categoryNameInURL}`;
     const mainUrl = await axios.get(main, options);
     let recommandSet: RecommandData[] = [];
     for (const data of mainUrl.data) {
@@ -62,10 +63,7 @@ export const RecommandList = ({ description }: { description: string }) => {
   return (
     <RecommandBox>
       <p>
-        <strong>
-          {categoryName === "github" ? '"Simple Memo"' : `"${categoryName}"`}
-        </strong>{" "}
-        카테고리의 다른 글
+        <strong>{categoryName[categoryNameInURL]}</strong> 카테고리의 다른 글
       </p>
       <ListBox>
         {recommandList.map((item, index) => {

@@ -29,7 +29,7 @@ const Spinner = styled.div`
     box-sizing: border-box;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 53%;
     width: 40px;
     height: 40px;
     margin-top: -32px;

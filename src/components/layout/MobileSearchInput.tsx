@@ -1,15 +1,19 @@
 import styled from "styled-components";
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaSearch, FaWindowClose } from "react-icons/fa";
 import { useRouter } from "next/router";
 
 export const MobileSearchInput = () => {
   const router = useRouter();
-  const [searchOn, setSearchOn] = useState(false);
+  const [searchOn, setSearchOn] = useState(true);
   const searchOpacity = searchOn ? { opacity: "1" } : { opacity: "0" };
+  const searchFormIndex = searchOn ? { zIndex: "1" } : { zIndex: "-99" };
 
-  const searchHandler = () => {
-    setSearchOn(!searchOn);
+  const openSearch = () => {
+    setSearchOn(true);
+  };
+  const closeSearch = () => {
+    setSearchOn(false);
   };
 
   const searchItem = useRef("");
@@ -23,32 +27,44 @@ export const MobileSearchInput = () => {
       query: { searchItem: searchItem.current },
     });
   };
+
+  useEffect(() => {
+    closeSearch();
+  }, [router.query.searchItem]);
+
   return (
-    <form onSubmit={onSubmitHandler}>
+    <>
       {searchOn ? (
-        <FaWindowClose onClick={searchHandler} />
+        <FaWindowClose onClick={closeSearch} />
       ) : (
-        <FaSearch onClick={searchHandler} />
+        <FaSearch onClick={openSearch} />
       )}
-      <SearchInput
-        type="text"
-        style={searchOpacity}
-        placeholder="키워드 입력 후 엔터를 눌러주세요"
-        onChange={onChangeHandler}
-      />
-    </form>
+      <SearchForm onSubmit={onSubmitHandler} style={searchFormIndex}>
+        <SearchInput
+          type="text"
+          style={searchOpacity}
+          placeholder="키워드를 입력해주세요"
+          onChange={onChangeHandler}
+        />
+      </SearchForm>
+    </>
   );
 };
 
+const SearchForm = styled.form`
+  position: absolute;
+  top: 17px;
+  left: 25%;
+`;
+
 const SearchInput = styled.input`
   padding: 5px;
-  position: absolute;
-  transform: translate(-115%, -18%);
   background: ${props => props.theme.backgroundColor};
   transition: 0.3s;
-  width: 250px;
-  height: 20px;
+  width: 50vw;
+  height: 30px;
   border-radius: 10px;
+  text-align: center;
   color: ${props => props.theme.componentFontColor};
   font-family: maplestory;
   font-size: 1.2rem;

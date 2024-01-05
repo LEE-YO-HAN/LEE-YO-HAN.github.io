@@ -5,12 +5,14 @@ import { LoadingSpinner } from "@/util/LoadingSpinner";
 import { SkeletonCard } from "./SkeletonCard";
 import Image from "next/image";
 import Link from "next/link";
+import { MobileSearchInput } from "../layout/MobileSearchInput";
 
 interface Props {
   postlist: MarkDownList[];
+  listName: string;
 }
 
-export const PostInfiScroll = ({ postlist }: Props) => {
+export const PostInfiScroll = ({ postlist, listName }: Props) => {
   const page = useRef<number>(1);
   const [isLoading, setisLoading] = useState(true);
   setTimeout(() => {
@@ -59,6 +61,10 @@ export const PostInfiScroll = ({ postlist }: Props) => {
 
   return (
     <>
+      <CountPost>
+        <span>{listName}</span>
+        <MobileSearchInput />
+      </CountPost>
       {isLoading ? <LoadingSpinner /> : null}
       {fetchPost?.map((item, index) => {
         const { description, date, category, title } = item;
@@ -93,6 +99,21 @@ export const PostInfiScroll = ({ postlist }: Props) => {
     </>
   );
 };
+
+const CountPost = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  color: ${props => props.theme.componentShadow};
+  font-size: 1.3rem;
+  font-weight: bold;
+
+  & svg {
+    font-size: 1.6rem;
+  }
+`;
 
 const Card = styled(Link)``;
 

@@ -34,6 +34,7 @@ export const MobileCategoryNav = ({ isOpen, closeNav }: Props) => {
                           ? { color: "white", fontWeight: "bold" }
                           : {}
                       }
+                      onClick={closeNav}
                     >
                       {name}
                     </Link>

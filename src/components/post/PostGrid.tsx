@@ -39,18 +39,17 @@ export const PostGrid = ({ posts }: Props) => {
   const router = useRouter();
   const { searchItem } = router.query;
   const pathname = router.pathname;
-  const listName =
-    pathname === "/search" ? `"${searchItem}" 관련 글` : "전체 글";
+  const listName = `${
+    pathname === "/search" ? `"${searchItem}" 관련 글` : "전체 글"
+  } (${posts.length})`;
   return (
     <>
       {mobile ? (
-        <PostInfiScroll postlist={postlist} />
+        <PostInfiScroll postlist={postlist} listName={listName} />
       ) : (
         <GridContainer>
           <CountPost>
-            <span>
-              {listName} ({posts.length})
-            </span>
+            <span>{listName}</span>
             <PostSearch />
           </CountPost>
           <GridBox>

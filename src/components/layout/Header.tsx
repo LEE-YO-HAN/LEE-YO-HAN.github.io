@@ -3,8 +3,8 @@ import styled from "styled-components";
 import Link from "next/link";
 import { useMobile } from "@/hooks/useMediaQuery";
 import { TfiMenu } from "react-icons/tfi";
-import { FaSearch } from "react-icons/fa";
 import { MobileCategoryNav } from "./MobileCategoryNav";
+import { MobileSearchInput } from "./MobileSearchInput";
 
 export const Header = () => {
   const mobile = useMobile();
@@ -26,9 +26,6 @@ export const Header = () => {
       <h1 style={mobile ? { fontSize: "1.4rem" } : {}}>
         <Link href={"/"}>Hanbbi{"'"}s DevLog</Link>
       </h1>
-      <ReactIcon style={mobileDisplayOn}>
-        <FaSearch />
-      </ReactIcon>
       <MobileCategoryNav isOpen={isNavOpen} closeNav={closeNav} />
     </HeaderWrap>
   );
@@ -58,6 +55,9 @@ const HeaderWrap = styled.header`
 `;
 
 const ReactIcon = styled.span`
+  position: absolute;
+  left: 0;
+  margin-left: 5vw;
   display: flex;
   font-size: 1.8rem;
   color: ${props => props.theme.componentFontColor};

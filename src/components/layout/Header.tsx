@@ -1,15 +1,26 @@
+import { useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { useMobile } from "@/hooks/useMediaQuery";
 import { TfiMenu } from "react-icons/tfi";
 import { FaSearch } from "react-icons/fa";
+import { MobileCategoryNav } from "./MobileCategoryNav";
 
 export const Header = () => {
   const mobile = useMobile();
   const mobileDisplayOn = mobile ? {} : { display: "none" };
+
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const openNav = () => {
+    setIsNavOpen(true);
+  };
+  const closeNav = () => {
+    setIsNavOpen(false);
+  };
+
   return (
     <HeaderWrap>
-      <ReactIcon style={mobileDisplayOn}>
+      <ReactIcon style={mobileDisplayOn} onClick={openNav}>
         <TfiMenu />
       </ReactIcon>
       <h1 style={mobile ? { fontSize: "1.4rem" } : {}}>
@@ -18,6 +29,7 @@ export const Header = () => {
       <ReactIcon style={mobileDisplayOn}>
         <FaSearch />
       </ReactIcon>
+      <MobileCategoryNav isOpen={isNavOpen} closeNav={closeNav} />
     </HeaderWrap>
   );
 };

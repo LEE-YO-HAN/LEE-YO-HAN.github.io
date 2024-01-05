@@ -2,14 +2,22 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { CATEGORYS, NameList } from ".";
+import { IoMdClose } from "react-icons/io";
 
-export const CategoryNav = () => {
+interface Props {
+  isOpen: boolean;
+  closeNav: () => void;
+}
+
+export const MobileCategoryNav = ({ isOpen, closeNav }: Props) => {
   const router = useRouter();
 
   return (
-    <CategoryNavWrap>
+    <NavWrap style={isOpen ? {} : { transform: "translateX(-100%)" }}>
+      <CloseBtn>
+        <IoMdClose onClick={closeNav} />
+      </CloseBtn>
       <NavList>
-        <p>Category</p>
         {CATEGORYS.map((item, index) => {
           return (
             <div key={index}>
@@ -36,21 +44,37 @@ export const CategoryNav = () => {
           );
         })}
       </NavList>
-    </CategoryNavWrap>
+    </NavWrap>
   );
 };
 
-const CategoryNavWrap = styled.nav`
-  margin-left: 20px;
+const NavWrap = styled.nav`
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 30px;
+  width: 100%;
+  height: 100%;
+  background-color: ${props => props.theme.componentBackground};
+  transition: 0.3s;
+`;
+
+const CloseBtn = styled.div`
+  text-align: right;
+  margin: 35px 12vw 0 0;
+
+  color: ${props => props.theme.componentFontColor};
+
+  & svg {
+    font-size: 55px;
+  }
 `;
 
 const NavList = styled.ul`
   list-style: none;
-  transition: 0.3s;
-  & p:first-child {
+  & p {
     margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 2.2rem;
     cursor: auto;
   }
 `;
@@ -58,13 +82,15 @@ const NavList = styled.ul`
 const CategoryName = styled.p`
   margin: 20px 0 10px 0;
   font-weight: bold;
-  font-size: 1.2rem;
+
   color: ${props => props.theme.componentAccentFontColor};
   cursor: auto;
 `;
 
 const ListItem = styled.li`
   margin-bottom: 7px;
+  font-size: 1.4rem;
+  font-weight: bold;
   cursor: pointer;
 
   & a {

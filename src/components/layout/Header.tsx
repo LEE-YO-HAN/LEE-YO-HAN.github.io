@@ -13,7 +13,7 @@ export const Header = () => {
         <TfiMenu />
       </ReactIcon>
       <h1 style={mobile ? { fontSize: "1.4rem" } : {}}>
-        <Link href={"/"}>Rain Sugar BangBang</Link>
+        <Link href={"/"}>Hanbbi{"'"}s DevLog</Link>
       </h1>
       <ReactIcon style={mobileDisplayOn}>
         <FaSearch />

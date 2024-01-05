@@ -10,7 +10,7 @@ interface Props {
 export const NextHead = ({ title, description, keyword, category }: Props) => {
   return (
     <Head>
-      <title>Hanbbis DevLog</title>
+      <title>Hanbbi{"'"}s DevLog</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content={`${description}`} />
       <meta name="keywords" content={`${category}, ${title}, ${keyword}`} />

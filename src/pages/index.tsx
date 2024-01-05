@@ -18,7 +18,7 @@ export default function Home({ posts }: { posts: MarkDownProps[] }) {
   return (
     <>
       <Head>
-        <title>Hanbbis DevLog</title>
+        <title>Hanbbi{"'"}s DevLog</title>
         <meta name="description" content="developer's blog" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="subject" content="developer blog" />

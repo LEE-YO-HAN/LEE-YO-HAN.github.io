@@ -18,11 +18,11 @@ export default function Home({ posts }: { posts: MarkDownProps[] }) {
   return (
     <>
       <Head>
-        <title>Rain Sugar BangBang Front-End</title>
+        <title>Hanbbis DevLog</title>
         <meta name="description" content="developer's blog" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="subject" content="developer blog" />
-        <meta property="og:title" content="Rain Sugar BangBang" />
+        <meta property="og:title" content="Hanbbis DevLog" />
         <meta property="og:description" content="welcome to devLog" />
         <meta property="og:image" content={"/images/cards/GITHUB.png"} />
         <meta

@@ -63,8 +63,8 @@ export const PostInfiScroll = ({ postlist }: Props) => {
       {fetchPost?.map((item, index) => {
         const { description, date, category, title } = item;
         return (
-          <Link key={index} href={`/${title.replaceAll(" ", "-")}`}>
-            <Container>
+          <Card key={index} href={`/${title.replaceAll(" ", "-")}`}>
+            <Content>
               <Image
                 src={`/images/cards/${category.toUpperCase()}.png`}
                 alt={`${category}`}
@@ -80,8 +80,8 @@ export const PostInfiScroll = ({ postlist }: Props) => {
                 </p>
                 <span>{date}</span>
               </ContentBody>
-            </Container>
-          </Link>
+            </Content>
+          </Card>
         );
       })}
       {isLoading ? <SkeletonCard /> : null}
@@ -94,7 +94,9 @@ export const PostInfiScroll = ({ postlist }: Props) => {
   );
 };
 
-const Container = styled.li`
+const Card = styled(Link)``;
+
+const Content = styled.div`
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 5px;
@@ -125,4 +127,6 @@ const ContentBody = styled.div`
   }
 `;
 
-const IoTarget = styled.div``;
+const IoTarget = styled.div`
+  height: 40px;
+`;

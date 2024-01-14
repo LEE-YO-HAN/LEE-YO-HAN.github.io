@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useMobile } from "@/hooks/useMediaQuery";
 import { TfiMenu } from "react-icons/tfi";
 import { MobileCategoryNav } from "./MobileCategoryNav";
-import { MobileSearchInput } from "./MobileSearchInput";
 
 export const Header = () => {
   const mobile = useMobile();

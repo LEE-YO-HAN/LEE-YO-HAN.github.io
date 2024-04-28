@@ -32,8 +32,6 @@ export default function Search() {
     searchFilter();
   }, [searchItem]);
 
-  console.log(searchItem);
-
   return (
     <>
       <NextHead

@@ -50,7 +50,7 @@ export const MobileCategoryNav = ({ isOpen, closeNav }: Props) => {
 };
 
 const NavWrap = styled.nav`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   padding: 0 30px;
@@ -58,6 +58,7 @@ const NavWrap = styled.nav`
   height: 100%;
   background-color: ${props => props.theme.componentBackground};
   transition: 0.3s;
+  z-index: 999;
 `;
 
 const CloseBtn = styled.div`
